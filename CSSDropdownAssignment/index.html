@@ -44,18 +44,69 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 50px;
+      margin-top: 25px;
       margin-left: 85px;
       margin-right: 85px;
-      background-color: white;
+      background-color: white
     }
-    nav > div:hover, nav > div:focus-within 
-    { background-color: rgb(39, 196, 64); 
-      position: relative; }
 
+    nav > div:hover, nav > div:focus-within {
+       background-color: rgb(48, 193, 72); 
+      position: relative;
+      
+    }
+    nav > div > div{
+      display: none;
+      width: 100%;
+      position: absolute;
+      flex-direction: column;
+      background-color: rgb(28, 29, 29);
+  
+    }
+    nav > div:hover > div, nav > div:focus-within > div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: rgb(28, 29, 29);
+      width: 100%;
+      height: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+    nav > div:hover > div > ul, nav > div:focus-within > div > ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: rgb(28, 29, 29);
+      width: 100%;
+      height: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+    nav > div:hover > div > ul > a, nav > div:focus-within > div > ul > a{
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      background-color: rgb(28, 29, 29);
+      width: 100%;
+      height: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+    
 
-
-
+   
+   
+    
 
     </style>
 
@@ -70,11 +121,11 @@
       <h2>File</h2>
       <div>
         <ul>
-          <li><a href="#">New</a></li>
-          <li><a href="#">Open</a></li>
-          <li><a href="#">Save</a></li>
-          <li><a href="#">Print</a></li>
-          <li><a href="#">Close</a></li>
+          <a href="#">New</a>
+          <a href="#">Open</a>
+          <a href="#">Save</a>
+          <a href="#">Print</a>
+          <a href="#">Close</a>
         </ul>
       </div>
     </div>
@@ -83,11 +134,11 @@
       <h2>Edit</h2>
       <div>
         <ul>
-          <li><a href="#">Undo</a></li>
-          <li><a href="#">Redo</a></li>
-          <li><a href="#">Cut</a></li>
-          <li><a href="#">Copy</a></li>
-          <li><a href="#">Paste</a></li>
+          <a href="#">Undo</a>
+          <a href="#">Redo</a>
+          <a href="#">Cut</a>
+          <a href="#">Copy</a>
+          <a href="#">Paste</a>
         </ul>
       </div>
     </div>
@@ -96,15 +147,15 @@
       <h2>View</h2>
       <div>
         <ul>
-          <li><a href="#">Zoom In</a></li>
-          <li><a href="#">Zoom Out</a></li>
-          <li><a href="#">Actual Size</a></li>
-          <li><a href="#">Fit Page</a></li>
-          <li><a href="#">Fit Width</a></li>
-          <li><a href="#">Fit Height</a></li>
-          <li><a href="#">Rotate Left</a></li>
-          <li><a href="#">Rotate Right</a></li>
-          <li><a href="#">Full Screen</a></li>
+         <a href="#">Zoom In</a>
+          <a href="#">Zoom Out</a>
+          <a href="#">Actual Size</a>
+          <a href="#">Fit Page</a>
+          <a href="#">Fit Width</a>
+          <a href="#">Fit Height</a>
+          <a href="#">Rotate Left</a>
+          <a href="#">Rotate Right</a>
+          <a href="#">Full Screen</a>
         </ul>
       </div>
   </nav>
@@ -113,8 +164,8 @@
       <div class="green">
         <h3>Instructions</h3>
         <p>Recreate this page using <strong>ONLY CSS</strong>. 
-          Do yourself a favor and 1) do not view the source.</p>
-        <p>Figure it out Yourself. 2) Do not searcg for the solution. 
+          Do yourself a favor and 1) do not view the source.
+        Figure it out Yourself. 2) Do not searcg for the solution. 
           Learn CSS until you know enough to do this. </p>
        
     </div>
