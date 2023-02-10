@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
     <title>Exercise Project</title>
-
-    <style>
+        <style>
             
   *
 {
@@ -47,93 +47,84 @@ body
             .navbar-item:focus{
                 background-color: #f0e9e9;
             }
-
-            .columns{
-                margin-top: 0rem;
-                background-color: transparent;
+            .navbar-item:visited{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:link{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:active{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:visited{
+                background-color: #f0e9e9;
             }
 
-    
-          
-            
-    </style>
-
+          </style>
 </head>
-<body>
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-        </a>
-        <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="isMenuActive = !isMenuActive" >
-          <span></span>
-          <span></span>
-          <span></span>
+<body >
+ 
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="isMenuActive = !isMenuActive" >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-      </div>
-    
       
-        <div class="navbar-menu" :class="{ 'is active': isMenuActive }">
+        <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
             <a class="navbar-item">
               Home
             </a>
-      
             <a class="navbar-item">
               About us
             </a>
-      
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
+              <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
                 Exercises
               </a>
-      
               <div class="navbar-dropdown">
-                <a class="navbar-item">
+                <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
                   Chest
                 </a>
-                <a class="navbar-item">
-                  Shoulder
-                </a>
-                <a class="navbar-item">
-                  Triceps
-                </a>
-                <a class="navbar-item">
-                  Biceps
-                </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
                   Back
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+                  Arms
+                </a>
+                <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
                   Legs
                 </a>
-                <a class="navbar-item">
-                  Abs
+                <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+                  Cardio
                 </a>
               </div>
             </div>
           </div>
       
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-info">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="field is-grouped">
+                  <div class="buttons">
+                    <a class="button is-info">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </nav>
-
-      <div class="bg-img">
-
-      </div>
+      
 
 
-      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
         <script>
 
@@ -141,21 +132,36 @@ body
                 data() {
                     return {
                         isMenuActive: false,
-                     
+                        currentTab: 'All',
+                        tabs: [
+                            { name: 'All', icon: 'fas fa-list' },
+                            { name: 'Completed', icon: 'fas fa-check' },
+                            { name: 'Current', icon: 'fas fa-spinner' },
+                            { name: 'Overdue', icon: 'fas fa-exclamation-triangle' },
+                            { name: 'Trash', icon: 'fas fa-trash'}
+                            /*  calendar, calendar-day, calendar-times, clipboard-list*/
+                        ],
+                        items: [
+                            { name: 'Learn Vue', completed: true },
+                            { name: 'Learn React', completed: false },
+                            { name: 'Learn Angular', completed: false },
+                            { name: 'Learn Svelte', completed: false },
+                            { name: 'Learn Ember', completed: false },
+
+                        ]
                         
                     }
+                },
+                methods: {
+                    shouldShow(item) {
+                        if (this.currentTab === 'All') return true
+                        if (this.currentTab === 'Completed' && item.completed) return true
+                        if (this.currentTab === 'Current' && !item.completed) return true
+                        return false
+                    },
                 }
-
             }).mount('body')
         </script>
-                
-
-
-     
-
-
-
-   
-
-</body>
+      
+    </body>
 </html>
