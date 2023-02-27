@@ -7,7 +7,7 @@ const isMenuActive = false;
 
 <template>
 
-<nav class="navbar is-primary">
+<nav class="navbar is-info">
     <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -94,4 +94,35 @@ const isMenuActive = false;
 
 </template>
 
-<style scoped></style>
+<style scoped>
+
+
+.navbar{
+                    background-color: #b1adad;
+            }
+            .navbar-item{
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .navbar-item:hover{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:active{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:focus{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:visited{
+                background-color: #f0e9e9;
+            }
+            .navbar-item:link{
+                background-color: #f0e9e9;
+            }
+           
+          
+
+
+
+
+</style>
