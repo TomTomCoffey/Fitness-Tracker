@@ -97,6 +97,7 @@ const isMenuActive = false;
 
 .navbar{
                     background-color: #0c5e44;
+                    margin-bottom: 3rem;
             }
             .navbar-item{
                 font-size: 1rem;
