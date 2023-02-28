@@ -3,15 +3,12 @@
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
-import Body from '@/components/Body.vue'
+
 
 </script>
 
 <template>
   <NavBar />
-
-  <Body />
-
 
 
 
@@ -19,10 +16,12 @@ import Body from '@/components/Body.vue'
   <div class="container">
     <RouterView />
   </div>
-  
-  <RouterView />
 
+  <div class="container">
   <Footer />
+  </div>
+ 
+
 </template>
 
 <style scoped>

@@ -7,7 +7,7 @@ const isMenuActive = false;
 
 <template>
 
-<nav class="navbar is-info">
+<nav class="navbar">
     <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -24,9 +24,7 @@ const isMenuActive = false;
       
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
-            <a class="navbar-item" href="https://bulma.io/">
-              Home
-            </a>
+           
 
             <RouterLink to="/" class="navbar-item">Home</RouterLink>
             <RouterLink to="/about" class="navbar-item">About</RouterLink>
@@ -98,7 +96,7 @@ const isMenuActive = false;
 
 
 .navbar{
-                    background-color: #b1adad;
+                    background-color: #0c5e44;
             }
             .navbar-item{
                 font-size: 1rem;
@@ -118,6 +116,9 @@ const isMenuActive = false;
             }
             .navbar-item:link{
                 background-color: #f0e9e9;
+            }
+            .navbar-link{
+              background-color: #f0e9e9;
             }
            
           
