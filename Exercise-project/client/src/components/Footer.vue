@@ -22,10 +22,11 @@ const isMenuActive = false;
 <style scoped>
 
 .footer{
-    background-color: #00d1b2;
+    background-color: #7ee5d8;
     color: white;
     padding: 1rem;
     margin-top: 1rem;
+    display: bottom;
 }
 </style>
 
