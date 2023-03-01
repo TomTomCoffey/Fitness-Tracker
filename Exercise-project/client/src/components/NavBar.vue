@@ -32,30 +32,30 @@ const isMenuActive = false;
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-                Docs
+                Exercises
               </a>
               <div class="navbar-dropdown">
                 <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
-                  Overview
+                  Chest
                 </a>
                 <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-                  Modifiers
+                  Shoulders
                 </a>
                 <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                  Columns
+                  Arms
                 </a>
                 <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                  Layout
+                  Legs
                 </a>
                 <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                  Form
+                  Back
                 </a>
                 <hr class="navbar-divider">
                 <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                  Elements
+                  Abs
                 </a>
                 <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                  Components
+                  Cardio
                 </a>
               </div>
             </div>

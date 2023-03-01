@@ -19,6 +19,17 @@
         </div>
       </article>
     </div>
+
+    <article class="message">
+              <div class="message-header">
+                <p>Your exersise progress!</p>
+                <button class="delete" aria-label="delete"></button>
+              </div>
+              <div class="message-body">
+               <p> This is your current workout progress for today! </p>
+                <progress class="progress is-success" value="60" max="100">60%</progress>
+              </div>
+            </article>
   </div>
     <div class="column">
     Second column
@@ -41,9 +52,11 @@
   }
   .message{
     padding: 0;
+    margin-bottom: 2rem;
   }
   .notification{
     padding: 0;
+    background-color: white;
   }
 
  
