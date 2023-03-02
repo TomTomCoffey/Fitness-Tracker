@@ -28,38 +28,16 @@ const isMenuActive = false;
 
             <RouterLink to="/" class="navbar-item">Home</RouterLink>
             <RouterLink to="/about" class="navbar-item">About</RouterLink>
-
-
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-                Exercises
-              </a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
-                  Chest
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-                  Shoulders
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                  Arms
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                  Legs
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                  Back
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                  Abs
-                </a>
-                <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                  Cardio
-                </a>
+            <RouterLink to="/stats" class="navbar-item">Statistics</RouterLink>
+            <RouterLink to="/exercises" class="navbar-item">Exercises</RouterLink>
+            <RouterLink to="/workouts" class="navbar-item">Workouts</RouterLink>
+            <RouterLink to="/login" class="navbar-item">Login</RouterLink>
+            <RouterLink to="/register" class="navbar-item">Register</RouterLink>
+             
+         
               </div>
             </div>
-          </div>
+       
       
           <div class="navbar-end">
             <div class="navbar-item">
@@ -85,7 +63,6 @@ const isMenuActive = false;
               </div>
             </div>
           </div>
-        </div>
         </div>
       </nav>
  
