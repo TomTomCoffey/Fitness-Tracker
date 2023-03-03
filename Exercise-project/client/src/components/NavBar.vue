@@ -30,9 +30,8 @@ const isMenuActive = false;
             <RouterLink to="/about" class="navbar-item">About</RouterLink>
             <RouterLink to="/stats" class="navbar-item">Statistics</RouterLink>
             <RouterLink to="/exercises" class="navbar-item">Exercises</RouterLink>
-            <RouterLink to="/workouts" class="navbar-item">Workouts</RouterLink>
             <RouterLink to="/login" class="navbar-item">Login</RouterLink>
-            <RouterLink to="/register" class="navbar-item">Register</RouterLink>
+
              
          
               </div>
