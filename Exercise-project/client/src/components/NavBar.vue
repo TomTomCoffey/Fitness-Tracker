@@ -33,6 +33,7 @@ import LoginBadge from './LoginBadge.vue';
              <RouterLink to="/Statistics" class="navbar-item">Statistics</RouterLink>
 
 
+
              
 
 
