@@ -9,6 +9,7 @@
    routes: [
   
      { path: '/', name: 'home', component: HomeView },
+     //{ path "/exercises", name: "exercises", component: ExercisesVue, beforeEnter: secureRoute },
      //{ path: '/products', name: 'products', component: ProductsVue, beforeEnter: secureRoute }, Use as template for new views with login
      { path: '/login', name: 'login', component: LoginVue },
      {
