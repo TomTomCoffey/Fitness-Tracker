@@ -31,6 +31,7 @@ import LoginBadge from './LoginBadge.vue';
              <RouterLink to="/about" class="navbar-item">About</RouterLink>
              <RouterLink to="/Exercises" class="navbar-item">Exercises</RouterLink>
              <RouterLink to="/Statistics" class="navbar-item">Statistics</RouterLink>
+             <RouterLink to="/FriendsActivity" class="navbar-item">Friends Activity</RouterLink>
 
 
 

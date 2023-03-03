@@ -4,6 +4,7 @@
  import LoginVue from '@/views/Login.vue'
  import ExercisesVue from '@/views/Exercises.vue'
  import Statistics from '@/views/Statistics.vue'
+ import FriendsActivity from '@/views/FriendsActivity.vue'
  import { useSession } from '@/model/session'
 
  const router = createRouter({
@@ -15,6 +16,7 @@
      //{ path: '/products', name: 'products', component: ProductsVue, beforeEnter: secureRoute }, Use as template for new views with login
      { path: '/login', name: 'login', component: LoginVue },
       { path: '/statistics', name: 'statistics', component: Statistics, beforeEnter: secureRoute },
+      { path: '/friendsActivity', name: 'friendsActivity', component: FriendsActivity, beforeEnter: secureRoute },
      {
        path: '/about',
        name: 'about',
