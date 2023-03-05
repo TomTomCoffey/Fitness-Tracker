@@ -17,13 +17,10 @@
       </div>
  
      <div class="column">
-    Second column
-         <StatBox
-          title="Testing 1 2 3"
-          value="0"
-          color="success"
-          icon="fas fa-dumbbell"
-        />
+        <div class="notification is-link is-light">
+          <StatBox />
+        </div>
+        
 
      </div>
   </div>

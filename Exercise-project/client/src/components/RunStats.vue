@@ -5,7 +5,7 @@
 <template>
     <div>
         <div class="box has-text-success summary">
-            <h2 class="title">Today</h2>
+            <h2 class="title">Cardio Stats</h2>
             <div class="colums is-multiline">
                 <div class="column is-half">
                     <h3 class="value">0.0</h3>
@@ -43,7 +43,7 @@
     background-color: #0c5e44;
     color: white;
     padding: 1rem;
-    
+
     
 }
 
