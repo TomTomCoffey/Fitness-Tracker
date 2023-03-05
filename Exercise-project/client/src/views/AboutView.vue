@@ -2,6 +2,7 @@
   import { RouterLink, RouterView } from 'vue-router'
   import aboutMsg from '@/components/AboutMessage.vue'
   import ProgressBar from '@/components/ProgressBar.vue'
+  import StatBox from '@/components/StatBox.vue';
 
   </script>
 <template>
@@ -17,7 +18,14 @@
  
      <div class="column">
     Second column
-    </div> 
+         <StatBox
+          title="Testing 1 2 3"
+          value="0"
+          color="success"
+          icon="fas fa-dumbbell"
+        />
+
+     </div>
   </div>
 </div>
 
