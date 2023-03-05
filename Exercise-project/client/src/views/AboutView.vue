@@ -17,9 +17,7 @@
       </div>
  
      <div class="column">
-        <div class="notification is-link is-light">
-          <StatBox />
-        </div>
+       
         
 
      </div>

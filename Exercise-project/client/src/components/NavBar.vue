@@ -27,10 +27,17 @@ import LoginBadge from './LoginBadge.vue';
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
 
+         
+         
+            
              <RouterLink to="/" class="navbar-item">Home</RouterLink>
+
              <RouterLink to="/about" class="navbar-item">About</RouterLink>
+          
              <RouterLink to="/Exercises" class="navbar-item">Exercises</RouterLink>
+             
              <RouterLink to="/Statistics" class="navbar-item">Statistics</RouterLink>
+          
              <RouterLink to="/FriendsActivity" class="navbar-item">Friends Activity</RouterLink>
 
 
@@ -82,6 +89,23 @@ import LoginBadge from './LoginBadge.vue';
             .navbar-link{
               background-color: #f0e9e9;
             }
+
+            .icon{
+              margin-right: 1rem;
+              margin-left: 1rem;
+              background-color: #f0e9e9;
+              size: 200%;
+            }
+            .logo{
+              margin-right: 1rem;
+              margin-left: 1rem;
+              background-color: #f0e9e9;
+              size: 200%;
+            }
+            .navbar-burger{
+              background-color: #f0e9e9;
+            }
+
            
           
 
