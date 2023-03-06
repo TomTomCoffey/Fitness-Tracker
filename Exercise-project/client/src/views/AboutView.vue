@@ -17,6 +17,9 @@
       </div>
  
      <div class="column">
+
+      <StatBox /> <!-- This is a placeholder to fill layout -->
+
        
         
 
