@@ -7,9 +7,9 @@ import { ref } from 'vue';
 
 <template>
     <div>
-        <div class="column is-quarter"></div>
+        <div class="column is-half"></div>
                 
-        <div class="column is-half">
+        <div class="column is-quarter">
         <PrBox/> <!-- This is a placeholder to fill layout -->
         </div>
         <div class="column is-quarter"></div>
@@ -23,7 +23,9 @@ import { ref } from 'vue';
 .column{
     display: center;
     padding: 0;
-    margin: 0;
+    margin: 10rem;
+    margin-bottom: 5rem;
+
 }
 
 </style>

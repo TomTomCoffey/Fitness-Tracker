@@ -19,9 +19,10 @@
                     <button class="delete" aria-label="delete"></button>
                 </div>
                 <div class="message-body">
-                    <p>Bench 225lbs</p>
-                    <p>Squat 315lbs</p>
-                    <p>Deadlift 405lbs</p>
+                    <p> Current Max Bench: 225lbs</p>
+                    <p>Current Max Squat: 315lbs</p>
+                    <p> Current Deadlift: 405lbs</p>
+                    <p>Fastest Mile Run:  7:01 </p>
                 </div>
             </div>
 
@@ -43,16 +44,22 @@
 
 .box{
     display: flex;
-    background-color: #0c5e44;
+    background-color: rgb(108, 105, 105);
     color: white;
     padding: 1rem;
-    margin-bottom: 2rem;}
+    margin-bottom: 2rem;
+    border-color: black;
+    margin-right: 5rem;
+    margin-left: 5rem;
+
+}
 
 .box img{
     margin-right: 1rem;
     border-radius: 50%;
     width: 128px;
     height: 128px;
+    
 }
 .message{
     margin: 0;
@@ -63,8 +70,10 @@
     border-color: black;
 }
 .container{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    background-color: #0c5e44;
+   
 
 }
 .message-header{
@@ -74,6 +83,7 @@
     margin-bottom: 1rem;
     
 }
+
 
 
 </style>

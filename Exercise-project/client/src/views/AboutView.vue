@@ -11,7 +11,7 @@
 <div class="container">
    <div class="columns">
       <div class="column">
-        <div class="notification is-link is-light">
+        <div class="notification">
      <aboutMsg />
      <ProgressBar />
     </div>
@@ -21,7 +21,7 @@
 
       <StatBox /> <!-- This is a placeholder to fill layout -->
 
-      <PrBox /> <!-- This is a placeholder to fill layout -->
+   <!-- This is a placeholder to fill layout -->
 
        
         
@@ -51,6 +51,11 @@
   .notification{
     padding: 0;
     background-color: white;
+  }
+  .container{
+    padding: 0;
+    margin: 5;
+
   }
 
  
