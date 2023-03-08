@@ -3,6 +3,7 @@
   import aboutMsg from '@/components/AboutMessage.vue'
   import ProgressBar from '@/components/ProgressBar.vue'
   import StatBox from '@/components/StatBox.vue';
+  import PrBox from '@/components/PrBox.vue';
 
   </script>
 <template>
@@ -19,6 +20,8 @@
      <div class="column">
 
       <StatBox /> <!-- This is a placeholder to fill layout -->
+
+      <PrBox /> <!-- This is a placeholder to fill layout -->
 
        
         
