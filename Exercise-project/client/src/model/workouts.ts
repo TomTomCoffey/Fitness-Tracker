@@ -10,7 +10,7 @@ import workouts from "../data/workouts.json";
 
 export interface Workout {
     workout: string;
-    duration: string;
+    weight: string;
 }
 
 export function useWorkouts() {

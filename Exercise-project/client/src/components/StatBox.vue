@@ -31,9 +31,7 @@
                 </div>
             </div>
          </div>
-         <div v-for="workout in workouts">
-            <p>{{ workout.workout }}</p>
-         </div>
+       
 
 
 </template>

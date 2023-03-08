@@ -1,15 +1,19 @@
 <script setup lang="ts">
  import { ref } from 'vue';
  import { useSession, login } from '@/model/session';
+ import { useWorkouts } from '@/model/workouts';
+
 
 
  const session = useSession();
+ const workouts = useWorkouts();
 
  </script>
 
 
 <template>
     <div>
+        
         <div class="container">
         <div class="box">
             <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
@@ -19,10 +23,10 @@
                     <button class="delete" aria-label="delete"></button>
                 </div>
                 <div class="message-body">
-                    <p> Current Max Bench: 225lbs</p>
-                    <p>Current Max Squat: 315lbs</p>
-                    <p> Current Deadlift: 405lbs</p>
-                    <p>Fastest Mile Run:  7:01 </p>
+                    <div v-for="workout in workouts">
+            <p>{{ workout.workout }} {{ workout.weight }}</p>
+            
+         </div>
                 </div>
             </div>
 
@@ -82,6 +86,12 @@
     padding: 1rem;
     margin-bottom: 1rem;
     
+}
+p{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    display: flex;
 }
 
 
