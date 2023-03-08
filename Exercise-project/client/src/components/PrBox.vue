@@ -19,8 +19,7 @@
             <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
             <div class="message">
                 <div class="message-header">
-                    <p> {{session.user?.name}}</p>
-                    <button class="delete" aria-label="delete"></button>
+                    <p> {{session.user?.name}}</p> 
                 </div>
                 <div class="message-body">
                     <div v-for="workout in workouts">
