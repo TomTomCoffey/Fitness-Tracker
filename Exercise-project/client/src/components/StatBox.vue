@@ -1,5 +1,8 @@
 
 <script setup lang="ts">
+    import { useWorkouts } from '@/model/workouts';
+
+    const workouts = useWorkouts();
 
 </script>
 
@@ -27,6 +30,9 @@
                     </div>
                 </div>
             </div>
+         </div>
+         <div v-for="workout in workouts">
+            <p>{{ workout.workout }}</p>
          </div>
 
 
