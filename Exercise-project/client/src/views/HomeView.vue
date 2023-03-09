@@ -2,10 +2,16 @@
 
 import StatBox from '@/components/StatBox.vue'
 import runStats from '@/components/RunStats.vue'
+import { useSession } from '@/model/session';
+import AboutMessage from '@/components/AboutMessage.vue';
+
+const session = useSession();
 </script>
 
 <template>
 
+ 
+<div v-if="session.user">
    <div class="container">
       <div class="columns">
          <div class="column">
@@ -24,6 +30,11 @@ import runStats from '@/components/RunStats.vue'
          </div>
       </div>
    </div>
+</div>
+   <div v-else>
+      <AboutMessage/>
+   </div>
+    
 
 
   
