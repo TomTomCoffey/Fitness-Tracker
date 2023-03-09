@@ -13,6 +13,8 @@
 
 <template>
     <div>
+
+        <div v-if="session.user">
         
         <div class="container">
         <div class="box">
@@ -28,17 +30,18 @@
             <p>{{ workout.workout }} {{ workout.weight }}</p>
                          </div>
                     </div>
-                </div>
+                 </div>
+        </div>
+        </div>
+    </div>
+ </div>
+            <div v-else>
+                <h2>You are not logged in.</h2>
+                <p>You need to be logged to access this.</p>
+                <p>Click here to log in</p>
+                <button @click="login()">Login</button>
             </div>
 
-
-        </div>
-
-        </div>
-
-        
-
-   
 
  </div>
 </template>

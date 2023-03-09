@@ -100,7 +100,7 @@ import LoginBadge from './LoginBadge.vue';
             .navbar-item{
                 font-size: 1rem;
                 font-weight: 600;
-                background-color: #f0e9e9;
+                background-color : #f0e9e9 ;
             }
             .navbar-item:hover{
                 background-color: #f0e9e9;

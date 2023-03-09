@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
  import PrBox from '@/components/PrBox.vue';
+ import { useSession } from '@/model/session';
+
+const session = useSession();
+const user = ref(session.user);
 
 </script>
 
@@ -10,13 +14,23 @@ import { ref } from 'vue';
         <div class="column is-half"></div>
                 
         <div class="column is-quarter">
+        <div v-if="session.user">
+            <h1 class="title is-1"> {{session.user.name}}'s Friend's Activity</h1>
         <PrBox/> <!-- This is a placeholder to fill layout -->
         <PrBox/> <!-- This is a placeholder to fill layout -->
         <PrBox/> <!-- This is a placeholder to fill layout -->
         <PrBox/> <!-- This is a placeholder to fill layout -->
         </div>
+        <div v-else>
+            <h1 class="title is-1">Log In</h1>
+            <h3>Please log in to see your friend's activity </h3>
+        </div>
+       
         <div class="column is-quarter"></div>
     </div>
+
+    </div>
+
 </template>
 
 
