@@ -13,7 +13,7 @@
             <div class="columns">
                 <div class="column">
                     <div class="box has-text-success">
-                        <h3 class="title is-5">Total PR's</h3>
+                        <h3 class="title is-5">Total PR's </h3>
                         <p class="subtitle is-3">0</p>
                     </div>
                 </div>
