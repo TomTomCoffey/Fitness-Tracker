@@ -28,21 +28,52 @@ import LoginBadge from './LoginBadge.vue';
           <div class="navbar-start">
 
          
+            <div class="span">
+              <div class="icon">
+                <i class="fas fa-home"></i>
+              </div>
+            </div>
          
              <RouterLink to="/" class="navbar-item">Home</RouterLink>
 
+             <div class="span">
+              <div class="icon">
+                <i class="fas fa-user"></i>
+              </div>
+             </div>
+
              <RouterLink to="/about" class="navbar-item">About</RouterLink>
+
+             <div class="span">
+              <div class="icon">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+             </div>
           
              <RouterLink to="/Exercises" class="navbar-item">Exercises</RouterLink>
+
+              <div class="span">
+                <div class="icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+              </div>
              
              <RouterLink to="/Statistics" class="navbar-item">Statistics</RouterLink>
+
+              <div class="span">
+                <div class="icon">
+                  <i class="fas fa-users"></i>
+                </div>
+              </div>
+
           
              <RouterLink to="/FriendsActivity" class="navbar-item">Friends Activity</RouterLink>
 
-
-
-             
-
+              <div class="span">
+                <div class="icon">
+                  <i class="fas fa-user-friends"></i>
+                </div>
+              </div>
 
              <div class="navbar-item has-dropdown is-hoverable">
              
@@ -63,12 +94,13 @@ import LoginBadge from './LoginBadge.vue';
 
 
 .navbar{
-                    background-color: #0c5e44;
+                    background-color: #f0e9e9;
                     margin-bottom: 3rem;
             }
             .navbar-item{
                 font-size: 1rem;
                 font-weight: 600;
+                background-color: #f0e9e9;
             }
             .navbar-item:hover{
                 background-color: #f0e9e9;
@@ -103,6 +135,12 @@ import LoginBadge from './LoginBadge.vue';
             }
             .navbar-burger{
               background-color: #f0e9e9;
+            }
+            .span{
+              margin-top: 1rem;
+              display: inline-block;
+              background-color: #f0e9e9;
+              margin-right: -1rem;
             }
 
            
