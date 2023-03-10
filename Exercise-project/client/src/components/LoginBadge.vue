@@ -12,9 +12,10 @@
                  Welcome, {{ session.user.name }}
                  (<a @click=" session.user = null">logout</a>)
              </div>
+
              <div class="navbar-item" v-else>
                 <div class="dropdown is active"></div>
-                 <a class="button" @click="login(1)">
+                 <a class="button" @click="login(2)">
                      <span class="icon">
                          <i class="fas fa-user"></i>
                      </span>
@@ -27,6 +28,7 @@
                      <strong>Sign up</strong>
                  </a>
              </div>
+             
 
 
 
