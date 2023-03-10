@@ -13,7 +13,8 @@
                  (<a @click=" session.user = null">logout</a>)
              </div>
              <div class="navbar-item" v-else>
-                 <a class="button is-primary" @click="login">
+                <div class="dropdown is active"></div>
+                 <a class="button" @click="login(1)">
                      <span class="icon">
                          <i class="fas fa-user"></i>
                      </span>
