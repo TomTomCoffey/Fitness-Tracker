@@ -45,6 +45,9 @@
     padding: 1rem;
     
 }
+.box{
+    height: 100%;
+}
 
 
 
