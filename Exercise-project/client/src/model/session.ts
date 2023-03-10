@@ -30,4 +30,9 @@ import user from "../data/session.json";
             }
     }
 
+    export function logout() {
+        session.user = null;
+    }
+    
+
     
