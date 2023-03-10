@@ -1,0 +1,31 @@
+
+[
+{
+    "id" : 1,
+    "name" : "Tom",
+    "email" : "tom@email.com",
+    "photo" : "http://www.example.com/tom.jpg",
+    "token" : "1"
+    
+},
+  {
+    "id" : 2,
+    "name" : "Zoey",
+    "email" : "ZoeyTheDog@doggy.com",
+    "photo" : "http://www.example.com/tom.jpg",
+    "token" : "0"
+
+
+ },
+  {
+    "id" : 3,
+    "name" : "Sally",
+    "email" : "Sally@sally.com",
+    "photo" : "http://www.example.com/tom.jpg",
+    "token" : "0"
+  }
+   
+
+
+
+]
