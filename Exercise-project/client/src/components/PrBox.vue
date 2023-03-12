@@ -13,35 +13,38 @@
 
 <template>
     <div>
-
-        <div v-if="session.user">
         
-        <div class="container">
-        <div class="box">
-            <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
-            <div class="message">
-                <div class="message-header">
-                    <p> {{session.user?.name}}</p>
-                 </div>
-
-                 <div v-if="session.user">
-                    <div class="message-body">
-                         <div v-for="workout in workouts">
-            <p>{{ workout.workout }} {{ workout.weight }}</p>
+        <div v-if="session.user">   
+        <!---<div v-for="session,user in sessions">-->
+            <div class="container">
+                <div class="box">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
+                    <div class="message">
+                        <div class="message-header">
+                            <p> {{session.user?.name}}</p>
                          </div>
-                    </div>
-                 </div>
-        </div>
-        </div>
-    </div>
- </div>
+    
+                         <div v-if="session.user">
+                            <div class="message-body">
+                                 <div v-for="workout in workouts">
+                    <p>{{ workout.workout }} {{ workout.weight }}</p>
+                                 </div>
+                            </div>
+                         </div>
+                </div>
+                </div>
+            </div>
+         </div>
+      
+
+    
             <div v-else>
                 <h2>You are not logged in.</h2>
                 <p>You need to be logged to access this.</p>
-                <p>Click here to log in</p>
-                <button @click="login()">Login</button>
+                <p>Click in the top right corner to log in </p>
+               
             </div>
-
+ 
 
  </div>
 </template>

@@ -34,11 +34,10 @@
              
                     </div> 
                 
-              <SignUpBadge/>
+                 <SignUpBadge/>
 
 
-                </div>
-
+             </div>
 
 
 
@@ -46,7 +45,8 @@
  </template>
 
  <style scoped>
-    .navbar-item{
+
+.navbar-item{
         color: #0c5e44;
     }
     .navbar-link{
@@ -66,8 +66,8 @@
         color: white;
         margin: 0.5rem;
     }
-    
 
+  
 
     
 
