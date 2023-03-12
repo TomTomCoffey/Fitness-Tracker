@@ -1,12 +1,16 @@
 <script setup lang="ts">
  import { ref } from 'vue';
  import { useSession, login } from '@/model/session';
- import { useWorkouts } from '@/model/workouts';
+ 
+ import { useWorkouts1 } from '@/model/workouts';
+
 
 
 
  const session = useSession();
- const workouts = useWorkouts();
+ const workouts = useWorkouts1();
+ const sessionWorkouts = ref(workouts);
+ 
 
  </script>
 
@@ -26,7 +30,7 @@
     
                          <div v-if="session.user">
                             <div class="message-body">
-                                 <div v-for="workout in workouts">
+                                 <div v-for="workout in session.user.workouts">
                     <p>{{ workout.workout }} {{ workout.weight }}</p>
                                  </div>
                             </div>

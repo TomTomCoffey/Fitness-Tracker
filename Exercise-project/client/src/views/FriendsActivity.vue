@@ -16,10 +16,10 @@ const user = ref(session.user);
         <div class="column is-quarter">
         <div v-if="session.user">
             <h1 class="title is-1"> {{session.user.name}}'s Friend's Activity</h1>
-        <PrBox/> <!-- This is a placeholder to fill layout -->
-        <PrBox/> <!-- This is a placeholder to fill layout -->
-        <PrBox/> <!-- This is a placeholder to fill layout -->
-        <PrBox/> <!-- This is a placeholder to fill layout -->
+        <div v-for="users in session" :key="session.user.id">
+            <PrBox :user="user" />
+            
+        </div>
         </div>
         <div v-else>
             <h1 class="title is-1">Log In</h1>

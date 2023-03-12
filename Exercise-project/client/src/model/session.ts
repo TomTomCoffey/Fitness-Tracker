@@ -44,6 +44,30 @@ import type { Workout } from "./workouts";
         session.user = null;
     }
 
+    export function isLoggedIn() {
+        return !!session.user;
+    }
+
+    export function isAdmin() {
+        return session.user?.isAdmin;
+    }
+
+    export function useWorkout() {
+        return session.user?.workouts;
+    }
+
+
+    export function addWorkout(workout: Workout) {
+        session.user?.workouts.push(workout);
+    }
+
+    export function removeWorkout(workout: Workout) {
+        const index = session.user?.workouts.indexOf(workout);
+        if (index !== undefined) {
+            session.user?.workouts.splice(index, 1);
+        }
+    }
+
   
     
 

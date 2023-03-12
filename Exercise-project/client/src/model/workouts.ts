@@ -15,7 +15,7 @@ export interface Workout {
 
 }
 
-export function useWorkouts() {
+export function useWorkouts1() {
     return workouts;
 }
 
