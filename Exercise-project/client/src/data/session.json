@@ -5,7 +5,8 @@
     "name" : "Tom",
     "email" : "tom@email.com",
     "photo" : "http://www.example.com/tom.jpg",
-    "token" : "1"
+    "token" : "1",
+    "isAdmin" : true
     
 },
   {
@@ -13,7 +14,9 @@
     "name" : "Zoey",
     "email" : "ZoeyTheDog@doggy.com",
     "photo" : "http://www.example.com/tom.jpg",
-    "token" : "0"
+    "token" : "0",
+    "isAdmin" : false
+
 
 
  },
@@ -22,7 +25,8 @@
     "name" : "Sally",
     "email" : "Sally@sally.com",
     "photo" : "http://www.example.com/tom.jpg",
-    "token" : "0"
+    "token" : "0",
+    "isAdmin" : false
   }
    
 

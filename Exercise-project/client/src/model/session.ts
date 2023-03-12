@@ -1,5 +1,6 @@
 import { reactive } from "vue";
 import user from "../data/session.json";
+import  {useWorkouts} from "./workouts";
 
  const session = reactive({
      user: null as User | null,
@@ -16,6 +17,8 @@ import user from "../data/session.json";
      email?: string;
      photo?: string;
      token?: string;
+     isAdmin?: boolean;
+     
  }
 
 
@@ -28,6 +31,7 @@ import user from "../data/session.json";
             if (User) {
                 session.user = User;
             }
+        
     }
 
     export function logout() {
