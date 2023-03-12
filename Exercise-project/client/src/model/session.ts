@@ -1,10 +1,15 @@
 import { reactive } from "vue";
 import user from "../data/session.json";
-import  {useWorkouts} from "./workouts";
+import type { Workout } from "./workouts";
+
 
  const session = reactive({
      user: null as User | null,
  })
+
+ 
+
+ 
 
  
 
@@ -18,6 +23,7 @@ import  {useWorkouts} from "./workouts";
      photo?: string;
      token?: string;
      isAdmin?: boolean;
+     workouts: Workout[];
      
  }
 
@@ -37,6 +43,8 @@ import  {useWorkouts} from "./workouts";
     export function logout() {
         session.user = null;
     }
+
+  
     
 
     
