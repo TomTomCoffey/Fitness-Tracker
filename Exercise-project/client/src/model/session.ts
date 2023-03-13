@@ -16,9 +16,10 @@ import type { Workout } from "./workouts";
      photo?: string;
      token?: string;
      isAdmin?: boolean;
-     workouts: Workout[];
+     workouts: Workout[];  ///might make a 2d array of workouts to make statistics easier
      friends?: User[];
      prs: number;
+     
    
      
  }
@@ -79,6 +80,8 @@ import type { Workout } from "./workouts";
     export function addFriends(friend: User) {
         session.user?.friends?.push(friend);
     }
+
+    export const photo = session.user?.photo;
 
 
 
