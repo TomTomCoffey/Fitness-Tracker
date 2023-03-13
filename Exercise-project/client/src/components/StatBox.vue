@@ -2,7 +2,7 @@
 <script setup lang="ts">
 
 import { ref } from 'vue';
-import { useSession } from '@/model/session';
+import { totalWeight, useSession } from '@/model/session';
 
 const session = useSession();
 const user = ref(session.user);
@@ -37,8 +37,7 @@ const user = ref(session.user);
                     <div class="box has-text-success">
                         <h3 class="title is-5">Total Weight Lifted</h3>
                         <p class="subtitle is-3">
-                         
-                         
+                          {{ totalWeight }}
                         </p>
                     </div>
                 </div>

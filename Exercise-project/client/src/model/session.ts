@@ -1,4 +1,4 @@
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import user from "../data/session.json";
 import type { Workout } from "./workouts";
 
@@ -71,24 +71,10 @@ import type { Workout } from "./workouts";
         }
     }
 
-    export function totalWeight() {
-        let total = 0;
-        for (const workout of session.user?.workouts || []) {
-            total += workout.weight;
-        }
-        return total;
-    }
+    export const totalWorkouts = computed(() => session.user?.workouts.length);
 
-    export function totalWorkouts() {
-        return session.user?.workouts.length;
-    }
+    export const totalWeight = computed(() =>  session.user?.workouts.reduce((total, workout) => total + workout.weight, 0));
 
-    export function totalWorkoutsThisWeek() {
-        
-        return 5; ////This is a placeholder
-
-    }
-        
 
     export function addFriends(friend: User) {
         session.user?.friends?.push(friend);
