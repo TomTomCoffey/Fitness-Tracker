@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import AddWorkout from '@/components/AddWorkout.vue';
+import { useSession } from '@/model/session';
+
+
+
+const session = useSession();
+const user = ref(session.user);
+const Sessionworkout = ref();
+
 
 
 </script>
+
 
 
 

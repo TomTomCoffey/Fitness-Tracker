@@ -1,4 +1,4 @@
-
+ 
 [
 {
     "id" : 1,
@@ -10,17 +10,20 @@
     "workouts" : [
       {
           "workout": "Bench Press",
-          "weight": "240lbs"
+          "weight": 240
       },
       {
           "workout": "Squat",
-          "weight": "275lbs"
+          "weight": 275
       },
       {
           "workout": "Deadlift",
-          "weight": "440lbs"
+          "weight": 440
       }
-  ]
+  ],
+   "friends":[],
+
+    "prs": 2
 
 
     
@@ -36,17 +39,20 @@
     "workouts" : [
       {
           "workout": "Bench Press",
-          "weight": "50lbs"
+          "weight": 100
       },
       {
           "workout": "Squat",
-          "weight": "550lbs"
+          "weight": 550
       },
       {
           "workout": "Deadlift",
-          "weight": "185lbs"
+          "weight": 185
       }
-    ]
+    ],
+    "friends": [],
+    "prs": 1
+
 
 
 
@@ -61,17 +67,21 @@
     "workouts" : [
       {
           "workout": "Bench Press",
-          "weight": "90lbs"
+          "weight": 90
       },
       {
           "workout": "Squat",
-          "weight": "250lbs"
+          "weight": 250
       },
       {
           "workout": "Deadlift",
-          "weight": "225lbs"
+          "weight": 225
       }
-    ]
+    ],
+
+    "friends": [],
+
+    "prs": 0
   }
    
 

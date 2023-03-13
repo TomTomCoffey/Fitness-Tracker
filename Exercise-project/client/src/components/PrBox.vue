@@ -18,7 +18,6 @@
     <div>
         
         <div v-if="session.user">   
-        <!---<div v-for="session,user in sessions">-->
             <div class="container">
                 <div class="box">
                     <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->

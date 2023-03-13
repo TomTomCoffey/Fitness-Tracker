@@ -9,13 +9,6 @@ import type { Workout } from "./workouts";
 
  
 
- 
-
- 
-
-
-
-
  interface User {
      id?: number;
      name: string;
@@ -24,6 +17,9 @@ import type { Workout } from "./workouts";
      token?: string;
      isAdmin?: boolean;
      workouts: Workout[];
+     friends?: User[];
+     prs: number;
+   
      
  }
 
@@ -67,6 +63,38 @@ import type { Workout } from "./workouts";
             session.user?.workouts.splice(index, 1);
         }
     }
+
+    export function updateWorkout(workout: Workout) {
+        const index = session.user?.workouts.indexOf(workout);
+        if (index !== undefined) {
+            session.user?.workouts.splice(index, 1, workout);
+        }
+    }
+
+    export function totalWeight() {
+        let total = 0;
+        for (const workout of session.user?.workouts || []) {
+            total += workout.weight;
+        }
+        return total;
+    }
+
+    export function totalWorkouts() {
+        return session.user?.workouts.length;
+    }
+
+    export function totalWorkoutsThisWeek() {
+        
+        return 5; ////This is a placeholder
+
+    }
+        
+
+    export function addFriends(friend: User) {
+        session.user?.friends?.push(friend);
+    }
+
+
 
   
     
