@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import AddWorkout from '@/components/AddWorkout.vue';
+
 
 </script>
+
 
 
 
