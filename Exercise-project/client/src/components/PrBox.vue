@@ -1,7 +1,6 @@
 <script setup lang="ts">
  import { ref } from 'vue';
  import { useSession, login } from '@/model/session';
- 
  import { useWorkouts1 } from '@/model/workouts';
 
 
