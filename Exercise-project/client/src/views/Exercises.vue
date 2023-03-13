@@ -2,6 +2,9 @@
 
 <script setup lang="ts">
 
+import { ref } from 'vue';
+import AddWorkout from '@/components/AddWorkout.vue';
+import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
 
 
 </script>
@@ -11,7 +14,19 @@
 <template>
     <div>
 
-        <h2> Hello can you see me?</h2>
+
+        <div class="column is-quarter"></div>
+           
+            <div class="column">
+                 <AddWorkout/>
+
+                 <AddWorkoutForm/>
+             </div>
+
+
+        
+
+        <div class="column is-quarter"></div>
 
     </div>
 </template>
