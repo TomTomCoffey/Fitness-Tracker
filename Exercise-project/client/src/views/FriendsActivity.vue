@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
  import PrBox from '@/components/PrBox.vue';
- import { useSession } from '@/model/session';
+ import { addFriends, useSession, findUser, login } from '@/model/session';
 
 const session = useSession();
 const user = ref(session.user);
+
+
+
 
 </script>
 
@@ -19,6 +22,7 @@ const user = ref(session.user);
         <div v-for="users in session" :key="session.user.id">
             <PrBox :user="users"/>
         </div>
+       
         </div>
         <div v-else>
             <h1 class="title is-1">Log In</h1>

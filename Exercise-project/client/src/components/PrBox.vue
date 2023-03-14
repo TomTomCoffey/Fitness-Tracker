@@ -9,6 +9,7 @@
  const session = useSession();
  const workouts = useWorkouts1();
  const sessionWorkouts = ref(workouts);
+ const user = ref(session.user);
  
 
  </script>
@@ -23,12 +24,12 @@
                     <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
                     <div class="message">
                         <div class="message-header">
-                            <p> {{session.user?.name}}</p>
+                            <p> {{user?.name}}</p>
                          </div>
     
-                         <div v-if="session.user">
+                         <div v-if="user">
                             <div class="message-body">
-                                 <div v-for="workout in session.user.workouts">
+                                 <div v-for="workout in user.workouts">
                     <p>{{ workout.workout }} {{ workout.weight }}</p>
                                  </div>
                             </div>
