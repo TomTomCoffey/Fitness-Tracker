@@ -23,12 +23,17 @@ const clickButton = false;
         <div class="column is-quarter"></div>
            
             <div class="column">
+
+                <div class="button is larger is-fullwidth"> Add Cardio Run</div>
                 
                 <div class="button is-large is-fullwidth" @click=" clickButton = !clickButton" > Add Workout</div>    
                 <div v-if="clickButton">
                     <AddWorkoutForm/>
                     
-                </div>
+                    
+             </div>
+
+
 
                 
 
