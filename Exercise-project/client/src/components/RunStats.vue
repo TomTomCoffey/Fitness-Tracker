@@ -17,12 +17,12 @@ const user= ref(session);
             <h2 class="title">Cardio Stats</h2>
             <div class="colums is-multiline">
                 <div class="column is-half">
-                    <h3 class="value">{{ session.user?.cardio[0].distance }}</h3>
+                    <h3 class="value">{{ session.user?.cardio[0].distanceMiles }}</h3> 
                         Distance
 
                 </div>
                 <div class="column is-half">
-                    <h3 class="value">{{ session.user?.cardio[0].duration }}</h3>
+                    <h3 class="value">{{ session.user?.cardio[0].durationMins }}</h3>
                         Duration
 
                 </div>

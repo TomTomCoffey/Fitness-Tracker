@@ -28,8 +28,8 @@
     "cardio": [
         {
             
-            "distance": 5.9,
-            "duration": 120
+            "distanceMiles": 5.9,
+            "durationMins": 120
         }
     ]
 
@@ -63,8 +63,8 @@
     "cardio": [
         {
             
-            "distance": 20.6,
-            "duration": 60
+            "distanceMiles": 20.6,
+            "durationMins": 60
         }
     ]
 
@@ -101,8 +101,8 @@
     "cardio": [
         {
             
-            "distance": 5.0,
-            "duration": 30
+            "distanceMiles": 5.0,
+            "durationMins": 30
         }
     ]
   }

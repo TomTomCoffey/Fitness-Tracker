@@ -22,7 +22,7 @@ import type { Cardio } from "./cardio";
      friends?: User[];
      prs: number;
      cardio: Cardio[];
-
+     
      
      
    
@@ -88,11 +88,10 @@ import type { Cardio } from "./cardio";
 
     export const photo = session.user?.photo;
 
-    export const averagePace = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.duration / cardio.distance, 0));
+    export const averagePace = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.durationMins / cardio.distanceMiles, 0));
 
-    export const caloriesBurned = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.duration * 8.5, 0));
+    export const caloriesBurned = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.durationMins * 8.5, 0));
 
-  
     
 
     
