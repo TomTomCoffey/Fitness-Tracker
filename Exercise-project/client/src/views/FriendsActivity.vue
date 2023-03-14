@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
  import PrBox from '@/components/PrBox.vue';
- import { addFriends, useSession, findUser, login } from '@/model/session';
+ import {  useSession, findUser, login } from '@/model/session';
 
 const session = useSession();
 const user = ref(session.user);

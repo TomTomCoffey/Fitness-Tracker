@@ -6,7 +6,7 @@ import AddWorkout from '@/components/AddWorkout.vue';
 import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
 import { useSession } from '@/model/session';
 
-const clickButton = false;
+const clickButton = true;
 const session = useSession();
 const user = ref(session.user);
 
@@ -22,8 +22,10 @@ const user = ref(session.user);
         <div class="column is-quarter"></div>
            
             <div class="column">
+
+                <div class="button is larger is-fullwidth"> Add Cardio Run</div>
                
-                <div class="button is-large is-fullwidth" @click=" clickButton = !clickButton" > Add Workout</div>    
+                <div class="button is-large is-fullwidth" @click="clickButton = true" > Add Workout</div>    
                 <div v-if="clickButton">
                     <AddWorkoutForm/>
                     

@@ -19,46 +19,49 @@ const Sessionworkout = ref();
 
 <template>
     <div>
-            
-        <div class="box">
-            <div class="field">
-                <label class="label">Workout Type</label>
-                <div class="control">
+       <div class="modal is-active">
+         <div class="model-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Add Workout</p>
+              <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Workout</label>
+                    <div class="control">
                     <div class="select">
                         <select>
-                            <option>Bench</option>
-                            <option>Squat</option>
-                            <option>Deadlift</option>
+                        <option>Bench</option>
+                        <option>Squat</option>
+                        <option>Deadlift</option>
                         </select>
                     </div>
-                </div>     
-            </div>
-            <div class="field">
-                <label class="label">Workout Date</label>
-                <div class="control">
-                    <input class="input" type="date" placeholder="Workout Date">
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <label class="label">Weight(lbs)</label>
-                <div class="control">
-                    <input class="input" type="number" placeholder="Weight">
+                <div class="field">
+                    <label class="label">Weight</label>
+                    <div class="control">
+                    <input class="input" type="text" placeholder="Workout Name">
+                    </div>
                 </div>
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-link">Submit</button>
-                </div>
-                <div class="control">
-                    <button class="button is-link is-light">Cancel</button>
-                </div>
-            </div>
-
-            </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success">Save changes</button>
+              <button class="button">Cancel</button>
+            </footer>
 
 
 
 
         </div>
+
+       </div>
+
+
+
+
+        
        
 
 
