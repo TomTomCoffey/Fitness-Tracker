@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useSession } from '@/model/session';
-import { averagePace, caloriesBurned} from '@/model/session';
+import { averagePace, caloriesBurned,feetPerMinute } from '@/model/session';
 
 
 const session = useSession();
@@ -28,8 +28,8 @@ const user= ref(session);
                 </div>
                 
                 <div class="column is-half">
-                    <h3 class="value">{{ averagePace }}</h3>
-                        Ave Pace
+                    <h3 class="value">{{ feetPerMinute }}</h3>
+                        Ave Pace(ft/min)
 
                 </div>
 
