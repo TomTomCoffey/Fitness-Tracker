@@ -23,7 +23,15 @@
   ],
    "friends":[],
 
-    "prs": 2
+    "prs": 2,
+
+    "cardio": [
+        {
+            
+            "distance": 5.9,
+            "duration": 120
+        }
+    ]
 
 
     
@@ -51,7 +59,14 @@
       }
     ],
     "friends": [],
-    "prs": 1
+    "prs": 1,
+    "cardio": [
+        {
+            
+            "distance": 20.6,
+            "duration": 60
+        }
+    ]
 
 
 
@@ -81,7 +96,15 @@
 
     "friends": [],
 
-    "prs": 0
+    "prs": 0,
+
+    "cardio": [
+        {
+            
+            "distance": 5.0,
+            "duration": 30
+        }
+    ]
   }
    
 

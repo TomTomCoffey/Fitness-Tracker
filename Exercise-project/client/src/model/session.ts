@@ -1,6 +1,8 @@
 import { computed, reactive } from "vue";
 import user from "../data/session.json";
 import type { Workout } from "./workouts";
+import type { Cardio } from "./cardio";
+
 
 
  const session = reactive({
@@ -19,6 +21,9 @@ import type { Workout } from "./workouts";
      workouts: Workout[];  ///might make a 2d array of workouts to make statistics easier
      friends?: User[];
      prs: number;
+     cardio: Cardio[];
+
+     
      
    
      
@@ -83,7 +88,9 @@ import type { Workout } from "./workouts";
 
     export const photo = session.user?.photo;
 
+    export const averagePace = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.duration / cardio.distance, 0));
 
+    export const caloriesBurned = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.duration * 8.5, 0));
 
   
     
