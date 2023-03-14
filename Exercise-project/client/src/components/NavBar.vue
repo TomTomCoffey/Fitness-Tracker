@@ -2,11 +2,14 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import LoginBadge from './LoginBadge.vue';
+import { useSession } from '@/model/session';
     const isMenuActive = ref(false);
     function toggleMenu() {
         isMenuActive.value = !isMenuActive.value;
         console.log({ isMenuActive });
     }
+
+    const session = useSession();
 </script>
 <template>
     <nav class="navbar">
@@ -69,17 +72,24 @@ import LoginBadge from './LoginBadge.vue';
           
              <RouterLink to="/FriendsActivity" class="navbar-item">Friends Activity</RouterLink>
 
-              <div class="span">
-                <div class="icon">
-                  <i class="fas fa-user-friends"></i>
-                </div>
-              </div>
+              
 
-             <div class="navbar-item has-dropdown is-hoverable">
-             
-             
-            </div>
+      
+              <div class="" v-if="session.user?.isAdmin">
+                <div class="icon">
+                  <i class="fas fa-user-shield"></i>
+                  <span></span>
+                </div>
+                <RouterLink to="/Admin" class="navbar-item">Admin</RouterLink>
+              </div>
+                
+
           </div>
+             
+                
+
+             
+          
       
           <div class="navbar-end">
             <LoginBadge />

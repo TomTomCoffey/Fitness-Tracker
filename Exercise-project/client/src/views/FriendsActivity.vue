@@ -17,8 +17,7 @@ const user = ref(session.user);
         <div v-if="session.user">
             <h1 class="title is-1"> {{session.user.name}}'s Friend's Activity</h1>
         <div v-for="users in session" :key="session.user.id">
-            <PrBox :user="user" />
-            
+            <PrBox :user="users"/>
         </div>
         </div>
         <div v-else>
