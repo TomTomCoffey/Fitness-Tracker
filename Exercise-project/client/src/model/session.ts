@@ -22,6 +22,7 @@ import type { Cardio } from "./cardio";
      friends?: User[];
      prs: number;
      cardio: Cardio[];
+
      
      
      
@@ -41,6 +42,7 @@ import type { Cardio } from "./cardio";
             }
         
     }
+
 
     export function logout() {
         session.user = null;
@@ -86,9 +88,7 @@ import type { Cardio } from "./cardio";
     export const totalWeight = computed(() =>  session.user?.workouts.reduce((total, workout) => total + workout.weight, 0));
 
 
-    export function addFriends(friend: User) {
-        session.user?.friends?.push(friend);
-    }
+   
 
     export const averagePace = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.durationMins / cardio.distanceMiles, 0));
 
