@@ -50,12 +50,16 @@ import type { Cardio } from "./cardio";
         return !!session.user;
     }
 
-    export function isAdmin() {
-        return session.user?.isAdmin;
-    }
-
     export function useWorkout() {
         return session.user?.workouts;
+    }
+
+    export function useCardio() {
+        return session.user?.cardio;
+    }
+
+    export function findUser(id: number) {
+        return session.user?.friends?.find((user) => user.id === id);
     }
 
 
@@ -85,8 +89,6 @@ import type { Cardio } from "./cardio";
     export function addFriends(friend: User) {
         session.user?.friends?.push(friend);
     }
-
-    export const photo = session.user?.photo;
 
     export const averagePace = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.durationMins / cardio.distanceMiles, 0));
 
