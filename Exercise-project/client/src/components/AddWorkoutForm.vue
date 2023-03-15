@@ -40,7 +40,7 @@ const Sessionworkout = ref();
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">Weight</label>
+                    <label class="label">Weight (lbs)</label>
                     <div class="control">
                     <input class="input" type="text" placeholder="Workout Name">
                     </div>

@@ -5,10 +5,21 @@ import { ref } from 'vue';
 import AddWorkout from '@/components/AddWorkout.vue';
 import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
 import { useSession } from '@/model/session';
+import AddCardioForm from '@/components/AddCardioForm.vue';
 
-const clickButton = true;
+const isWorkoutActive = ref(false);
 const session = useSession();
 const user = ref(session.user);
+const isCadrioActive = ref(false);
+
+function toggleCardio() {
+    isCadrioActive.value = !isCadrioActive.value;
+    console.log(isCadrioActive);
+}
+function toggleWorkout() {
+    isWorkoutActive.value = !isWorkoutActive.value;
+    console.log(isWorkoutActive);
+}
 
 
 </script>
@@ -23,17 +34,20 @@ const user = ref(session.user);
            
             <div class="column">
 
-                <div class="button is larger is-fullwidth"> Add Cardio Run</div>
+                <div class="button is larger is-fullwidth" @click="toggleCardio"> Add Cardio Run</div>
+                <div v-if="isCadrioActive==true">
+                    <AddCardioForm/>
+                </div>
                
-                <div class="button is-large is-fullwidth" @click="clickButton = true" > Add Workout</div>    
-                <div v-if="clickButton">
+                <div class="button is-large is-fullwidth" @click="toggleWorkout" > Add Workout</div>    
+                <div v-if="isWorkoutActive==true">
                     <AddWorkoutForm/>
                     
                 </div>
 
-                 
-                    
-                             
+                                  
+            </div>
+
             </div>
 
 
@@ -41,7 +55,7 @@ const user = ref(session.user);
 
         <div class="column is-quarter"></div>
 
-    </div>
+  
 </template>
 
 
