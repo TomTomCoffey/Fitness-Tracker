@@ -2,12 +2,19 @@
 import { ref } from 'vue';
 import AddWorkout from '@/components/AddWorkout.vue';
 import { useSession } from '@/model/session';
+import Exercises from '@/views/Exercises.vue';
 
 
 
 const session = useSession();
 const user = ref(session.user);
 const Sessionworkout = ref();
+const toggle = ref(false);
+
+function toggleWorkout() {
+    toggle.value = !toggle.value;
+    console.log(toggle);
+}
 
 
 
@@ -24,7 +31,11 @@ const Sessionworkout = ref();
           <div class="modal-card">
             <header class="modal-card-head">
               <p class="modal-card-title">Add Workout</p>
-              <button class="delete" aria-label="close"></button>
+              <button class="delete" @click="toggleWorkout"></button>
+              <div v-if="toggle">
+                <!----need to figure out how to close modal-->
+                
+            </div>
             </header>
             <section class="modal-card-body">
                 <div class="field">
