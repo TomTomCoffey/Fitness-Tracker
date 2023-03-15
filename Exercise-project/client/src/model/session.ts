@@ -69,6 +69,10 @@ import type { Cardio } from "./cardio";
         session.user?.workouts.push(workout);
     }
 
+    export function addWorkout1(workout: string, weight: number) {
+        session.user?.workouts.push({workout, weight});
+    }
+
     export function removeWorkout(workout: Workout) {
         const index = session.user?.workouts.indexOf(workout);
         if (index !== undefined) {

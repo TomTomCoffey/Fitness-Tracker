@@ -1,12 +1,27 @@
 <script setup lang="ts">
+import { useSession } from '@/model/session';
+
+
+
+import { ref } from 'vue';
+
+const isCardioActive = ref(false);
+function toggleCardio() {
+    isCardioActive.value = !isCardioActive.value;
+    console.log(isCardioActive);
+}
+
+const session = useSession();
 
 </script>
 
 
 
+
+
 <template>
     <div>
-        <div class="modal is-active">
+      
          <div class="model-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
@@ -29,18 +44,22 @@
                 </div>
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-success">Save changes</button>
+              <button class="button is-success">Add</button>
               <button class="button">Cancel</button>
             </footer>
         </div>
 
         </div>
 
-    </div>
+  
 </template>
 
 
 
 <style scoped>
+
+
+
+
 
 </style>
