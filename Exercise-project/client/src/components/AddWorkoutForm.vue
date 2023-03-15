@@ -50,10 +50,6 @@ const Sessionworkout = ref();
               <button class="button is-success">Save changes</button>
               <button class="button">Cancel</button>
             </footer>
-
-
-
-
         </div>
 
        </div>
