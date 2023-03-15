@@ -19,5 +19,14 @@ export function useWorkouts1() {
     return workouts;
 }
 
+export function useWorkouts() {
+    const state = reactive({
+        workouts: workouts
+    });
+
+    return state;
+}
+
+
 
 

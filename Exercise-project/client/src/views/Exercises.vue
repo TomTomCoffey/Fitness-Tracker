@@ -36,12 +36,18 @@ function toggleWorkout() {
 
                 <div class="button is larger is-fullwidth" @click="toggleCardio"> Add Cardio Run</div>
                 <div v-if="isCadrioActive==true">
-                    <AddCardioForm/>
+                    <AddCardioForm
+                    modal="is-active"
+                    />
                 </div>
+                
                
                 <div class="button is-large is-fullwidth" @click="toggleWorkout" > Add Workout</div>    
                 <div v-if="isWorkoutActive==true">
-                    <AddWorkoutForm/>
+                    <AddWorkoutForm
+                    modal="is-active"
+
+                    />
                     
                 </div>
 
