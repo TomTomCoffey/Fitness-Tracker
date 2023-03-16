@@ -1,32 +1,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useSession, findUser, addFriend} from '@/model/session';
-import { useWorkouts1 } from '@/model/workouts';
+import { useSession, findUser, users} from '@/model/session';
 
 
+const items = ref(users);
 
 
-const session = useSession();
-const user = ref(session.user);
-const user2 = findUser(2);
-const user3 = findUser(3);
-const user1 = findUser(1);
-
-
-function makeUserArray(){
-    let userArray = [];
-    userArray.push(user);
-    userArray.push(user2);
-    userArray.push(user3);
-    
-    
-    return userArray;
-}
-
- let userArray = makeUserArray();
-
-
+/////This code will be updated to delete users from the database
+////Also this code wont be based off a static array of users
 
 
 </script>
@@ -40,30 +22,30 @@ function makeUserArray(){
             <table class="table is-bordered is-striped is-narrow is-hoverable">
                 <thead>
                     <tr>
-                        <th class="title is-1"></th>
-                        <th class="title is-1">Photo</th>
-                        <th class="title is-1">ID</th>
-                        <th class="title is-1">Name</th>
-                        <th class="title is-1">Email</th>
-                        <th class="title is-1">Admin</th>
-                        <th class="title is-1">Delete</th>
+                        <th class="title is-5"></th>
+                        <th class="title is-5">Photo</th>
+                        <th class="title is-5">ID</th>
+                        <th class="title is-5">Name</th>
+                        <th class="title is-5">Email</th>
+                        <th class="title is-5">Admin</th>
+                        <th class="title is-5">Delete</th>
                         
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="user in userArray" :key="userArray.length">
-                        <td class="title"></td>
-                        <td class="title"><img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"></td>
-                        <td class="title"> <h2>{{user1?.id}}</h2></td>
-                        <td class="title">{{user1?.name}}</td>
-                        <td class="title">{{user1?.email}}</td>
-                        <td class="title">{{user1?.isAdmin}}</td>
-                        <td class="title"><button class="button is-danger">Delete</button></td>
+                    <tr v-for="(user, index) in items" :key="index">
+                        <td class="title is-5"></td>
+                        <td class="title is-5"><img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"></td>
+                        <td class="title is-5">{{user?.id}}</td>
+                        <td class="title is-5">{{user?.name}}</td>
+                        <td class="title is-5">{{user?.email}}</td>
+                        <td class="title is-5">{{user?.isAdmin}}</td>
+                        <td class="title is-5"><button class="button is-danger">Delete</button></td>
                     </tr>
                 </tbody>
-           
-
             </table>
+
+            
 
 
 
@@ -82,5 +64,48 @@ function makeUserArray(){
 
 
 <style scoped>
+
+.table{
+
+    width: 100%;
+    text-align: left;
+}
+
+.container{
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+.title{
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    size: small;
+   
+}
+.th{
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #ccc;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    size: small;
+}
+.td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    size: small;
+}
 
 </style>
