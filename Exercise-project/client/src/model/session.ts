@@ -12,7 +12,7 @@ import type { Cardio } from "./cardio";
 
  
 
- interface User {
+  export interface User {
      id?: number;
      name: string;
      email?: string;
@@ -23,13 +23,125 @@ import type { Cardio } from "./cardio";
      friends?: User[];
      prs: number;
      cardio: Cardio[];
-
-     
-     
-     
-   
-     
+ 
  }
+ export const users: User[] = [
+
+    
+        {
+            "id" : 1,
+            "name" : "Tom",
+            "email" : "tom@email.com",
+            "photo" : "http://www.example.com/tom.jpg",
+            "token" : "1",
+            "isAdmin" : true,
+            "workouts" : [
+              {
+                  "workout": "Bench Press",
+                  "weight": 240
+              },
+              {
+                  "workout": "Squat",
+                  "weight": 275
+              },
+              {
+                  "workout": "Deadlift",
+                  "weight": 440
+              }
+          ],
+           "friends":[],
+        
+            "prs": 2,
+        
+            "cardio": [
+                {
+                    
+                    "distanceMiles": 5.9,
+                    "durationMins": 120
+                }
+            ]
+        
+        
+            
+            
+        },
+          {
+            "id" : 2,
+            "name" : "Zoey",
+            "email" : "ZoeyTheDog@doggy.com",
+            "photo" : "/Users/tomcoffey/Desktop/college/Web/web-final-project/Exercise-project/client/src/data/images/IMG_7634.jpeg",
+            "token" : "0",
+            "isAdmin" : false,
+            "workouts" : [
+              {
+                  "workout": "Bench Press",
+                  "weight": 100
+              },
+              {
+                  "workout": "Squat",
+                  "weight": 550
+              },
+              {
+                  "workout": "Deadlift",
+                  "weight": 185
+              }
+            ],
+            "friends": [ 
+        ],
+            "prs": 1,
+            "cardio": [
+                {
+                    
+                    "distanceMiles": 20.6,
+                    "durationMins": 60
+                }
+            ]
+        
+        
+        
+        
+         },
+          {
+            "id" : 3,
+            "name" : "Sally",
+            "email" : "Sally@sally.com",
+            "photo" : "http://www.example.com/tom.jpg",
+            "token" : "0",
+            "isAdmin" : false,
+            "workouts" : [
+              {
+                  "workout": "Bench Press",
+                  "weight": 90
+              },
+              {
+                  "workout": "Squat",
+                  "weight": 250
+              },
+              {
+                  "workout": "Deadlift",
+                  "weight": 225
+              }
+            ],
+        
+            "friends": [],
+        
+            "prs": 0,
+        
+            "cardio": [
+                {
+                    
+                    "distanceMiles": 5.0,
+                    "durationMins": 30
+                }
+            ]
+          }
+           
+        
+        
+        
+        
+
+ ]
 
 
 
@@ -119,5 +231,17 @@ import type { Cardio } from "./cardio";
     export const feetPerMinute = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.distanceMiles * 5280 / cardio.durationMins, 0));
 
     
+
+   
+        
+       
+
+
+
+
+
+
+
+
 
     
