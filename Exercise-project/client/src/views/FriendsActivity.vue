@@ -21,16 +21,7 @@ function makeUserArray(){
     return userArray;
 }
 
-let userArray = makeUserArray();
-
-
-
-
-
-
-
-
-
+const userArray = makeUserArray();
 
 
 
@@ -46,8 +37,11 @@ let userArray = makeUserArray();
             <h1 class="title is-1"> {{session.user.name}}'s Friend's Activity</h1>
             <div class="subtitle">See all your friends current personal records!</div>
        <div v-for="user in userArray" :key="userArray.length">
-            <PrBox/>
-            
+            <PrBox
+            :user="user"
+               />     
+        
+
            
         </div>
        
