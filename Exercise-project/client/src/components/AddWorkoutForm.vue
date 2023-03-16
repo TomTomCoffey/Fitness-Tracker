@@ -2,8 +2,7 @@
 
 
 import { ref } from 'vue';
-import AddWorkout from '@/components/AddWorkout.vue';
-import { useSession, addWorkout, useWorkout, addWorkout1 } from '@/model/session';
+import { useSession, useWorkout, addWorkout1 } from '@/model/session';
 import Exercises from '@/views/Exercises.vue';
 
 
