@@ -1,7 +1,11 @@
 <script setup lang="ts">
  import { ref } from 'vue';
- import { useSession, login } from '@/model/session';
+ import { useSession} from '@/model/session';
  import { useWorkouts1 } from '@/model/workouts';
+ import FriendsActivity from '@/views/FriendsActivity.vue';
+
+
+
 
 
 
@@ -10,6 +14,9 @@
  const workouts = useWorkouts1();
  const sessionWorkouts = ref(workouts);
  const user = ref(session.user);
+
+
+
  
 
  </script>

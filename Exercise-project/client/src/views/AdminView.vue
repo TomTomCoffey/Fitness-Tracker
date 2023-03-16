@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import AdminBox from '@/components/AdminBox.vue';
 
 </script>
 
 
 <template>
     <div>
-            <h2>only the admin can see this</h2>
+        <AdminBox  />
+       
     </div>
 </template>
 
