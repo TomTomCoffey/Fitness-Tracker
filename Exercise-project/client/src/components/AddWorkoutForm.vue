@@ -26,8 +26,6 @@ function addWorkout2(workoutName: string, workoutWeight: number) {
 
 
 
-
-
 const workoutName = ref('');
 const workoutWeight = ref(0);
 
@@ -76,6 +74,7 @@ const workoutWeight = ref(0);
             <footer class="modal-card-foot">
               <button class="button is-success" @click="addWorkout2(workoutName, workoutWeight)">Add</button>
               <button class="button">Cancel</button>
+              <!--need to make cancel buttons work-->
 
             </footer>
         </div>

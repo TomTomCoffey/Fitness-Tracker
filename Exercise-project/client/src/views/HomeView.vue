@@ -2,10 +2,15 @@
 
 import StatBox from '@/components/StatBox.vue'
 import runStats from '@/components/RunStats.vue'
-import { useSession } from '@/model/session';
+import { totalDistance, useSession, totalDuration, totalWeight } from '@/model/session';
 import AboutMessage from '@/components/AboutMessage.vue';
 
 const session = useSession();
+
+
+
+
+
 </script>
 
 <template>
@@ -24,8 +29,24 @@ const session = useSession();
          <div class="column">
             <div class="notification is-link is-light">
                <div class="title"> All Time</div>
-               <StatBox />
-               <runStats />
+               <StatBox >
+                  <template #totalWeight> <!-- this is the slot -->
+                     {{ totalWeight }}
+                  </template>
+                  <template #totalLifts>
+                     {{ session.user.workouts.length }} <!-- this is the slot -->
+                  </template>
+               </StatBox>
+            
+               <runStats >
+                  <template #totalDistance>   <!-- this is the slot -->
+                     {{ totalDistance }}
+                  </template>
+                  <template #totalDuration> <!-- this is the slot -->
+                     {{ totalDuration }}
+                  </template>
+               </runStats>
+
             </div>
          </div>
       </div>
