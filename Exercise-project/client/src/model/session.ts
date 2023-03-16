@@ -65,6 +65,7 @@ import type { Cardio } from "./cardio";
     }
 
 
+
     export function addWorkout(workout: Workout) {
         session.user?.workouts.push(workout);
     }
@@ -79,13 +80,14 @@ import type { Cardio } from "./cardio";
             session.user?.workouts.splice(index, 1);
         }
     }
+  
 
-    export function updateWorkout(workout: Workout) {
-        const index = session.user?.workouts.indexOf(workout);
-        if (index !== undefined) {
-            session.user?.workouts.splice(index, 1, workout);
-        }
+    export function addCardio(distanceMiles: number, durationMins: number) {
+        session.user?.cardio.push({distanceMiles, durationMins});
+
     }
+
+
 
     export const totalWorkouts = computed(() => session.user?.workouts.length);
 
