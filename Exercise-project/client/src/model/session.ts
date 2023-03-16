@@ -7,6 +7,7 @@ import type { Cardio } from "./cardio";
 
  const session = reactive({
      user: null as User | null,
+     
  })
 
  
@@ -31,6 +32,9 @@ import type { Cardio } from "./cardio";
  }
 
 
+
+
+
  export function useSession() {
      return session;
  }
@@ -43,15 +47,19 @@ import type { Cardio } from "./cardio";
         
     }
 
+    export function getUser(number: number) {
+        const User = user.find((user) => user.id === number);
+        if (User) {
+            return User;
+        }
+        
+    }
+
 
     export function logout() {
         session.user = null;
     }
-
-    export function isLoggedIn() {
-        return !!session.user;
-    }
-
+   
     export function useWorkout() {
         return session.user?.workouts;
     }
@@ -62,6 +70,10 @@ import type { Cardio } from "./cardio";
 
     export function findUser(id: number) {
         return session.user?.friends?.find((user) => user.id === id);
+    }
+
+    export function addFriend(user: User) {
+        session.user?.friends?.push(user);
     }
 
 
@@ -89,12 +101,12 @@ import type { Cardio } from "./cardio";
 
 
 
+
     export const totalWorkouts = computed(() => session.user?.workouts.length);
 
     export const totalWeight = computed(() =>  session.user?.workouts.reduce((total, workout) => total + workout.weight, 0));
 
-
-   
+    export const thisWeeksWeightLifted = computed(() => session.user?.workouts.reduce((total, workout) => total + (workout.weight)/7, 0));
 
     export const averagePace = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.durationMins / cardio.distanceMiles, 0));
 
