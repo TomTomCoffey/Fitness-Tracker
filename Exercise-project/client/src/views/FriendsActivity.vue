@@ -17,10 +17,11 @@ function makeUserArray(){
     userArray.push(user);
     userArray.push(user2);
     userArray.push(user3);
+    
     return userArray;
 }
 
-const userArray = makeUserArray();
+let userArray = makeUserArray();
 
 
 
@@ -43,8 +44,11 @@ const userArray = makeUserArray();
         <div class="column is-quarter">
         <div v-if="session.user">
             <h1 class="title is-1"> {{session.user.name}}'s Friend's Activity</h1>
+            <div class="subtitle">See all your friends current personal records!</div>
        <div v-for="user in userArray" :key="userArray.length">
-            <PrBox :user="user" />
+            <PrBox/>
+            
+           
         </div>
        
         </div>
