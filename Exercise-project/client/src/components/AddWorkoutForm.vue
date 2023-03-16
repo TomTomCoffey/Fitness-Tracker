@@ -2,7 +2,7 @@
 
 
 import { ref } from 'vue';
-import { useSession, useWorkout, addWorkout1 } from '@/model/session';
+import { useSession, useWorkout, addWorkout1, addCardio} from '@/model/session';
 import Exercises from '@/views/Exercises.vue';
 
 
@@ -23,8 +23,14 @@ function addWorkout2(workoutName: string, workoutWeight: number) {
     console.log(workoutName, workoutWeight);
 }
 
+
+
+
+
+
 const workoutName = ref('');
 const workoutWeight = ref(0);
+
 
 
 
