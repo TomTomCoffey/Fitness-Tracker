@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSession } from '@/model/session';
+import { useSession, addCardio } from '@/model/session';
 
 
 
@@ -12,6 +12,16 @@ function toggleCardio() {
 }
 
 const session = useSession();
+
+const cardioDistance = ref(0);
+const cardioDuration = ref(0);
+
+function addCardio1(cardioDistance: number, cardioDuration: number) {
+    addCardio(cardioDistance, cardioDuration);
+    console.log(cardioDistance, cardioDuration);
+}
+
+
 
 </script>
 
@@ -32,19 +42,19 @@ const session = useSession();
                 <div class="field">
                     <label class="label">Distance (in miles)</label>
                     <div class="control">
-                    <input class="input" type="text" placeholder="Workout Name">
+                    <input type="number" required v-model="cardioDistance" >
                     </div>
                 </div>
           
                 <div class="field">
                     <label class="label">Duration (in mins)</label>
                     <div class="control">
-                    <input class="input" type="text" placeholder="Workout Name">
+                    <input type="number"  required v-model="cardioDuration">
                     </div>
                 </div>
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-success">Add</button>
+              <button class="button is-success" @click="addCardio1(cardioDuration, cardioDistance)">Add</button>
               <button class="button">Cancel</button>
             </footer>
         </div>
