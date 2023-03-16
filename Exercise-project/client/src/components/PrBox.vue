@@ -2,10 +2,6 @@
  import { ref } from 'vue';
  import { useSession, users} from '@/model/session';
  import { useWorkouts1 } from '@/model/workouts';
- import FriendsActivity from '@/views/FriendsActivity.vue';
-
-
-
 
 
 
