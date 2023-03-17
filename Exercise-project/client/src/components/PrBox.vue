@@ -5,11 +5,16 @@
 
 
 
-
  const session = useSession();
  const workouts = useWorkouts1();
  const sessionWorkouts = ref(workouts);
  const user = ref(session.user);
+
+ const items  = ref(users);
+
+   
+
+
 
 
 
@@ -21,7 +26,7 @@
 <template>
     <div>
         
-        <div v-if="session.user">   
+        <div v-for="(user, index) in items" :key="index">
             <div class="container">
                 <div class="box">
                     <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
@@ -40,16 +45,12 @@
                 </div>
                 </div>
             </div>
-         </div>
+        </div>
+         
       
 
     
-            <div v-else>
-                <h2>You are not logged in.</h2>
-                <p>You need to be logged to access this.</p>
-                <p>Click in the top right corner to log in </p>
-               
-            </div>
+            
  
 
  </div>

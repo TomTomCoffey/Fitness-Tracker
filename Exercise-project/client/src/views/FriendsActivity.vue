@@ -1,27 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+ import { ref } from 'vue';
+ import { useSession, users} from '@/model/session';
+ import type { defineComponent } from 'vue';
  import PrBox from '@/components/PrBox.vue';
- import {  useSession, findUser, login, getUser, addFriend } from '@/model/session';
+ 
+
  
 
 const session = useSession();
-const friends = ref(session);
-const user = ref(session);
+const userArray = ref(users);
 
-const user2 = getUser(2);
-const user3 = getUser(3);
-const user4 = getUser(4);
 
-function makeUserArray(){
-    let userArray = [];
-    userArray.push(user);
-    userArray.push(user2);
-    userArray.push(user3);
-    
-    return userArray;
-}
-
-const userArray = makeUserArray();
 
 
 
@@ -34,18 +23,13 @@ const userArray = makeUserArray();
                 
         <div class="column is-quarter">
         <div v-if="session.user">
-            <h1 class="title is-1"> {{session.user.name}}'s Friend's Activity</h1>
+            <h1 class="title is-1"> {{session.user.name}}'s Friends' Activity</h1>
             <div class="subtitle">See all your friends current personal records!</div>
-       <div v-for="user in userArray" :key="userArray.length">
-            <PrBox
-            :user="user"
-               />     
-        
-
-           
-        </div>
+            <PrBox/>
        
         </div>
+       
+     
         <div v-else>
             <h1 class="title is-1">Log In</h1>
             <h3>Please log in to see your friend's activity </h3>
