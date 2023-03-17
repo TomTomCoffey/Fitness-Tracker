@@ -4,6 +4,7 @@
   import ProgressBar from '@/components/ProgressBar.vue'
   import StatBox from '@/components/StatBox.vue';
   import PrBox from '@/components/PrBox.vue';
+import NewWorkoutPost from '@/components/NewWorkoutPost.vue';
 
   </script>
 <template>
@@ -20,6 +21,9 @@
      <div class="column">
 
       <StatBox /> <!-- This is a placeholder to fill layout -->
+
+
+   
 
       
 

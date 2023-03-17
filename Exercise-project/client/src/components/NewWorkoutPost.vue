@@ -1,0 +1,134 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useSession, users, newestWorkout, newestCardio} from '@/model/session';
+
+
+const session = useSession();
+const userArray = ref(users);
+
+
+
+</script>
+
+
+
+
+<template>
+    <div>
+
+    
+     
+    
+
+
+        <div class="column is-half">
+            <article class="media box">
+                <figure class="media-left">
+                    <p class="image is-128x128">
+                        <img src="../data/images/IMG_7634 Small.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{ session.user?.name }}</strong> <small>@{{ session.user?.name }}</small> <small></small>
+                            <br>
+                             Nice Work! You added a new lift, {{ newestWorkout?.workout }} for {{ newestWorkout?.weight }} lbs!!!
+                        </p>
+                    </div>
+                    <nav class="level is-mobile">
+                        <div class="level-left">
+                            <a class="level-item" aria-label="reply">
+                                <span class="icon is-small">
+                                    <i class="fas fa-reply" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                            <a class="level-item" aria-label="retweet">
+                                <span class="icon is-small">
+                                    <i class="fas fa-retweet" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                            <a class="level-item" aria-label="like">
+                                <span class="icon is-small">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </article>
+
+            
+             
+         </div>
+
+       
+        <div class="column is half">
+
+            <article class="media box">
+                <figure class="media-left">
+                    <p class="image is-128x128">
+                        <img src="../data/images/IMG_7634 Small.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{ session.user?.name }}</strong> <small>@{{ session.user?.name }}</small> <small></small>
+                            <br>
+                             Nice Work! You added a new run, {{ newestCardio?.distanceMiles  }} miles in {{ newestCardio?.distanceMiles }} mins !!!
+                        </p>
+                    </div>
+                    <nav class="level is-mobile">
+                        <div class="level-left">
+                            <a class="level-item" aria-label="reply">
+                                <span class="icon is-small">
+                                    <i class="fas fa-reply" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                            <a class="level-item" aria-label="retweet">
+                                <span class="icon is-small">
+                                    <i class="fas fa-retweet" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                            <a class="level-item" aria-label="like">
+                                <span class="icon is-small">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+            </article>
+
+
+            
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        
+       
+     
+
+    </div>
+</template>
+
+
+
+<style scoped>
+
+.column{
+    display: flex;
+  
+}
+
+</style>

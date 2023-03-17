@@ -6,6 +6,7 @@ import AddWorkout from '@/components/AddWorkout.vue';
 import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
 import { useSession } from '@/model/session';
 import AddCardioForm from '@/components/AddCardioForm.vue';
+import NewWorkoutPost from '@/components/NewWorkoutPost.vue';
 
 const isWorkoutActive = ref(false);
 const session = useSession();
@@ -46,10 +47,11 @@ function toggleWorkout() {
                 <div v-if="isWorkoutActive==true">
                     <AddWorkoutForm
                     modal="is-active"
-
                     />
                     
                 </div>
+
+                <NewWorkoutPost/>
 
                                   
             </div>

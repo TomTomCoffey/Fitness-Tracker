@@ -230,7 +230,9 @@ import type { Cardio } from "./cardio";
 
     export const feetPerMinute = computed(() => session.user?.cardio.reduce((total, cardio) => total + cardio.distanceMiles * 5280 / cardio.durationMins, 0));
 
-    
+    export const newestWorkout = computed(() => session.user?.workouts[session.user?.workouts.length - 1]);
+
+    export const newestCardio = computed(() => session.user?.cardio[session.user?.cardio.length - 1]);
 
    
         
