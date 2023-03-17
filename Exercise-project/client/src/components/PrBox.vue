@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="box">
                     <figure class="image is-128x128">
-                        <img src="https://github.com/TomTomCoffey/web-final-project/blob/0d2d9a6bb346abf39e81473a66f35318bcc42c8a/Exercise-project/client/src/data/images/IMG_7634.jpeg">
+                    <img src="../data/images/IMG_7634 Small.png">
                     </figure><!-- This is a placeholder to fill layout -->
                     <div class="message">
                         <div class="message-header">
@@ -102,6 +102,12 @@ p{
     padding: 0;
     margin-bottom: 1rem;
     display: flex;
+}
+.message-body{
+  
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-color: black;
 }
 
 

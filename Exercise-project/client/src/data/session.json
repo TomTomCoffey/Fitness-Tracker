@@ -41,7 +41,7 @@
     "id" : 2,
     "name" : "Zoey",
     "email" : "ZoeyTheDog@doggy.com",
-    "photo" : "client/src/data/images/IMG_7634.jpeg",
+    "photo" : "../data/images/IMG_7634 Small.png",
     "token" : "0",
     "isAdmin" : false,
     "workouts" : [
