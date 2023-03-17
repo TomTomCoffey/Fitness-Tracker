@@ -11,8 +11,10 @@ const session = useSession();
 
 <template>
     <div>
+        
+
         <div class="column is-half">
-            <article class="media box">
+        <article class="media box">
                 <figure class="media-left">
                     <p class="image is-128x128">
                         <img src="../data/images/IMG_7634 Small.png">
@@ -23,7 +25,7 @@ const session = useSession();
                         <p>
                             <strong>{{ session.user?.name }}</strong> <small>@{{ session.user?.name }}</small> <small></small>
                             <br>
-                             Nice Work! You added a new run, {{ newestCardio?.distanceMiles}} miles in {{ newestCardio?.durationMins}} mins!!!
+                             Nice Work! You added a new run, {{ newestCardio?.distanceMiles  }} miles in {{ newestCardio?.distanceMiles }} mins !!!
                         </p>
                     </div>
                     <nav class="level is-mobile">
@@ -57,6 +59,18 @@ const session = useSession();
 <style scoped>
 
 .mediabox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+  
+}
+
+.column{
     display: flex;
     flex-direction: column;
     justify-content: space-between;

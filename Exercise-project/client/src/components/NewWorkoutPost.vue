@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useSession, users, newestWorkout, newestCardio} from '@/model/session';
+import NewRunPost from './NewRunPost.vue';
 
 
 const session = useSession();
@@ -16,6 +17,9 @@ const userArray = ref(users);
 <template>
     <div>
 
+    
+     
+    
 
       <div class="column is-half">
             <article class="media box">
@@ -54,6 +58,16 @@ const userArray = ref(users);
                 </div>
             </article>
         </div>
+        
+
+            
+             
+      
+
+       
+   
+
+        
 
     </div>
 </template>
