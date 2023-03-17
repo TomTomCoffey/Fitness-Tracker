@@ -63,14 +63,14 @@
     padding: 1rem;
     margin-bottom: 2rem;
     border-color: black;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 10rem;
+    margin-left: 10rem;
 
 }
 
 .box img{
     margin-right: 1rem;
-    border-radius: 50%;
+    border-radius: 25%;
     width: 128px;
     height: 128px;
     
@@ -86,7 +86,7 @@
 .container{
     margin-top: 5rem;
     margin-bottom: 5rem;
-    background-color: #0c5e44;
+    background-color: transparent;
    
 
 }
