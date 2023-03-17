@@ -7,6 +7,7 @@ import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
 import { useSession } from '@/model/session';
 import AddCardioForm from '@/components/AddCardioForm.vue';
 import NewWorkoutPost from '@/components/NewWorkoutPost.vue';
+import NewRunPost from '@/components/NewRunPost.vue';
 
 const isWorkoutActive = ref(false);
 const session = useSession();
@@ -51,7 +52,10 @@ function toggleWorkout() {
                     
                 </div>
 
+                <div class="box">
                 <NewWorkoutPost/>
+               <NewWorkoutPost/>
+                </div>
 
                                   
             </div>
@@ -85,6 +89,9 @@ function toggleWorkout() {
     cursor: pointer;
     transition-duration: 0.4s;
     box-shadow: 0 4px #999;
+}
+.box{
+    display: flex;
 }
 
 </style>

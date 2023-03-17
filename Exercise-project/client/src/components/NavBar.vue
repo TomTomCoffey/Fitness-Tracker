@@ -53,7 +53,7 @@ import { useSession } from '@/model/session';
               </div>
              </div>
           
-             <RouterLink to="/Exercises" class="navbar-item">Exercises</RouterLink>
+             <RouterLink to="/Exercises" class="navbar-item"> Add Exercises</RouterLink>
 
               <div class="span">
                 <div class="icon">
