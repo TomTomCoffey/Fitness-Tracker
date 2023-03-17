@@ -72,8 +72,8 @@ const workoutWeight = ref(0);
                 </div>
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-success" @click="addWorkout2(workoutName, workoutWeight)">Add</button>
-              <button class="button">Cancel</button>
+              <button class="button is-success" @click="addWorkout2(workoutName, workoutWeight), $emit('close')">Add</button>
+              <button class="button" @click="$emit('close')">Cancel</button>
               <!--need to make cancel buttons work-->
 
             </footer>
