@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { useSession, addCardio } from '@/model/session';
-
-
-
 import { ref } from 'vue';
 
-const isCardioActive = ref(false);
+const isCardioActive = ref(true);
 function toggleCardio() {
     isCardioActive.value = !isCardioActive.value;
     console.log(isCardioActive);
@@ -23,6 +20,8 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
 
 
 
+
+
 </script>
 
 
@@ -31,7 +30,7 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
 
 <template>
     <div>
-      
+     
          <div class="model-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
@@ -55,9 +54,10 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
             </section>
             <footer class="modal-card-foot">
               <button class="button is-success" @click="addCardio1(cardioDuration, cardioDistance)">Add</button>
-              <button class="button">Cancel</button>
+              <button class="button" @click="$emit('close'), toggleCardio">Cancel</button>
             </footer>
         </div>
+      
 
         </div>
 
@@ -67,6 +67,19 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
 
 
 <style scoped>
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
 
 
 

@@ -37,23 +37,29 @@ function toggleWorkout() {
             <div class="column">
 
                 <div class="button is larger is-fullwidth" @click="toggleCardio"> Add Cardio Run</div>
-                <div v-if="isCadrioActive==true">
+                <div v-if="isCadrioActive==true" class ="modal is-active">
+                   <div class="modal-content">
                     <AddCardioForm
-                    modal="is-active"
+                    @close="isCadrioActive=false"
                     />
+                   </div>
+                   <button @click="isCadrioActive=false">Close</button>
                 </div>
                 
                
                 <div class="button is-large is-fullwidth" @click="toggleWorkout" > Add Workout</div>    
-                <div v-if="isWorkoutActive==true">
+                <div v-if="isWorkoutActive==true" class="modal is-active">  
+                    <div class="modal-content">  
                     <AddWorkoutForm
-                    modal="is-active"
+                    @close="isWorkoutActive=false"
                     />
-                    
+                    <button @click="isWorkoutActive=false">Close</button>
+                    </div>
+                           
                 </div>
 
                 <div class="box">
-                <NewWorkoutPost/>
+                <NewWorkoutPost />
                 <NewRunPost/>
                
                 </div>
@@ -93,6 +99,19 @@ function toggleWorkout() {
 }
 .box{
     display: flex;
+    flex-direction: column;
+}
+
+.modal{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 </style>
