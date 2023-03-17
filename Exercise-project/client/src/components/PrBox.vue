@@ -10,15 +10,9 @@
  const sessionWorkouts = ref(workouts);
  const user = ref(session.user);
 
- const items  = ref(users);
 
-   
+ let items  = ref(users);
 
-
-
-
-
- 
 
  </script>
 
@@ -29,7 +23,9 @@
         <div v-for="(user, index) in items" :key="index">
             <div class="container">
                 <div class="box">
-                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"> <!-- This is a placeholder to fill layout -->
+                    <figure class="image is-128x128">
+                        <img src="https://github.com/TomTomCoffey/web-final-project/blob/0d2d9a6bb346abf39e81473a66f35318bcc42c8a/Exercise-project/client/src/data/images/IMG_7634.jpeg">
+                    </figure><!-- This is a placeholder to fill layout -->
                     <div class="message">
                         <div class="message-header">
                             <p> {{user?.name}}</p>

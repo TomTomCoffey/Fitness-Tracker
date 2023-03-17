@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
 import StatBox from '@/components/StatBox.vue'
 import runStats from '@/components/RunStats.vue'
 import { totalDistance, useSession, totalDuration, totalWeight } from '@/model/session';
 import AboutMessage from '@/components/AboutMessage.vue';
+
 
 const session = useSession();
 
