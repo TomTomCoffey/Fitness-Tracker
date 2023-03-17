@@ -25,7 +25,7 @@ const session = useSession();
                         <p>
                             <strong>{{ session.user?.name }}</strong> <small>@{{ session.user?.name }}</small> <small></small>
                             <br>
-                             Nice Work! You added a new run, {{ newestCardio?.distanceMiles  }} miles in {{ newestCardio?.distanceMiles }} mins !!!
+                             Nice Work! You added a new run, {{ newestCardio?.distanceMiles  }} miles in {{ newestCardio?.durationMins }} mins !!!
                         </p>
                     </div>
                     <nav class="level is-mobile">

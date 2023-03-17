@@ -17,7 +17,7 @@ const cardioDistance = ref(0);
 const cardioDuration = ref(0);
 
 function addCardio1(cardioDistance: number, cardioDuration: number) {
-    addCardio(cardioDistance, cardioDuration);
+    addCardio(cardioDuration, cardioDistance);
     console.log(cardioDistance, cardioDuration);
 }
 
