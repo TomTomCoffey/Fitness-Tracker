@@ -45,7 +45,7 @@ const workoutWeight = ref(0);
           <div class="modal-card">
             <header class="modal-card-head">
               <p class="modal-card-title">Add Workout</p>
-              <button class="delete" @click="toggleWorkout"></button>
+              <button class="delete" @click="$emit('close')"></button>
               <div v-if="toggle">
                 <!----need to figure out how to close modal-->
                 

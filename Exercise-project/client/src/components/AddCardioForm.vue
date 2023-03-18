@@ -35,7 +35,7 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
           <div class="modal-card">
             <header class="modal-card-head">
               <p class="modal-card-title">Add Run</p>
-              <button class="delete" aria-label="close"></button>
+              <button class="delete" @click="$emit('close')" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <div class="field">

@@ -53,7 +53,6 @@ function toggleWorkout() {
                     <AddWorkoutForm
                     @close="isWorkoutActive=false"
                     />
-                    <button @click="isWorkoutActive=false">Close</button>
                     </div>
                            
                 </div>
