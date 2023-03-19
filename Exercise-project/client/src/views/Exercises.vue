@@ -2,7 +2,6 @@
 <script setup lang="ts">
 
 import { ref } from 'vue';
-import AddWorkout from '@/components/AddWorkout.vue';
 import AddWorkoutForm from '@/components/AddWorkoutForm.vue';
 import { useSession } from '@/model/session';
 import AddCardioForm from '@/components/AddCardioForm.vue';
