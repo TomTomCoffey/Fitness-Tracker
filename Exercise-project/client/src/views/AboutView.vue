@@ -3,8 +3,7 @@
   import aboutMsg from '@/components/AboutMessage.vue'
   import ProgressBar from '@/components/ProgressBar.vue'
   import StatBox from '@/components/StatBox.vue';
-  import PrBox from '@/components/PrBox.vue';
-import NewWorkoutPost from '@/components/NewWorkoutPost.vue';
+
 
   </script>
 <template>
@@ -20,16 +19,7 @@ import NewWorkoutPost from '@/components/NewWorkoutPost.vue';
  
      <div class="column">
 
-      <StatBox /> <!-- This is a placeholder to fill layout -->
-
-
-   
-
-      
-
-    
-
-       
+     
         
 
      </div>

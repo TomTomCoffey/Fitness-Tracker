@@ -85,4 +85,6 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
 
 
 
+
+
 </style>

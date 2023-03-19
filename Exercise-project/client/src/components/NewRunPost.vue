@@ -12,7 +12,7 @@ const session = useSession();
 <template>
     <div>
         
-
+        <div class="container">
         <div class="column is-half">
         <article class="media box">
                 <figure class="media-left">
@@ -52,6 +52,7 @@ const session = useSession();
         </div>
 
     </div>
+    </div>
 
 </template>
 
@@ -80,6 +81,9 @@ const session = useSession();
     max-width: 800px;
     padding: 1rem;
   
+}
+.container{
+    background-color: transparent;
 }
 
 </style>

@@ -82,7 +82,7 @@ function toggleWorkout() {
 <style scoped>
 
 .button{
-    background-color: #0c5e44;
+    background-color: #3AAfa9;
     color: white;
     padding: 1rem;
     margin: 1rem;
@@ -100,6 +100,7 @@ function toggleWorkout() {
 .box{
     display: flex;
     flex-direction: column;
+    background-color: transparent;
 }
 
 .modal{
@@ -113,5 +114,7 @@ function toggleWorkout() {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
+
+
 
 </style>

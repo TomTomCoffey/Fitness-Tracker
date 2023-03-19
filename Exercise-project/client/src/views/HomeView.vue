@@ -15,6 +15,7 @@ const session = useSession();
 
 <template>
 
+
  
 <div v-if="session.user">
    <div class="container">
@@ -55,6 +56,8 @@ const session = useSession();
    <div v-else>
       <AboutMessage/>
    </div>
+
+
     
 
 
@@ -71,5 +74,6 @@ const session = useSession();
       margin: 0;
       color: #0c5e44;
    }
+  
 
 </style>

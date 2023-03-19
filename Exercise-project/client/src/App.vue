@@ -7,7 +7,10 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
+
   <NavBar />
+  <div class="container-background">
+ 
 
 
 
@@ -22,11 +25,31 @@ import Footer from '@/components/Footer.vue'
   <div class="container">
   <Footer />
   </div>
+
+  </div>
  
 
 </template>
 
 <style scoped>
+
+.container-background{
+  
+  background-image: url(https://img.freepik.com/premium-photo/sneakers-water-dumbbells-sport-fitness-healthy-lifestyle_645697-3320.jpg?size=626&ext=jpg&ga=GA1.2.1378731816.1679254592&semt=ais);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+ 
+
+}
+
+
+
+
 
 
 
