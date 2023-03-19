@@ -29,7 +29,7 @@ function toggleWorkout() {
 
 <template>
     <div>
-
+        <div class="container">
 
         <div class="column is-quarter"></div>
            
@@ -71,6 +71,8 @@ function toggleWorkout() {
         
 
         <div class="column is-quarter"></div>
+
+        </div>
 
   
 </template>
