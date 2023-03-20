@@ -53,17 +53,18 @@
         color: #0c5e44;
     }
     .navbar-dropdown{
-        background-color: #0c5e44;
+        background-color: #def2f1;
         color: white;
     }
     .button{
-        background-color: #0c5e44;
+        background-color: #2b7a78;
         color: white;
         margin: 0.5rem;
+        width: 80%;
     }
     .button:hover{
-        background-color: #0c5e44;
-        color: white;
+        background-color: #feffff;
+        color: black;
         margin: 0.5rem;
     }
 

@@ -42,7 +42,6 @@ function toggleWorkout() {
                     @close="isCadrioActive=false"
                     />
                    </div>
-                   <button @click="isCadrioActive=false">Close</button>
                 </div>
                 
                
