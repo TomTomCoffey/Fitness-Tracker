@@ -17,14 +17,7 @@ const user = ref(session.user);
 
 <template>
     <div>
-        <div class="graph">
-            
-
-
-
-
-
-        </div>
+    
 
 
        

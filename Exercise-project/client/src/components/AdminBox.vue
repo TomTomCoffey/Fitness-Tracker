@@ -35,7 +35,11 @@ const items = ref(users);
                 <tbody>
                     <tr v-for="(user, index) in items" :key="index">
                         <td class="title is-5"></td>
-                        <td class="title is-5"><img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image"></td>
+                        <td class="title is-5">
+                            <figure class="image">
+                                <img src="../data/images/IMG_7634 Small.png" alt="https://bulma.io/images/placeholders/64x64.png">
+                            </figure>
+                        </td>
                         <td class="title is-5">{{user?.id}}</td>
                         <td class="title is-5">{{user?.name}}</td>
                         <td class="title is-5">{{user?.email}}</td>
@@ -85,6 +89,7 @@ const items = ref(users);
     padding: 0 20px;
     box-sizing: border-box;
     size: small;
+    image-orientation: flip;
    
 }
 .th{
@@ -107,5 +112,18 @@ const items = ref(users);
     box-sizing: border-box;
     size: small;
 }
+
+
+.image{
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    size: small;
+}
+
+
+
 
 </style>

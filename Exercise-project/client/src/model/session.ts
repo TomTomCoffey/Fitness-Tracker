@@ -69,7 +69,7 @@ import type { Cardio } from "./cardio";
             "id" : 2,
             "name" : "Zoey",
             "email" : "ZoeyTheDog@doggy.com",
-            "photo" : "/Users/tomcoffey/Desktop/college/Web/web-final-project/Exercise-project/client/src/data/images/IMG_7634.jpeg",
+            "photo" : "../data/images/IMG_7634.jpeg",
             "token" : "0",
             "isAdmin" : false,
             "workouts" : [
