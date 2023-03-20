@@ -18,23 +18,23 @@ const user = ref(session.user);
 
 
 <template>
-        <div class="box has-text-success summary">
+        <div class="box has-text-info summary">
             <h2 class="title is-4">Lifting Stats</h2>
             <div class="columns">
                 <div class="column">
-                    <div class="box has-text-success">
+                    <div class="box has-text">
                         <h3 class="title is-5">Total PR's </h3>
                         <p class="subtitle is-3">{{ session.user?.prs }}</p>
                     </div>
                 </div>
                 <div class="column">
-                    <div class="box has-text-success">
+                    <div class="box has-text">
                         <h3 class="title is-5">Total Lifts</h3>
                         <p class="subtitle is-3">{{ session.user?.workouts.length }}</p>
                     </div>
                 </div>
                 <div class="column">
-                    <div class="box has-text-success">
+                    <div class="box has-text">
                         <h3 class="title is-5">Total Weight Lifted</h3>
                         <p class="subtitle is-3">
                           {{ totalWeight }}
@@ -60,12 +60,16 @@ const user = ref(session.user);
 .box{
     height: 100%;
     background-color: transparent;
+    color: #3aae9f;
     
 }
 .title{
     color: #3aae9f;
 }
 .title is-4{
+    color: #3aae9f;
+}
+h3{
     color: #3aae9f;
 }
 

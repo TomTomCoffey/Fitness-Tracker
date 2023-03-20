@@ -20,7 +20,7 @@ const user= ref(session);
 
 <template>
     <div>
-        <div class="box has-text-success summary">
+        <div class="box has-text-info summary">
             <h2 class="title">Cardio Stats</h2>
             <div class="colums is-multiline">
                 <div class="column is-half">
@@ -54,6 +54,14 @@ const user= ref(session);
 
 
 <style scoped>
+
+.box has-text-success summary{
+    background-color: white;
+    color: #3aae9f;
+    padding: 1rem;
+
+    
+}
 
 .summary{
     background-color: white;
