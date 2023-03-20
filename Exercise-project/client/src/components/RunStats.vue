@@ -56,13 +56,54 @@ const user= ref(session);
 <style scoped>
 
 .summary{
-    background-color: transparent;
+    background-color: white;
     color: #3aae9f;
     padding: 1rem;
 
     
 }
-
+.title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3aae9f;
+    padding: 0;
+    margin: 0;
+}
+.value1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3aae9f;
+    padding: 0;
+    margin: 0;
+}
+.value2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3aae9f;
+    padding: 0;
+    margin: 0;
+}
+.value3{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3aae9f;
+    padding: 0;
+    margin: 0;
+}
+.value4{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3aae9f;
+    padding: 0;
+    margin: 0;
+}
+.h2{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3aae9f;
+    padding: 0;
+    margin: 0;
+}
 
 
 

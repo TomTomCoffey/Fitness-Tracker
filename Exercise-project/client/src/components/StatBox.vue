@@ -60,6 +60,13 @@ const user = ref(session.user);
 .box{
     height: 100%;
     background-color: transparent;
+    
+}
+.title{
+    color: #3aae9f;
+}
+.title is-4{
+    color: #3aae9f;
 }
 
 

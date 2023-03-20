@@ -93,6 +93,21 @@ const session = useSession();
       border-radius: 0;
 
    }
+   .column{
+      padding: 1rem;
+      margin: 1rem;
+      background-color: transparent;
+   }
+   .box{
+      background-color: white;
+      color: white;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 0;
+   }
+   
+   
+   
 
   
 
