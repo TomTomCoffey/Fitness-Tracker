@@ -11,12 +11,6 @@ import Footer from '@/components/Footer.vue'
   <NavBar />
   <div class="container-background">
  
-
-
-
-
-
-
   
   <div class="container">
     <RouterView />
@@ -36,7 +30,7 @@ import Footer from '@/components/Footer.vue'
 .container-background{
   
   background-image: url(https://img.freepik.com/premium-photo/sneakers-water-dumbbells-sport-fitness-healthy-lifestyle_645697-3320.jpg?size=626&ext=jpg&ga=GA1.2.1378731816.1679254592&semt=ais);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -46,11 +40,6 @@ import Footer from '@/components/Footer.vue'
  
 
 }
-
-
-
-
-
 
 
 </style>
