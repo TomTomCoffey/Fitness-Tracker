@@ -56,7 +56,17 @@ function toggleWorkout() {
                 </div>
 
                 <div class="box">
-                <NewWorkoutPost />
+                
+                <NewWorkoutPost>
+                    <template #title>
+                        <h1>My Workout</h1>
+                    </template>
+                    <template #content>
+                        <p>My workout was great</p>
+                    </template>
+                    
+
+                </NewWorkoutPost>
                 <NewRunPost/>
                
                 </div>
