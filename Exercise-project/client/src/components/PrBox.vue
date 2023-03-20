@@ -22,7 +22,7 @@
         
         <div v-for="(user, index) in items" :key="index">
             <div class="container">
-                <div class="box">
+                <div class="mediabox">
                     <figure class="image is-128x128">
                     <img src="../data/images/IMG_7634 Small.png">
                     </figure><!-- This is a placeholder to fill layout -->
@@ -56,7 +56,7 @@
 
 <style scoped>
 
-.box{
+.mediabox{
     display: flex;
     background-color:#def2f1 ;
     color: white;
@@ -65,6 +65,7 @@
     border-color: black;
     margin-right: 10rem;
     margin-left: 10rem;
+    border-color: #3aafa9;
 
 }
 
