@@ -36,13 +36,14 @@
 
 <style>
   .message-header{
-    background-color: #0c5e44;
+    background-color:#2b7a78  ;
     color: white;
     padding: 1rem;
   }
   .message{
     padding: 0;
     margin-bottom: 2rem;
+    color: #def2f1
   }
   .notification{
     padding: 0;

@@ -52,13 +52,14 @@ const user = ref(session.user);
 <style scoped>
 
 .summary{
-    background-color: #0c5e44;
+    background-color: transparent;
     color: white;
     padding: 1rem;
     
 }
 .box{
     height: 100%;
+    background-color: transparent;
 }
 
 

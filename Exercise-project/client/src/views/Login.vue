@@ -17,4 +17,21 @@
 
  <style scoped>
 
+ .title{
+     color: white;
+     font-size: 3rem;
+     font-weight: 300;
+     line-height: 1.2;
+     margin-bottom: 1rem;
+     text-align: center;
+ }
+ .subtitle{
+     color: white;
+     font-size: 1.5rem;
+     font-weight: 300;
+     line-height: 1.2;
+     margin-bottom: 5rem;
+     text-align: center;
+ }
+
  </style>

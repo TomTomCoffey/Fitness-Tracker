@@ -104,52 +104,52 @@ import { useSession } from '@/model/session';
 
 
 .navbar{
-                    background-color: #f0e9e9;
-                    margin-bottom: 3rem;
+                    background-color: #def2f1;
+                    margin-bottom: 0rem;
             }
             .navbar-item{
                 font-size: 1rem;
                 font-weight: 600;
-                background-color : #f0e9e9 ;
+                background-color : #def2f1 ;
             }
             .navbar-item:hover{
-                background-color: #f0e9e9;
+                background-color: #def2f1;
             }
             .navbar-item:active{
-                background-color: #f0e9e9;
+                background-color: #def2f1;
             }
             .navbar-item:focus{
-                background-color: #f0e9e9;
+                background-color: #def2f1;
             }
             .navbar-item:visited{
-                background-color: #f0e9e9;
+                background-color: #def2f1;
             }
             .navbar-item:link{
-                background-color: #f0e9e9;
+                background-color: #def2f1;
             }
             .navbar-link{
-              background-color: #f0e9e9;
+              background-color: #def2f1;
             }
 
             .icon{
               margin-right: 1rem;
               margin-left: 1rem;
-              background-color: #f0e9e9;
+              background-color: #def2f1;
               size: 200%;
             }
             .logo{
               margin-right: 1rem;
               margin-left: 1rem;
-              background-color: #f0e9e9;
+              background-color: #def2f1;
               size: 200%;
             }
             .navbar-burger{
-              background-color: #f0e9e9;
+              background-color: #def2f1;
             }
             .span{
               margin-top: 1rem;
               display: inline-block;
-              background-color: #f0e9e9;
+              background-color: #def2f1;
               margin-right: -1rem;
             }
 

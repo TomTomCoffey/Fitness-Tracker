@@ -8,7 +8,7 @@
 <article class="message">
               <div class="message-header">
                 <p>Your exersise progress!</p>
-                <button class="delete" aria-label="delete"></button>
+               
               </div>
               <div class="message-body">
                <p> Track your progress and fill the bar to meet your goals! </p>

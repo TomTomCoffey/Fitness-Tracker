@@ -56,8 +56,8 @@ const user= ref(session);
 <style scoped>
 
 .summary{
-    background-color: #0c5e44;
-    color: white;
+    background-color: transparent;
+    color: #3aae9f;
     padding: 1rem;
 
     

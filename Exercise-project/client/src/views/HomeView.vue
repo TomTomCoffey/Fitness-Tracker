@@ -65,15 +65,35 @@ const session = useSession();
 </template>
 
 <style scoped>
-   .container{
+
+.container{
       padding: 0;
-      margin: 5;
+      margin: 0;
+      background-color: transparent;
    }
    .title{
       padding: 0;
       margin: 0;
-      color: #0c5e44;
+      color: #3aae9f;
+      background-color: transparent;
+      
+      
    }
+   .columns{
+      padding: 0;
+      margin: 0;
+      background-color: transparent;
+      color: #3aae9f;
+   }
+   .notification{
+      background-color: #3aae9f;
+      color: white;
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+
+   }
+
   
 
 </style>

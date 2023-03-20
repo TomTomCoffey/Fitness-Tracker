@@ -58,7 +58,7 @@
 
 .box{
     display: flex;
-    background-color: rgb(108, 105, 105);
+    background-color:#def2f1 ;
     color: white;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -70,15 +70,16 @@
 
 .box img{
     margin-right: 1rem;
-    border-radius: 25%;
+    border-radius: 50%;
     width: 128px;
     height: 128px;
+
     
 }
 .message{
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: transparent;
     padding: 1rem;
     margin-bottom: 2rem;
     border-color: black;
@@ -91,7 +92,7 @@
 
 }
 .message-header{
-    background-color: #0c5e44;
+    background-color: #3aafa9;
     color: white;
     padding: 1rem;
     margin-bottom: 1rem;

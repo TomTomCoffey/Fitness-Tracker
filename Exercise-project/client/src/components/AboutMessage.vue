@@ -10,7 +10,6 @@
 <article class="message is-medium">
              <div class="message-header">
                <p>About the App</p>
-               <button class="delete is-medium" aria-label="delete"></button>
              </div>
   <div class="message-body">
    <p>
@@ -28,5 +27,13 @@
 
 
 <style scoped>
+
+.message{
+    background-color: white;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    
+}
 
 </style>
