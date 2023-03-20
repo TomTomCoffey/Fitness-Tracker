@@ -3,7 +3,7 @@
 
 import { ref } from 'vue';
 import { useSession, useWorkout, addWorkout1, addCardio} from '@/model/session';
-import Exercises from '@/views/Exercises.vue';
+
 
 
 
