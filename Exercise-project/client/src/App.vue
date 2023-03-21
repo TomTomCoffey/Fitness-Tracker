@@ -33,7 +33,7 @@ import Footer from '@/components/Footer.vue'
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   padding: 0;
   margin: 0;
