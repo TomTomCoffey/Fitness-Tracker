@@ -26,7 +26,11 @@ const userArray = ref(users);
         <div v-if="session.user">
             <h1 class="title is-1"> {{session.user.name}}'s Friends' Activity</h1>
             <div class="subtitle">See all your friends current personal records!</div>
-            <PrBox/>
+    
+
+                <PrBox />
+           
+           
        
         </div>
        

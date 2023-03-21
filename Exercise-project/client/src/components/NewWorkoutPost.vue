@@ -34,6 +34,11 @@ const session = useSession();
           <img src="../data/images/IMG_7634 Small.png">
         </p>
       </figure>
+      <figure class="media-left">
+       
+
+      </figure>
+       
       <div class="media-content">
         <div class="content">
           <p>

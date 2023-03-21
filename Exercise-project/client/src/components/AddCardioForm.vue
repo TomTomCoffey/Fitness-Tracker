@@ -53,7 +53,7 @@ function addCardio1(cardioDistance: number, cardioDuration: number) {
                 </div>
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-success" @click="addCardio1(cardioDuration, cardioDistance), $emit('close')">Add</button>
+              <button class="button is-info" @click="addCardio1(cardioDuration, cardioDistance), $emit('close')">Add</button>
               <button class="button" @click="$emit('close')">Cancel</button>
             </footer>
         </div>
