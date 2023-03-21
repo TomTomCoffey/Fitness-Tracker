@@ -26,7 +26,7 @@ const userArray = ref(users);
       <div class="column is-half">
             <article class="media box">
                 <figure class="media-left">
-                    <p class="image is-128x128">
+                    <p class="image">
                         <img src="../data/images/IMG_7634 Small.png">
                     </p>
                 </figure>
@@ -100,6 +100,15 @@ const userArray = ref(users);
     max-width: 800px;
     padding: 1rem;
   
+}
+
+.image{
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 
