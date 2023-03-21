@@ -16,14 +16,6 @@ const props = defineProps({
 
 
 const session = useSession();
-const userArray = ref(users);
-
-
-const workoutHandler = ref(props.workout);
-
-
-
-
 
 
 

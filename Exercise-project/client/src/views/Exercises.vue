@@ -56,17 +56,18 @@ function toggleWorkout() {
                 </div>
 
                 <div class="box">
-                    <div class="column">
+                 
                     <div v-for="w in session.user?.workouts.slice().reverse()" :key="w.workout">
                      <NewWorkoutPost  :workout="w" />
                      </div>
-                    </div>
 
-                    <div class="column">
+                
+                <!----I want there to be two columns each displaying their own loops so it is easier to read-->
+                   
                     <div v-for="r in session.user?.cardio.slice().reverse()" :key="r.distanceMiles">
                      <NewRunPost  :cardio="r" />
                      </div>
-                    </div>
+                
                   
                  </div>
                  
@@ -107,7 +108,7 @@ function toggleWorkout() {
     box-shadow: 0 4px #999;
 }
 .box{
-    display: flex;
+    display: row;
     flex-direction: column;
     background-color: transparent;
 }
@@ -124,7 +125,7 @@ function toggleWorkout() {
     background-color: rgba(0,0,0,0.4);
 }
 .column{
-    display: block;
+    display: flex;
     flex-direction: column;
     background-color: transparent;
 }
