@@ -2,8 +2,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useSession, newestCardio } from '@/model/session';
+import { defineProps } from 'vue';
 
 const session = useSession();
+
+const props = defineProps({
+  cardio: {
+    type: Object,
+    required: true
+  }
+});
 
 </script>
 
@@ -25,7 +33,7 @@ const session = useSession();
                         <p>
                             <strong>{{ session.user?.name }}</strong> <small>@{{ session.user?.name }}</small> <small></small>
                             <br>
-                             Nice Work! You added a new run, {{ newestCardio?.distanceMiles  }} miles in {{ newestCardio?.durationMins }} mins !!!
+                             Nice Work! You added a new run, {{ props.cardio.distanceMiles  }} miles in {{ props.cardio.durationMins }} mins !!!
                         </p>
                     </div>
                     <nav class="level is-mobile">

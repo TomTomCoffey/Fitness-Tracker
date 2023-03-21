@@ -56,15 +56,20 @@ function toggleWorkout() {
                 </div>
 
                 <div class="box">
-                
-                <NewWorkoutPost>
-            
-                </NewWorkoutPost>
-                <NewRunPost/>
+                    <div class="column">
+                    <div v-for="w in session.user?.workouts.slice().reverse()" :key="w.workout">
+                     <NewWorkoutPost  :workout="w" />
+                     </div>
+                    </div>
 
-                
-               
-                </div>
+                    <div class="column">
+                    <div v-for="r in session.user?.cardio.slice().reverse()" :key="r.distanceMiles">
+                     <NewRunPost  :cardio="r" />
+                     </div>
+                    </div>
+                  
+                 </div>
+                 
 
                                   
             </div>
@@ -117,6 +122,11 @@ function toggleWorkout() {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
+}
+.column{
+    display: block;
+    flex-direction: column;
+    background-color: transparent;
 }
 
 
