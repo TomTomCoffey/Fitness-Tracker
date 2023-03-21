@@ -58,9 +58,11 @@ function toggleWorkout() {
                 <div class="box">
                 
                 <NewWorkoutPost>
-                    
+            
                 </NewWorkoutPost>
                 <NewRunPost/>
+
+                
                
                 </div>
 
