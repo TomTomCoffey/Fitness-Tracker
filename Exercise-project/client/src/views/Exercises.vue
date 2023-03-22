@@ -128,8 +128,8 @@ function toggleWorkout() {
 
 .container1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0rem;
+  grid-template-columns: 2fr 2fr;
+ 
 }
 .column1 {
   display: flex;

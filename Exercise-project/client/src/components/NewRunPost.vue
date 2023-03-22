@@ -114,6 +114,19 @@ const props = defineProps({
     padding: 1rem;
 }
 
+.media{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+  
+
+}
+
 
 
 
