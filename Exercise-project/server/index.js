@@ -1,16 +1,19 @@
-const http = require('http');  // Import the http module
+const express = require('express')
+const products = require('./controllers/products')
+const app = express()
 
 const hostname = '127.0.0.1';
-const port = process.env.PORT || 3000; // Port number 3000 is used for development
+const port = process.env.PORT || 3000;
 
-const server = http.createServer((req, res) => { 
 
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello New Paltz From NODEMON');
+app
+    .get('/', (req, res) => {
+        res.send('Hello World! From Express')
+    })
+    
 
-});
 
-server.listen(port, () => 
+
+app.listen(port, () => 
   console.log(`Server running at http://${hostname}:${port}/`)
 );

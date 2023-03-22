@@ -124,7 +124,6 @@ const props = defineProps({
     max-width: 800px;
     padding: 1rem;
   
-
 }
 
 
