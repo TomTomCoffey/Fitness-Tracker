@@ -28,6 +28,8 @@ const props = defineProps({
                         <img src="../data/images/IMG_7634 Small.png">
                     </p>
                 </figure>
+                <figure class="media-right">
+                </figure>
                 <div class="media-content">
                     <div class="content">
                         <p>
@@ -68,7 +70,7 @@ const props = defineProps({
 <style scoped>
 
 .mediabox{
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -90,9 +92,19 @@ const props = defineProps({
     padding: 1rem;
   
 }
-.container{
-    background-color: transparent;
+
+.mediabox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+  
 }
+
 .image{
     width: 100%;
     max-width: 100px;
@@ -101,6 +113,8 @@ const props = defineProps({
     margin: 0 auto;
     padding: 1rem;
 }
+
+
 
 
 

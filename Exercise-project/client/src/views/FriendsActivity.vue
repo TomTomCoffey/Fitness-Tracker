@@ -5,14 +5,8 @@
  import PrBox from '@/components/PrBox.vue';
  
 
- 
-
 const session = useSession();
 const userArray = ref(users);
-
-
-
-
 
 </script>
 
@@ -47,8 +41,6 @@ const userArray = ref(users);
 </div>
 
 </template>
-
-
 
 <style scoped>
 

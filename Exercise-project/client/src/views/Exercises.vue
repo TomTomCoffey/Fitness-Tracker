@@ -55,30 +55,22 @@ function toggleWorkout() {
                            
                 </div>
 
-                <div class="box">
-                 
+                <div class="container1">
+                    <div class="column1">
+                  <h2>Workouts</h2>
                     <div v-for="w in session.user?.workouts.slice().reverse()" :key="w.workout">
-                     <NewWorkoutPost  :workout="w" 
-
-                    
-                     />
+                         <NewWorkoutPost :workout="w" @close="$emit('close')" />
                      </div>
-                     
-
-                
-                <!----I want there to be two columns each displaying their own loops so it is easier to read-->
-                   
-                    <div v-for="r in session.user?.cardio.slice().reverse()" :key="r.distanceMiles">
-                     <NewRunPost  
-                     :cardio="r" 
-                     @close="$emit('close')"
-                     
-                     />
-                     </div>
-                  
-                
-                  
                  </div>
+                 <div class="column1">
+                      <h2>Cardio Runs</h2>
+                     <div v-for="r in session.user?.cardio.slice().reverse()" :key="r.distanceMiles">
+                        <NewRunPost :cardio="r" @close="$emit('close')" />
+                     </div>
+                </div>
+             </div>
+
+               
                  
 
                                   
@@ -115,11 +107,7 @@ function toggleWorkout() {
     transition-duration: 0.4s;
     box-shadow: 0 4px #999;
 }
-.box{
-    display: row;
-    flex-direction: column;
-    background-color: transparent;
-}
+
 
 .modal{
     position: fixed;
@@ -138,11 +126,17 @@ function toggleWorkout() {
     background-color: transparent;
 }
 
-.container{
-    background-color: transparent;
-
-   
+.container1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0rem;
 }
+.column1 {
+  display: flex;
+  flex-direction: column;
+}
+
+
 
 
 
