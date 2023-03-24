@@ -31,7 +31,7 @@ const session = useSession();
     <article class="media box">
       <figure class="media-left">
         <p class="image">
-          <img src="../data/images/IMG_7634 Small.png">
+          <img src="https://github.com/TomTomCoffey/web-final-project/blob/132ea39377c675b55eb870cdedf8ba0a043ea262/Exercise-project/client/src/data/images/IMG_7634%20Small.png">
         </p>
       </figure>
       <figure class="media-left">
