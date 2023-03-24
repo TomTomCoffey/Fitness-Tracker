@@ -27,7 +27,7 @@ const isMenuActive = false;
     
     margin-right: -15%;
     margin-left: -15%;
-    margin-bottom: -1rem;
+    margin-bottom: 0rem;
 
     
 }
