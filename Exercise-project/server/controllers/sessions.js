@@ -17,14 +17,14 @@ router
 
     .get('/:id', (req, res) => {
         const id = +req.params.id;
-        const product = model.getSessionById(id);
-        res.send(product);
+        const user = model.getSessionById(id);
+        res.send(user);
     })
 
     .post('/', (req, res) => {
-        const product = req.body;
+        const user = req.body;
 
-        console.log({ product });
+        console.log({ user });
         console.log( req.query );
         console.log( req.params );
         console.log( req.headers );
@@ -34,7 +34,7 @@ router
     })
 
     .patch('/:id', (req, res) => {
-        const product = req.body;
+        const user = req.body;
         model.updateProduct(user);
         res.send(user);
     })
