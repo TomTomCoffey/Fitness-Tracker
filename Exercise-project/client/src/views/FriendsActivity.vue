@@ -13,10 +13,8 @@ const userArray = ref(users);
 
 <template>
     <div>
-        <div class="container">
-        <div class="column is-half"></div>
-                
-        <div class="column is-quarter">
+        
+       
         <div v-if="session.user">
             <h1 class="title is-1"> {{session.user.name}}'s Friends' Activity</h1>
             <div class="subtitle">See all your friends current personal records!</div>
@@ -34,18 +32,18 @@ const userArray = ref(users);
             <h3>Please log in to see your friend's activity </h3>
         </div>
        
-        <div class="column is-quarter"></div>
+      
     </div>
+  
 
-    </div>
-</div>
+ 
 
 </template>
 
 <style scoped>
 
 .column{
-    display: center;
+    display: flex;
     padding: 0;
     margin: 10rem;
     margin-bottom: 0em;
@@ -67,7 +65,7 @@ const userArray = ref(users);
 }
 
 .container{
-    display: center;
+    display: flex;
     padding: 0;
     margin: 5;
     background-color: transparent;
@@ -86,7 +84,7 @@ const userArray = ref(users);
 
 .h1{
     color: white;
-    text-align: center;
+    text-align: flex;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     display: flex;
