@@ -1,0 +1,16 @@
+
+
+[
+    {
+        "workout": "Bench Press",
+        "weight": "225lbs"
+    },
+    {
+        "workout": "Squat",
+        "weight": "315lbs"
+    },
+    {
+        "workout": "Deadlift",
+        "weight": "405lbs"
+    }
+]
