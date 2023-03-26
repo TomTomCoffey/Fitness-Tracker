@@ -21,9 +21,6 @@ const userArray = ref(users);
     
 
                 <PrBox />
-           
-           
-       
         </div>
        
      
@@ -64,29 +61,7 @@ const userArray = ref(users);
     margin-top: 0.5rem;
 }
 
-.container{
-    display: flex;
-    padding: 0;
-    margin: 5;
-    background-color: transparent;
-    color: #2b7a78;
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: -1rem;
-    padding: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
 
-.h1{
-    color: white;
-    text-align: flex;
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-    display: flex;
-}
+
+
 </style>
