@@ -26,6 +26,8 @@
 
 
             <div class="column is-half">
+
+      <div class="box">
     <article class="media box">
       <figure class="media-left">
         <p class="image">
@@ -41,6 +43,7 @@
 
       </figure>
        
+      <div class="box">
       <div class="media-content">
         <div class="content">
           <p>
@@ -54,6 +57,7 @@
                           
           </p>
         </div>
+      </div>
         <nav class="level is-mobile">
           <div class="level-left">
             <a class="level-item" aria-label="reply">
@@ -75,6 +79,7 @@
         </nav>
       </div>
     </article>
+      </div>
   </div>
 </div>
  </div>
@@ -113,7 +118,7 @@
 
 .image{
     width: 100%;
-    max-width: 120px;
+    max-width: 150px;
     height: auto;
     border-radius: 0%;
     margin: 0 auto;
@@ -129,7 +134,8 @@
     width: 100%;
     padding: 1rem;
     height: 100%;
-    max-width: 800px;
+    max-height: 400px;
+    max-width: 400px;
     padding: 1rem;
     border-radius: 0%;
     background-color: #f5f5f5;
@@ -146,10 +152,18 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    width: 1000%;
-    max-width: 800px;
+    width: 3600%;
+    max-width: 200px;
     padding: 1rem;
 
+}
+
+.box
+{
+  margin: 1 rem;
+  border: #f5f5f5;
+  max-width: fit-content;
+  max-height: fit-content;
 }
 
 
