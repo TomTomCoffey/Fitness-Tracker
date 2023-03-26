@@ -56,8 +56,10 @@ const userArray = ref(users);
     text-align: center;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+    display: flex;
 }
 .subtitle{
+    display: flex;
     color: white;
     text-align: center;
     margin-bottom: 1rem;
@@ -80,5 +82,13 @@ const userArray = ref(users);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    display: flex;
 }
 </style>

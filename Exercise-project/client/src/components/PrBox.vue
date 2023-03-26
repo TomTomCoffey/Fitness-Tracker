@@ -34,6 +34,9 @@
         </p>
       </figure>
       <figure class="media-left">
+
+
+        <h2><strong>Best Lifts!</strong></h2>
        
 
       </figure>
@@ -45,7 +48,7 @@
             <br>
             
                                  <div v-for="workout in user.workouts">
-                    <p> Current PR for:{{ workout.workout }} {{ workout.weight }}lbs</p>
+                    <p> Current PR for: {{ workout.workout }} {{ workout.weight }}lbs</p>
                                  </div>
                     <p> </p>
                           
@@ -81,6 +84,20 @@
 
 <style scoped>
 
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+  
+}
+
+
 .column{
     display: flex;
     flex-direction: column;
@@ -93,25 +110,15 @@
   
 }
 
-.mediabox{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-  
-}
 
 .image{
     width: 100%;
-    max-width: 100px;
+    max-width: 120px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 0%;
     margin: 0 auto;
     padding: 1rem;
+    
 }
 .media{
     display: flex;
@@ -120,9 +127,28 @@
     align-items: center;
     margin: 0 auto;
     width: 100%;
+    padding: 1rem;
+    height: 100%;
     max-width: 800px;
     padding: 1rem;
+    border-radius: 0%;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    
+   
   
+
+}
+.p{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 1000%;
+    max-width: 800px;
+    padding: 1rem;
 
 }
 
