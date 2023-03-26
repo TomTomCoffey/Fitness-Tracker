@@ -73,8 +73,10 @@ const items = ref(users);
 
     width: 100%;
     text-align: left;
-}
+    margin: 0 auto;
+    padding: 0 20px;
 
+}
 .container{
     width: 100%;
     text-align: left;
@@ -89,7 +91,7 @@ const items = ref(users);
     padding: 0 20px;
     box-sizing: border-box;
     size: small;
-    image-orientation: flip;
+   
    
 }
 .th{
@@ -115,8 +117,8 @@ const items = ref(users);
 
 
 .image{
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
