@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 // Middleware
 app
     .use(express.json())
-    .use(express.static(path.join(__dirname, '../client')))
+    .use(express.static(path.join(__dirname, '../client/dist')))
     .use((req, res, next) => {
         console.log(`${req.method} ${req.url}`);
         next();
