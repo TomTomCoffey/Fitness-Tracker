@@ -67,6 +67,11 @@
     width: max-content/2;
 
   }
+  .notification{
+    padding: 0;
+    background-color: transparent;
+    margin: auto;
+  }
 
  
 
