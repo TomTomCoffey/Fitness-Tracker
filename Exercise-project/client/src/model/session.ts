@@ -195,7 +195,8 @@ import type { Cardio } from "./cardio";
     }
 
     export function addWorkout1(workout: string, weight: number) {
-        session.user?.workouts.push({workout, weight});
+        if(workout !== "" && weight >= 0)
+       { session.user?.workouts.push({workout, weight});}
     }
 
     export function removeWorkout(workout: Workout) {
@@ -207,7 +208,9 @@ import type { Cardio } from "./cardio";
   
 
     export function addCardio(distanceMiles: number, durationMins: number) {
-        session.user?.cardio.push({distanceMiles, durationMins});
+
+        if(distanceMiles >= 0 && durationMins >= 0)
+       { session.user?.cardio.push({distanceMiles, durationMins});}
 
     }
 

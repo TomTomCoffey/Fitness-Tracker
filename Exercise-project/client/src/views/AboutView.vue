@@ -13,6 +13,17 @@
       <div class="column">
         <div class="notification">
      <aboutMsg />
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification">
+       
+        </div>
+      </div>
+      <div class="column">
+        <div class="notification">
+
  
     </div>
       </div>
@@ -52,6 +63,8 @@
   .container{
     padding: 0;
     margin: 5;
+    height: max-content/2;
+    width: max-content/2;
 
   }
 
