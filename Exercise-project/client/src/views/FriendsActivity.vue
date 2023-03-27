@@ -1,7 +1,6 @@
 <script setup lang="ts">
  import { ref } from 'vue';
  import { useSession, users} from '@/model/session';
- import type { defineComponent } from 'vue';
  import PrBox from '@/components/PrBox.vue';
  
 
@@ -52,6 +51,7 @@ const userArray = ref(users);
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     display: flex;
+    position: relative;
 }
 .subtitle{
     display: flex;
@@ -59,6 +59,7 @@ const userArray = ref(users);
     text-align: center;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
+    position: relative;
 }
 
 

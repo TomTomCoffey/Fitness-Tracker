@@ -13,7 +13,7 @@
       <div class="column">
         <div class="notification">
      <aboutMsg />
-     <ProgressBar />
+ 
     </div>
       </div>
  
