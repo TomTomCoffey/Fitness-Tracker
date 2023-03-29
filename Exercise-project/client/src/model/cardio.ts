@@ -1,9 +1,10 @@
 
-import { reactive } from "vue";
+
 
 
 export interface Cardio {
 
+    name: string;
     distanceMiles: number;
     durationMins: number;
 }
