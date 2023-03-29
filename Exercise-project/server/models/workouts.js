@@ -5,7 +5,7 @@ function getWorkouts(){
 }
 
 function getWorkoutbyName(workout) {
-    return data.workouts.find(users => workouts.workout === workout );
+    return data.workouts.find(workouts => workouts.workout === workout);
 }
 
 

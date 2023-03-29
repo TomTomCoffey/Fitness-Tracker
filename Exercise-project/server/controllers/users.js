@@ -4,20 +4,20 @@ const router = express.Router();
 
 router
     .get('/', (req, res) => {
-        const list = model.getSession();
+        const list = model.getUser();
         res.send(list)
     })
 
     .get('/search/:q', (req, res) => {
         const term = req.params.q;
         console.log({ term });
-        const list = model.searchSessions(term);
+        const list = model.searchUser(term);
         res.send(list);
     })
 
     .get('/:id', (req, res) => {
         const id = +req.params.id;
-        const user = model.getSessionById(id);
+        const user = model.getUserById(id);
         res.send(user);
     })
 
@@ -29,19 +29,19 @@ router
         console.log( req.params );
         console.log( req.headers );
 
-        model.addProduct(user);
+        model.addUser(user);
         res.send(user);
     })
 
     .patch('/:id', (req, res) => {
         const user = req.body;
-        model.updateProduct(user);
+        model.updateUser(user);
         res.send(user);
     })
 
     .delete('/:id', (req, res) => {
         const id = +req.params.id;
-        model.deleteProduct(id);
+        model.deleteUser(id);
         res.send({id});
     })
 
