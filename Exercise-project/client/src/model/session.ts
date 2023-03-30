@@ -2,6 +2,8 @@ import { computed, reactive } from "vue";
 import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
+import { api } from "./myFetch";
+
 
 
 
@@ -142,6 +144,17 @@ import type { Cardio } from "./cardio";
         
 
  ]
+
+ export function getUsers(): User[] {
+
+    api('users').then(res => {
+        console.log(res);
+    });
+
+    return users;
+
+
+}
 
 
 
