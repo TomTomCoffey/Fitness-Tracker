@@ -1,5 +1,5 @@
 import { computed, reactive } from "vue";
-import user from "../data/session.json";
+//import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
