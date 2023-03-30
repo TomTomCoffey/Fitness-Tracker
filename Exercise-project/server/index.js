@@ -1,7 +1,5 @@
 const express = require('express')
 const path = require('path');
-//const jokes = require('./controllers/jokes');
-//const products = require('./controllers/products')
 const sessions = require('./controllers/users')
 const app = express()
 
