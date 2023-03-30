@@ -10,8 +10,11 @@ import NewRunPost from '@/components/NewRunPost.vue';
 
 const isWorkoutActive = ref(false);
 const session = useSession();
-const user = ref(session.user);
+
 const isCadrioActive = ref(false);
+
+
+
 
 function toggleCardio() {
     isCadrioActive.value = !isCadrioActive.value;

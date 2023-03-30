@@ -2,13 +2,18 @@ import { computed, reactive } from "vue";
 import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
-import { api } from "./myFetch";
+import * as myFetch from "./myFetch";
 
-
+ 
 
 
  const session = reactive({
      user: null as User | null,
+     isLoading: false,
+     messages: [] as {
+         msg: string,
+         type: "success" | "error" | "warning" | "info",
+     }[],
      
  })
 
@@ -27,6 +32,34 @@ import { api } from "./myFetch";
      cardio: Cardio[];
  
  }
+
+
+ export function api(url: string) {
+    session.isLoading = true;
+    return myFetch.api(url)
+        .catch(err => {
+            console.error(err);
+            session.messages.push({
+                msg: err.message ?? JSON.stringify(err),
+                type: "error",
+            })
+        })
+        .finally(() => {
+            session.isLoading = false;
+        })
+}
+
+export function getProducts(): Promise<User[]> {
+
+    return api('products')
+
+}
+
+
+
+
+
+
  export const users: User[] = [
 
     
@@ -145,16 +178,7 @@ import { api } from "./myFetch";
 
  ]
 
- export function getUsers(): User[] {
 
-    api('users').then(res => {
-        console.log(res);
-    });
-
-    return users;
-
-
-}
 
 
 
@@ -163,6 +187,7 @@ import { api } from "./myFetch";
  export function useSession() {
      return session;
  }
+
 
  export function login(number: number) {
          const User = user.find((user) => user.id === number);
@@ -226,8 +251,6 @@ import { api } from "./myFetch";
        { session.user?.cardio.push({distanceMiles, durationMins});}
 
     }
-
-
 
 
     export const totalWorkouts = computed(() => session.user?.workouts.length);
