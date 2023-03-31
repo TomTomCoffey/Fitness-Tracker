@@ -1,5 +1,5 @@
 import { computed, reactive } from "vue";
-import user from "../data/session.json";
+//import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
@@ -189,21 +189,30 @@ export function getProducts(): Promise<User[]> {
  }
 
 
- export function login(number: number) {
-         const User = user.find((user) => user.id === number);
-            if (User) {
-                session.user = User;
-            }
+//  export function login(number: number) {
+//          const User = user.find((user) => user.id === number);
+//             if (User) {
+//                 session.user = User;
+//             }
         
-    }
+//     }
 
-    export function getUser(number: number) {
-        const User = user.find((user) => user.id === number);
-        if (User) {
-            return User;
-        }
+export function loginThroughServer(number: number) {
+    return api(`users/${number}`)
+        .then(user => {
+            if (user) {
+                session.user = user;
+            }
+        })
+}
+
+    // export function getUser(number: number) {
+    //     const User = user.find((user) => user.id === number);
+    //     if (User) {
+    //         return User;
+    //     }
         
-    }
+    // }
 
 
     export function logout() {
