@@ -251,7 +251,7 @@ export function getUserThroughServer(number: number) {
 
     export function addCardio(distanceMiles: number, durationMins: number) {
 
-        if(distanceMiles >= 0 && durationMins >= 0)
+        if(distanceMiles > 0 && durationMins > 0)
        { session.user?.cardio.push({distanceMiles, durationMins});}
 
     }
