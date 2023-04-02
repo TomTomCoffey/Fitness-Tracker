@@ -49,10 +49,23 @@ import * as myFetch from "./myFetch";
         })
 }
 
-export function getProducts(): Promise<User[]> {
+export function Users(): Promise<User[]> {
 
-    return api('products')
+    return api('users')
 
+}
+
+       
+export function addMessage(msg: string, type: "success" | "error" | "warning" | "info") {
+    console.log({msg, type});
+    session.messages.push({
+        msg,
+        type,
+    })
+}
+
+export function deleteMessage(index: number) {
+    session.messages.splice(index, 1);
 }
 
 
@@ -205,6 +218,8 @@ export function loginThroughServer(number: number) {
 
 
 
+
+
     export function getUser(number: number) {
         const User = user.find((user) => user.id === number);
         if (User) {
@@ -282,18 +297,7 @@ export function loginThroughServer(number: number) {
     export const newestCardio = computed(() => session.user?.cardio[session.user?.cardio.length - 1]);
 
    
-       
-    export function addMessage(msg: string, type: "success" | "error" | "warning" | "info") {
-        console.log({msg, type});
-        session.messages.push({
-            msg,
-            type,
-        })
-    }
-    
-    export function deleteMessage(index: number) {
-        session.messages.splice(index, 1);
-    }
+
        
 
 
