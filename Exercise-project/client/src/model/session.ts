@@ -1,9 +1,8 @@
 import { computed, reactive } from "vue";
+import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
-import type { DataListEnvelope } from "./myFetch";
-import { useRouter } from "vue-router";
 
  
 
@@ -13,7 +12,7 @@ import { useRouter } from "vue-router";
      isLoading: false,
      messages: [] as {
          msg: string,
-         type: "success" | "danger" | "warning" | "info",
+         type: "success" | "error" | "warning" | "info",
      }[],
      
  })
@@ -42,7 +41,7 @@ import { useRouter } from "vue-router";
             console.error(err);
             session.messages.push({
                 msg: err.message ?? JSON.stringify(err),
-                type: "danger",
+                type: "error",
             })
         })
         .finally(() => {
@@ -50,35 +49,10 @@ import { useRouter } from "vue-router";
         })
 }
 
+export function getProducts(): Promise<User[]> {
 
+    return api('products')
 
-export function getUser(id: number): Promise<DataListEnvelope<User>> {
-    return api(`users/${id}`)
-
-}
-
-
-export function useLogout() {
-    const router = useRouter();
-    
-    return function(){
-        console.log({router});
-        session.user = null;
-
-        router.push("/login");
-    }
-}
-
-export function addMessage(msg: string, type: "success" | "danger" | "warning" | "info") {
-    console.log({msg, type});
-    session.messages.push({
-        msg,
-        type,
-    })
-}
-
-export function deleteMessage(index: number) {
-    session.messages.splice(index, 1);
 }
 
 
@@ -215,7 +189,13 @@ export function deleteMessage(index: number) {
  }
 
 
-
+ export function login(number: number) {
+         const User = user.find((user) => user.id === number);
+            if (User) {
+                session.user = User;
+            }
+        
+    }
 
 export function loginThroughServer(number: number) {
     return api(`users/${number}`)
@@ -226,13 +206,13 @@ export function loginThroughServer(number: number) {
         })
 }
 
-export async function getUserThroughServer(number: number) {
-    const user = await api(`users/${number}`);
-    if (user) {
-        session.user = user;
-    }
-}
-
+    // export function getUser(number: number) {
+    //     const User = user.find((user) => user.id === number);
+    //     if (User) {
+    //         return User;
+    //     }
+        
+    // }
 
 
     export function logout() {
@@ -276,16 +256,9 @@ export async function getUserThroughServer(number: number) {
 
     export function addCardio(distanceMiles: number, durationMins: number) {
 
-        if(distanceMiles > 0 && durationMins > 0)
+        if(distanceMiles >= 0 && durationMins >= 0)
        { session.user?.cardio.push({distanceMiles, durationMins});}
 
-    }
-
-    export function removeCardio(cardio: Cardio) {
-        const index = session.user?.cardio.indexOf(cardio);
-        if (index !== undefined) {
-            session.user?.cardio.splice(index, 1);
-        }
     }
 
 

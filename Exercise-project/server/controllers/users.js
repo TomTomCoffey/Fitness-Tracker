@@ -5,23 +5,20 @@ const router = express.Router();
 router
     .get('/', (req, res) => {
         const list = model.getUser();
-        const data = { data: list, total: list.length, isSuccess: true };
-        res.send(data)
+        res.send(list)
     })
 
     .get('/search/:q', (req, res) => {
         const term = req.params.q;
         console.log({ term });
         const list = model.searchUser(term);
-        const data = { data: list, total: list.length, isSuccess: true };
-        res.send(data)
+        res.send(list);
     })
 
     .get('/:id', (req, res) => {
         const id = +req.params.id;
         const user = model.getUserById(id);
-        const data = { data: user, total: list.length, isSuccess: true };
-        res.send(data)
+        res.send(user);
     })
 
     .post('/', (req, res) => {
@@ -33,22 +30,19 @@ router
         console.log( req.headers );
 
         model.addUser(user);
-        const data = { data: list, total: list.length, isSuccess: true };
-        res.send(data)
+        res.send(user);
     })
 
     .patch('/:id', (req, res) => {
         const user = req.body;
         model.updateUser(user);
-        const data = { data: list, total: list.length, isSuccess: true };
-        res.send(data)
+        res.send(user);
     })
 
     .delete('/:id', (req, res) => {
         const id = +req.params.id;
         model.deleteUser(id);
-        const data = { data: list, total: list.length, isSuccess: true };
-        res.send(data)
+        res.send({id});
     })
 
 module.exports = router;

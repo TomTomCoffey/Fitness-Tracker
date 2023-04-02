@@ -1,8 +1,7 @@
 const API_URL = 'http://localhost:3000/api/v1/';
 
-export async function rest(url: string){
-    const res = await fetch(url);
-    return await res.json();
+export function rest(url: string){
+    return fetch(url).then(res => res.json());
 }
 
 export function api(url: string){
