@@ -2,6 +2,7 @@ import { computed, reactive } from "vue";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
+import type { DataListEnvelope } from "./myFetch";
 
  
 
@@ -48,9 +49,10 @@ import * as myFetch from "./myFetch";
         })
 }
 
-export function getProducts(): Promise<User[]> {
 
-    return api('products')
+
+export function getUser(id: number): Promise<DataListEnvelope<User>> {
+    return api(`users/${id}`)
 
 }
 
