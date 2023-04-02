@@ -283,7 +283,18 @@ export function loginThroughServer(number: number) {
     export const newestCardio = computed(() => session.user?.cardio[session.user?.cardio.length - 1]);
 
    
-        
+       
+    export function addMessage(msg: string, type: "success" | "error" | "warning" | "info") {
+        console.log({msg, type});
+        session.messages.push({
+            msg,
+            type,
+        })
+    }
+    
+    export function deleteMessage(index: number) {
+        session.messages.splice(index, 1);
+    }
        
 
 
