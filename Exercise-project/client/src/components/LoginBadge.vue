@@ -20,10 +20,10 @@
                         <strong>Log in</strong>
                     </a>
                     <div class="navbar-dropdown">
-                    <a class="button" @click="loginThroughServer(1), login(1)">
-                        <strong>Tom</strong>
+                    <a class="button" @click="loginThroughServer(1)">
+                        <strong>Tojjhhm</strong>
                     </a>
-                    <a class="button" @click="loginThroughServer(2), login(2)">
+                    <a class="button" @click="loginThroughServer(2)">
                         <strong>Zoey</strong>
                     </a>
                     <a class="button" @click="loginThroughServer(3)">
