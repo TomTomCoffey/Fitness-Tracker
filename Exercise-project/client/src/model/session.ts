@@ -170,11 +170,7 @@ export function getProducts(): Promise<User[]> {
                 }
             ]
           }
-           
-        
-        
-        
-        
+             
 
  ]
 
@@ -206,13 +202,16 @@ export function loginThroughServer(number: number) {
         })
 }
 
-    // export function getUser(number: number) {
-    //     const User = user.find((user) => user.id === number);
-    //     if (User) {
-    //         return User;
-    //     }
+
+
+
+    export function getUser(number: number) {
+        const User = user.find((user) => user.id === number);
+        if (User) {
+            return User;
+        }
         
-    // }
+    }
 
 
     export function logout() {
