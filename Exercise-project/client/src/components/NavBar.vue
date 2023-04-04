@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import LoginBadge from './LoginBadge.vue';
 import { useSession } from '@/model/session';
+import Notify from './Notify.vue';
 
     const isMenuActive = ref(false);
     function toggleMenu() {
@@ -93,9 +94,11 @@ import { useSession } from '@/model/session';
 
              
           
-      
+            <Notify/>
           <div class="navbar-end">
             <LoginBadge />
+
+            
           
                      
         

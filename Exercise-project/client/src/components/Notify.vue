@@ -9,7 +9,7 @@
 
 <template>
     <div class="notifications">
-        <button class="button is-primary" @click="isActive = !isActive">
+        <button class="button" @click="isActive = !isActive">
             <span class="icon">
                 <i class="fas fa-bell fa-lg " :class="{'fa-beat-fade' : session.isLoading}"></i>
             </span>
@@ -43,6 +43,13 @@
     }
     .notification-list .notification {
         margin: 5px;
+    }
+
+    .button {
+        margin-top: 5px;
+        background-color: transparent;
+        border: none;
+        color: #333;
     }
 
 </style>
