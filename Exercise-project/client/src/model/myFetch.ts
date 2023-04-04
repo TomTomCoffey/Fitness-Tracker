@@ -8,3 +8,5 @@ export function rest(url: string){
 export function api(url: string){
     return rest(API_URL + url);
 }
+
+
