@@ -253,11 +253,12 @@ export function loginThroughServer(number: number) {
 
 
     export function addWorkout(workout: Workout) {
-        session.user?.workouts.push(workout);
+        if(workout.workout !== "" && workout.weight > 0)
+        {session.user?.workouts.push(workout);}
     }
 
     export function addWorkout1(workout: string, weight: number) {
-        if(workout !== "" && weight >= 0)
+        if(workout !== "" && weight > 0)
        { session.user?.workouts.push({workout, weight});}
     }
 
@@ -271,7 +272,7 @@ export function loginThroughServer(number: number) {
 
     export function addCardio(distanceMiles: number, durationMins: number) {
 
-        if(distanceMiles >= 0 && durationMins >= 0)
+        if(distanceMiles > 0 && durationMins > 0)
        { session.user?.cardio.push({distanceMiles, durationMins});}
 
     }
