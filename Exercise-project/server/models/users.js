@@ -3,10 +3,12 @@ const data = require('../data/users.json');
 
 
 function getUser(){
+   
     return data.users;
 }
 
 function getUserById(id) {
+  
     return data.users.find(users => users.id === id);
 }
 
