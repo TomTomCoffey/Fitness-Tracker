@@ -1,50 +1,43 @@
-const data = require('../data/users.json');
+const data = require('../data/users.json')
 
 
-
-function getUsers(){
-   
-    return data.users;
+function getUsers() {
+  return data.users;
 }
 
-function getUserById(id) {
-  
-    return data.users.find(users => users.id === id);
+function getUserbyId(id) {
+    return data.users.find(user => user.id === id);
 }
 
-
-function addUser(users) {
-    users.id = data.users.length + 1;
-    data.users.push(users);
+function addUser(user) {
+    user.id = data.users.length + 1;
+    data.users.push(user);
 }
 
-
-function updateUser(users) {
-    const index = data.users.findIndex(s => s.id === users.id);
-    data.userss[index] = users;
+function updateUser(user) {
+    const index = data.users.findIndex(p => p.id === user.id);
+    data.users[index] = user;
 }
-
 
 function deleteUser(id) {
-    const index = data.users.findIndex(s => s.id === id);
+    const index = data.users.findIndex(p => p.id === id);
     data.users.splice(index, 1);
 }
 
-
-function searchUser(searchTerm) {
-    return data.users.filter(users => {
-        return  users.title.toLowerCase().includes(searchTerm.toLowerCase())  ||
-            users.description.toLowerCase().includes(searchTerm.toLowerCase())  ||
-            users.brand.toLowerCase().includes(searchTerm.toLowerCase());
+function searchUsers(searchTerm) {
+    return data.users.filter(user => {
+        return  user.name.toLowerCase().includes(searchTerm.toLowerCase())  ||
+            user.email.toLowerCase().includes(searchTerm.toLowerCase())  ||
+            user.token.toLowerCase().includes(searchTerm.toLowerCase());
     });
 }
 
 module.exports = {
     getUsers,
-    getUserById,
+    getUserbyId,
     addUser,
     updateUser,
     deleteUser,
-    searchUser
-    
+    searchUsers
+
 };
