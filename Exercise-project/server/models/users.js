@@ -2,7 +2,7 @@ const data = require('../data/users.json');
 
 
 
-function getUser(){
+function getUsers(){
    
     return data.users;
 }
@@ -40,7 +40,7 @@ function searchUser(searchTerm) {
 }
 
 module.exports = {
-    getUser,
+    getUsers,
     getUserById,
     addUser,
     updateUser,
