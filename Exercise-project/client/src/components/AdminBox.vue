@@ -8,16 +8,17 @@ import { users } from '@/model/session';
 
 
 
-//const items = ref(users);
+const items = ref(users);
 
 //const session = useSession();
 
-// const peoples = ref<User[]>([]);
+// const items = ref<User[]>([]);
 //  getUsers().then((data) => {
 //      items.value = data.data;
 //  });
 
- const items = users
+//  console.log(items.value);
+
 
 
 

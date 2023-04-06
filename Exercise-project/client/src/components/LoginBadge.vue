@@ -1,5 +1,5 @@
 <script setup lang="ts">
- import { login, useSession } from '@/model/session';
+ import { login, useSession, loginWithGetUser } from '@/model/session';
  import SignUpBadge from './SignUpBadge.vue';
 
 
@@ -20,7 +20,7 @@
                         <strong>Log in</strong>
                     </a>
                     <div class="navbar-dropdown">
-                    <a class="button" @click=" login(1)">
+                    <a class="button" @click=" login(1), loginWithGetUser(1)">
                         <strong>Tom</strong>
                     </a>
                     <a class="button" @click=" login(2)">

@@ -65,6 +65,7 @@ export function getUser(id: number): Promise<DataEnvelope<User>> {
 export function loginWithGetUser(id: number) {
     return getUser(id)
         .then(envelope => {
+            console.log({envelope});
             session.user = envelope.data;
         })
 }
