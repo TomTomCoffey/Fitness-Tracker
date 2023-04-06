@@ -3,7 +3,7 @@ import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
-import type { DataListEnvelope } from "./myFetch";
+import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 
  
 
@@ -50,11 +50,27 @@ import type { DataListEnvelope } from "./myFetch";
         })
 }
 
-export function getProducts(): Promise<DataListEnvelope<User>> {
+export function getUsers(): Promise<DataListEnvelope<User>> {
 
     return api('users')
 
 }
+
+export function getUser(id: number): Promise<DataEnvelope<User>> {
+
+    return api(`users/${id}`)
+
+}
+
+export function loginWithGetUser(id: number) {
+    return getUser(id)
+        .then(envelope => {
+            session.user = envelope.data;
+        })
+}
+
+
+
 
        
 export function addMessage(msg: string, type: "success" | "danger" | "warning" | "info") {
@@ -191,13 +207,13 @@ export function deleteMessage(index: number) {
 
 
 
-
-
-
-
  export function useSession() {
      return session;
  }
+
+    export function useUser() {
+        return session.user;
+    }
 
 
  export function login(number: number) {
@@ -205,21 +221,6 @@ export function deleteMessage(index: number) {
             if (User) {
                 session.user = User;
             }
-        
-    }
-
-
-
-
-
-
-
-
-    export function getUser(number: number) {
-        const User = user.find((user) => user.id === number);
-        if (User) {
-            return User;
-        }
         
     }
 
