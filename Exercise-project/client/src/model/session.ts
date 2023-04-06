@@ -3,6 +3,7 @@ import user from "../data/session.json";
 import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
+import type { DataListEnvelope } from "./myFetch";
 
  
 
@@ -49,7 +50,7 @@ import * as myFetch from "./myFetch";
         })
 }
 
-export function Users(): Promise<User[]> {
+export function getProducts(): Promise<DataListEnvelope<User>> {
 
     return api('users')
 
@@ -207,14 +208,7 @@ export function deleteMessage(index: number) {
         
     }
 
-export function loginThroughServer(number: number) {
-    return api(`users/${number}`)
-        .then(user => {
-            if (user) {
-                session.user = user;
-            }
-        })
-}
+
 
 
 

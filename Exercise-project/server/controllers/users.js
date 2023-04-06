@@ -5,20 +5,23 @@ const router = express.Router();
 router
     .get('/', (req, res) => {
         const list = model.getUser();
-        res.send(list)
+        const data = { data: list, total: list.length, isSuccess: true };
+        res.send(data)
     })
 
     .get('/search/:q', (req, res) => {
         const term = req.params.q;
         console.log({ term });
         const list = model.searchUser(term);
-        res.send(list);
+        const data = { data: list, total: list.length, isSuccess: true };
+        res.send(data)
     })
 
     .get('/:id', (req, res) => {
         const id = +req.params.id;
         const user = model.getUserById(id);
-        res.send(user);
+        const data = { data: user, isSuccess: true };
+        res.send(data)
     })
 
     .post('/', (req, res) => {
@@ -30,19 +33,22 @@ router
         console.log( req.headers );
 
         model.addUser(user);
-        res.send(user);
+        const data = { data: product, isSuccess: true };
+        res.send(data)
     })
 
     .patch('/:id', (req, res) => {
         const user = req.body;
         model.updateUser(user);
-        res.send(user);
+        const data = { data: product, isSuccess: true };
+        res.send(data)
     })
 
     .delete('/:id', (req, res) => {
         const id = +req.params.id;
         model.deleteUser(id);
-        res.send({id});
+        const data = { data: id, isSuccess: true };
+        res.send(data)
     })
 
 module.exports = router;
