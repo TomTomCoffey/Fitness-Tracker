@@ -52,23 +52,23 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 
 export function getUsers(): Promise<DataListEnvelope<User>> {
 
-    return api('users')
+    return api('user')
 
 }
 
 export function getUser(id: number): Promise<DataEnvelope<User>> {
 
-    return api(`users/${id}`)
+    return api(`user/${id}`)
 
 }
 
-export function loginWithGetUser(id: number) {
-    return getUser(id)
-        .then(envelope => {
-            console.log({envelope});
-            session.user = envelope.data;
-        })
-}
+
+
+
+
+
+
+
 
 
 

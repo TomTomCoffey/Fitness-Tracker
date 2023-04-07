@@ -2,31 +2,21 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 //import { useSession, users} from '@/model/session';
-//import { getProducts, type Product } from '@/model/products'
 import { getUsers, type User } from '@/model/session';
 import { users } from '@/model/session';
 
 
 
-const items = ref(users);
+// const items = ref(users);
 
 //const session = useSession();
 
-// const items = ref<User[]>([]);
-//  getUsers().then((data) => {
-//      items.value = data.data;
-//  });
+const items = ref<User[]>([]);
+ getUsers().then((data) => {
+     items.value = data.data;
+ });
 
-//  console.log(items.value);
-
-
-
-
-
-
-
-
-
+ console.log(items.value);
 
 
 /////This code will be updated to delete users from the database
