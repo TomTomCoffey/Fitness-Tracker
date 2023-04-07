@@ -1,5 +1,4 @@
-/*  B"H
-*/
+
 const API_URL = 'http://localhost:3000/api/v1/';
 
 export function rest(url: string, data?: any, method?: string, headers?: any){
