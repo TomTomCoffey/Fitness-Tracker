@@ -52,15 +52,23 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 
 export function getUsers(): Promise<DataListEnvelope<User>> {
 
-    return api('user')
+    return api('users')
 
 }
 
 export function getUser(id: number): Promise<DataEnvelope<User>> {
 
-    return api(`user/${id}`)
+    return api(`users/${id}`)
 
 }
+
+
+export function updateUser(user: User): Promise<DataEnvelope<User>> {
+
+    return api(`user/${user.id}`, user, 'PUT')
+
+}
+
 
 
 
@@ -224,6 +232,7 @@ export function deleteMessage(index: number) {
             }
         
     }
+
 
 
     export function logout() {

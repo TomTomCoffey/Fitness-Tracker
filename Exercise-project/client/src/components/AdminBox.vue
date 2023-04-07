@@ -3,13 +3,10 @@
 import { ref } from 'vue';
 //import { useSession, users} from '@/model/session';
 import { getUsers, type User } from '@/model/session';
-import { users } from '@/model/session';
 
 
 
-// const items = ref(users);
 
-//const session = useSession();
 
 const items = ref<User[]>([]);
  getUsers().then((data) => {
