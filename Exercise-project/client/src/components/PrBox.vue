@@ -1,8 +1,18 @@
 <script setup lang="ts">
  import { ref } from 'vue';
- import { useSession, users} from '@/model/session';
+ import { useSession} from '@/model/session';
  import { useWorkouts1 } from '@/model/workouts';
  import { defineProps } from 'vue';
+ import { getUsers, type User } from '@/model/session';
+
+
+
+
+
+const items = ref<User[]>([]);
+ getUsers().then((data) => {
+     items.value = data.data;
+ });
 
 
 
@@ -14,7 +24,8 @@
  const user = ref(session.user);
 
 
- let items  = ref(users);
+
+
 
 
  </script>

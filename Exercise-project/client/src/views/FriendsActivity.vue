@@ -1,11 +1,11 @@
 <script setup lang="ts">
  import { ref } from 'vue';
- import { useSession, users} from '@/model/session';
+ import { useSession} from '@/model/session';
  import PrBox from '@/components/PrBox.vue';
  
 
 const session = useSession();
-const userArray = ref(users);
+
 
 </script>
 

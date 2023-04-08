@@ -1,5 +1,5 @@
 <script setup lang="ts">
- import { login, useSession  } from '@/model/session';
+ import { login, useSession } from '@/model/session';
  import SignUpBadge from './SignUpBadge.vue';
 
 

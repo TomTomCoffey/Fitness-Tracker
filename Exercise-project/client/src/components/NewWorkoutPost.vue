@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useSession, users, newestWorkout, newestCardio} from '@/model/session';
+import { useSession, newestWorkout, newestCardio} from '@/model/session';
 import NewRunPost from './NewRunPost.vue';
 import { defineProps } from 'vue';
 
