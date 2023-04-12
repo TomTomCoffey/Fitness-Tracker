@@ -63,6 +63,11 @@ export function getUser(id: number): Promise<DataEnvelope<User>> {
 }
 
 
+
+
+
+
+
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
     return api(`user/${user.id}`, user, 'PUT')
@@ -71,14 +76,6 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
 
 
-
-
-
-
-// const items = ref<User[]>([]);
-//  getUsers().then((data) => {
-//      items.value = data.data;
-//  });
 
 
 
