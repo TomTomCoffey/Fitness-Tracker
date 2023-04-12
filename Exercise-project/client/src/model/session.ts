@@ -25,7 +25,7 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
      name: string;
      email?: string;
      photo?: string;
-     token?: string;
+     password?: string;
      isAdmin?: boolean;
      workouts: Workout[];  ///might make a 2d array of workouts to make statistics easier
      friends?: User[];
@@ -61,6 +61,15 @@ export function getUser(id: number): Promise<DataEnvelope<User>> {
     return api(`users/${id}`)
 
 }
+
+
+
+export function createUser(user: User): Promise<DataEnvelope<User>> {
+
+    return api('users', user)
+}
+
+
 
 
 

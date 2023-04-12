@@ -6,7 +6,7 @@
     "name" : "Tom",
     "email" : "tom@email.com",
     "photo" : "https://bulma.io/images/placeholders/128x128.png",
-    "token" : "1",
+    "password" : "1",
     "isAdmin" : true,
     "workouts" : [
       {
@@ -43,7 +43,7 @@
     "name" : "Zoey",
     "email" : "ZoeyTheDog@doggy.com",
     "photo" : "https://github.com/TomTomCoffey/web-final-project/blob/main/Exercise-project/client/src/data/images/IMG_7634%20Small.png?raw=true",
-    "token" : "0",
+    "password" : "0",
     "isAdmin" : false,
     "workouts" : [
       {
@@ -79,7 +79,7 @@
     "name" : "Sally",
     "email" : "Sally@sally.com",
     "photo" : "https://bulma.io/images/placeholders/128x128.png",
-    "token" : "0",
+    "password" : "0",
     "isAdmin" : false,
     "workouts" : [
       {
