@@ -10,8 +10,7 @@
 
 
     <div>
-
-     
+        <button class="button is-info" @click="">Sign up</button>
 
     </div>
 </template>

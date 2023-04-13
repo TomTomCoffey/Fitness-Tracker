@@ -28,7 +28,7 @@ function searchUsers(searchTerm) {
     return data.users.filter(user => {
         return  user.name.toLowerCase().includes(searchTerm.toLowerCase())  ||
             user.email.toLowerCase().includes(searchTerm.toLowerCase())  ||
-            user.token.toLowerCase().includes(searchTerm.toLowerCase());
+            user.password.toLowerCase().includes(searchTerm.toLowerCase());
     });
 }
 

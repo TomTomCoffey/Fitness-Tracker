@@ -77,8 +77,8 @@
     "id" : 3,
     "name" : "Sally",
     "email" : "Sally@sally.com",
-    "password" : "https://bulma.io/images/placeholders/128x128.png",
-    "token" : "0",
+    "photo" : "https://bulma.io/images/placeholders/128x128.png",
+    "password" : "0",
     "isAdmin" : false,
     "workouts" : [
       {

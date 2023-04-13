@@ -36,8 +36,8 @@ import { useSession, addMessage } from '@/model/session';
 
     <form class="admin-product-edit" @submit.prevent="save()">
 
-        <h1 class="title" v-if="product.id">Edit Product</h1>
-        <h1 class="title" v-else>Add New Product</h1>
+        <h1 class="title" v-if="user.id">Edit User</h1>
+        <h1 class="title" v-else>Add New User</h1>
 
         <div class="field">
             <label class="label">Name</label>
@@ -49,35 +49,14 @@ import { useSession, addMessage } from '@/model/session';
             <div class="field">
             <label class="label">Email</label>
             <div class="control">
-                <textarea class="textarea" placeholder="Description" v-model="user.email"></textarea>
+                <input class="input" type="text" placeholder="Email" v-model="user.email">
             </div>
             </div>
 
             <div class="field">
-            <label class="label">Price</label>
+            <label class="label">Photo (enter in your own url).</label>
             <div class="control">
-                <input class="input" type="number" placeholder="Price" v-model="product.price">
-            </div>
-            </div>
-
-            <div class="field">
-            <label class="label">Category</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Category" v-model="product.category">
-            </div>
-            </div>
-
-            <div class="field">
-            <label class="label">Brand</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Brand" v-model="product.brand">
-            </div>
-            </div>
-
-            <div class="field">
-            <label class="label">Stock</label>
-            <div class="control">
-                <input class="input" type="number" placeholder="Stock" v-model="product.stock">
+                <input class="input" type="text" placeholder="Photo" v-model="user.photo">
             </div>
             </div>
 
