@@ -1,5 +1,9 @@
 
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
+
+
 
 
 </script>
@@ -10,7 +14,9 @@
 
 
     <div>
-        <button class="button is-info" @click="">Sign up</button>
+        
+        <RouterLink to="/signup"  button class="button is-info"> Sign up</RouterLink>
+        
 
     </div>
 </template>

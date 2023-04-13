@@ -6,6 +6,8 @@
  import Statistics from '@/views/Statistics.vue'
  import FriendsActivity from '@/views/FriendsActivity.vue'
  import AdminView from '@/views/AdminView.vue'
+ import SignUpView from '@/views/SignUpView.vue'
+
  import { useSession } from '@/model/session'
 
  const router = createRouter({
@@ -19,6 +21,8 @@
       { path: '/admin', name: 'admin', component: AdminView, beforeEnter: secureRoute },
       { path: '/statistics', name: 'statistics', component: Statistics, beforeEnter: secureRoute },
       { path: '/friendsActivity', name: 'friendsActivity', component: FriendsActivity, beforeEnter: secureRoute },
+      { path: '/signup', name: 'signup', component: SignUpView,beforeEnter: secureRoute },
+      
      {
        path: '/about',
        name: 'about',

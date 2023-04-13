@@ -4,6 +4,7 @@ import { RouterLink } from 'vue-router';
 import LoginBadge from './LoginBadge.vue';
 import { useSession } from '@/model/session';
 import Notify from './Notify.vue';
+import SignUpBadge from './SignUpBadge.vue';
 
     const isMenuActive = ref(false);
     function toggleMenu() {
@@ -84,6 +85,8 @@ import Notify from './Notify.vue';
                 </div>
                 <RouterLink to="/Admin" class="navbar-item">Admin</RouterLink>
               </div>
+
+
                 
 
           </div>
@@ -97,6 +100,8 @@ import Notify from './Notify.vue';
             <Notify/>
           <div class="navbar-end">
             <LoginBadge />
+
+            <SignUpBadge/>
 
             
           
