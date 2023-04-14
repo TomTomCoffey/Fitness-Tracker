@@ -21,7 +21,7 @@
       { path: '/admin', name: 'admin', component: AdminView, beforeEnter: secureRoute },
       { path: '/statistics', name: 'statistics', component: Statistics, beforeEnter: secureRoute },
       { path: '/friendsActivity', name: 'friendsActivity', component: FriendsActivity, beforeEnter: secureRoute },
-      { path: '/signup', name: 'signup', component: SignUpView,beforeEnter: secureRoute },
+      { path: '/signup', name: 'signup', component: SignUpView},
       
      {
        path: '/about',

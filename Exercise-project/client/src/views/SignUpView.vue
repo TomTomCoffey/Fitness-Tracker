@@ -4,10 +4,10 @@ import type { User } from '@/model/session';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { getUser, createUser } from '@/model/session';
-import { useSession, addMessage } from '@/model/session';
+import {  addMessage } from '@/model/session';
    
 
-    const session = useSession();
+
     const route = useRoute(); 
     const user = ref<User>({} as User);
     getUser(+route.params.id).then((data) => {
@@ -20,7 +20,7 @@ import { useSession, addMessage } from '@/model/session';
         } else {
             createUser(user.value).then((data) => {
                 console.log(data)
-                addMessage('Product created', 'success')
+                addMessage('User created', 'success')
             })
         }
     }
@@ -31,10 +31,10 @@ import { useSession, addMessage } from '@/model/session';
 
 
 <template>
-    <div>
+    <div class="box">
 
 
-    <form class="admin-product-edit" @submit.prevent="save()">
+    <form class="admin-user-edit" @submit.prevent="save()">
 
         <h1 class="title" v-if="user.id">Edit User</h1>
         <h1 class="title" v-else>Add New User</h1>
@@ -82,5 +82,31 @@ import { useSession, addMessage } from '@/model/session';
 
 
 <style scoped>
+    .admin-user-edit {
+        margin: 5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        max-height: 100%;
+        background-color: #f5f5f5;
+    }
+    .admin-user-edit .title {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .admin-user-edit .field {
+        margin: 1rem;
+    }
+    .admin-user-edit .field .label {
+        margin-bottom: 0.5rem;
+    }
+    .box{
+        margin: 5rem;
+        max-width: 600px;
+        margin: 0 auto;
+        max-height: 100%;
+        background-color: #f5f5f5;
+    }
+
+
 
 </style>
