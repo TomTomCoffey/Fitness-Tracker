@@ -188,6 +188,46 @@ export function deleteMessage(index: number) {
 
     }
 
+    export function removeCardio(cardio: Cardio) {
+        const index = session.user?.cardio.indexOf(cardio);
+        if (index !== undefined) {
+            session.user?.cardio.splice(index, 1);
+        }
+    }
+
+    export function increasePRs() {
+        session.user!.prs++;
+    }
+``  
+    export function findBestBench(){
+        let bestBench = 0;
+        for(let i = 0; i < session.user!.workouts.length; i++){
+            if(session.user?.workouts[i].workout === "Bench Press" && session.user?.workouts[i].weight > bestBench){
+                bestBench = session.user?.workouts[i].weight;
+            }
+        }
+        return bestBench;
+    }
+    export function findBestSquat(){
+        let bestSquat = 0;
+        for(let i = 0; i < session.user!.workouts.length; i++){
+            if(session.user?.workouts[i].workout === "Squat" && session.user?.workouts[i].weight > bestSquat){
+                bestSquat = session.user?.workouts[i].weight;
+            }
+        }
+        return bestSquat;
+    }
+    export function findBestDeadlift(){
+        let bestDeadlift = 0;
+        for(let i = 0; i < session.user!.workouts.length; i++){
+            if(session.user?.workouts[i].workout === "Deadlift" && session.user?.workouts[i].weight > bestDeadlift){
+                bestDeadlift = session.user?.workouts[i].weight;
+            }
+        }
+        return bestDeadlift;
+    }
+    
+   
 
     export const totalWorkouts = computed(() => session.user?.workouts.length);
 
