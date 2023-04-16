@@ -2,7 +2,7 @@
 
 
 import { ref } from 'vue';
-import { useSession, useWorkout, addWorkout1, addCardio} from '@/model/session';
+import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs} from '@/model/session';
 
 
 
@@ -21,6 +21,27 @@ function toggleWorkout() {
 function addWorkout2(workoutName: string, workoutWeight: number) {
     addWorkout1(workoutName, workoutWeight);
     console.log(workoutName, workoutWeight);
+}
+
+function checkForPr(workoutName: string, workoutWeight: number) {
+    if (workoutName == "Bench") {
+        if (workoutWeight > findBestBench()) {
+            increasePRs();
+        }
+    }
+    if (workoutName == "Squat") {
+        if (workoutWeight > findBestSquat()) {
+            increasePRs();
+        }
+    }
+    if (workoutName == "Deadlift") {
+        if (workoutWeight > findBestDeadlift()) {
+            increasePRs();
+        }
+    }
+
+    addWorkout2(workoutName, workoutWeight)
+
 }
 
 
@@ -72,7 +93,7 @@ const workoutWeight = ref(0);
                 </div>
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-success" @click="addWorkout2(workoutName, workoutWeight), $emit('close')">Add</button>
+              <button class="button is-success" @click="checkForPr(workoutName, workoutWeight), $emit('close')">Add</button>
               <button class="button" @click="$emit('close')">Cancel</button>
               <!--need to make cancel buttons work-->
 
