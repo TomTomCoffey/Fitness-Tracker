@@ -20,10 +20,12 @@ import {  addMessage } from '@/model/session';
         } else {
             createUser(user.value).then((data) => {
                 console.log(data)
-                addMessage('User created', 'success')
+                addMessage('Congrats on being a new user!', 'success')
             })
         }
     }
+
+ 
 
 </script>
 
