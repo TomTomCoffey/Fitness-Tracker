@@ -2,7 +2,7 @@
 
 
 import { ref } from 'vue';
-import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs} from '@/model/session';
+import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs, addMessage} from '@/model/session';
 
 
 
@@ -27,16 +27,19 @@ function checkForPr(workoutName: string, workoutWeight: number) {
     if (workoutName == "Bench") {
         if (workoutWeight > findBestBench()) {
             increasePRs();
+            addMessage("You hit a new PR for Bench!", 'info');
         }
     }
     if (workoutName == "Squat") {
         if (workoutWeight > findBestSquat()) {
             increasePRs();
+            addMessage("You hit a new PR for Squat!", 'info');
         }
     }
     if (workoutName == "Deadlift") {
         if (workoutWeight > findBestDeadlift()) {
             increasePRs();
+            addMessage("You hit a new PR for Deadlift!", 'info');
         }
     }
 
