@@ -136,6 +136,9 @@ export function deleteMessage(index: number) {
             }
         
     }
+export function loginWithUser(user: User) {
+    session.user = user;
+}
 
 
 

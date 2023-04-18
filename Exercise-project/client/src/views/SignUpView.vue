@@ -4,14 +4,16 @@ import type { User } from '@/model/session';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { getUser, createUser } from '@/model/session';
-import {  addMessage } from '@/model/session';
-   
+import {  addMessage, loginWithUser, useSession } from '@/model/session';
+
+   const session = useSession();
 
 
     const route = useRoute(); 
     const user = ref<User>({} as User);
     getUser(+route.params.id).then((data) => {
         user.value = data.data ?? {} as User;
+        user.value.isAdmin = false;
         console.log(user.value)
     })
     function save() {
@@ -21,6 +23,7 @@ import {  addMessage } from '@/model/session';
             createUser(user.value).then((data) => {
                 console.log(data)
                 addMessage('Congrats on being a new user!', 'success')
+               // loginWithUser(user.value) <--- want to log in new users as they sign in but not working
             })
         }
     }
