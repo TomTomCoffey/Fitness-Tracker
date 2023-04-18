@@ -1,6 +1,6 @@
 <script setup lang="ts">
  import { ref } from 'vue';
- import { useSession} from '@/model/session';
+ import { useSession, findBestBench, findBestDeadlift, findBestSquat } from '@/model/session';
  import { useWorkouts1 } from '@/model/workouts';
  import { getUsers, type User } from '@/model/session';
 
@@ -62,7 +62,7 @@ const items = ref<User[]>([]);
                                  <div v-for="workout in user.workouts">
                     <p> Current PR for: {{ workout.workout }} {{ workout.weight }}lbs</p>
                                  </div>
-                    <p> </p>
+                  
                           
           </p>
         </div>
