@@ -14,6 +14,10 @@ import {  addMessage, loginWithUser, useSession } from '@/model/session';
     getUser(+route.params.id).then((data) => {
         user.value = data.data ?? {} as User;
         user.value.isAdmin = false;
+        user.value.workouts = [];
+        user.value.cardio = [];
+        user.value.friends = [];
+        user.value.prs = 0;
         console.log(user.value)
     })
     function save() {
@@ -23,7 +27,7 @@ import {  addMessage, loginWithUser, useSession } from '@/model/session';
             createUser(user.value).then((data) => {
                 console.log(data)
                 addMessage('Congrats on being a new user!', 'success')
-               // loginWithUser(user.value) <--- want to log in new users as they sign in but not working
+                loginWithUser(user.value)// <--- want to log in new users as they sign in but not working
             })
         }
     }
