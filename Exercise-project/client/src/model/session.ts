@@ -69,13 +69,11 @@ export function createUser(user: User): Promise<DataEnvelope<User>> {
     return api('users', user)
 }
 
+export function deleteUser(id: number): Promise<void> {
+    
+        return api(`users/${id}`, undefined, 'DELETE')
 
-
-
-
-
-
-
+}
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
