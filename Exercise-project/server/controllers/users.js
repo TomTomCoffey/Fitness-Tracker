@@ -9,6 +9,7 @@ router
         const data = { data: list, total: list.length, isSuccess: true };
         res.send(data)
     })
+    
 
     .get('/:id', (req, res) => {
         const id = +req.params.id;

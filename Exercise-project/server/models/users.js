@@ -1,6 +1,7 @@
 const data = require('../data/users.json')
 
 
+
 function getUsers() {
   return data.users;
 }
