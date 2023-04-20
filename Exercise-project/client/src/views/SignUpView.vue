@@ -74,7 +74,9 @@ import {  addMessage, loginWithUser, useSession } from '@/model/session';
                 <button class="button is-link">Submit</button>
             </div>
             <div class="control">
+                <RouterLink to ="/home">
                 <button class="button is-link is-light">Cancel</button>
+               </RouterLink>
             </div>
             </div>
     </form>
