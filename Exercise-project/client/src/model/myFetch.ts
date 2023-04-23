@@ -1,6 +1,4 @@
-
-//const API_URL = 'http://localhost:3000/api/v1/';
-const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000/api';
+const API_URL = import.meta.env.VITE_API_URL ?? '/api/v1/';
 
 export function rest(url: string, data?: any, method?: string, headers?: any){
     return fetch(url, {
@@ -30,4 +28,3 @@ export type DataEnvelope<T> = {
 export type DataListEnvelope<T> = DataEnvelope<T[]> & {
     total: number,
 }
-

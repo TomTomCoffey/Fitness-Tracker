@@ -10,14 +10,6 @@ router
         res.send(data)
     })
 
-    .get('/', (req, res, next) => {
-        model.getProducts()
-            .then(list => {
-                const data = { data: list, total: list.length, isSuccess: true };
-                res.send(data)
-            }).catch(next);
-    })
-    
 
     .get('/:id', (req, res) => {
         const id = +req.params.id;

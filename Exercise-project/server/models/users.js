@@ -1,5 +1,18 @@
 const data = require('../data/users.json')
+// const { connect, ObjectId } = require('./mongo');
 
+// const COLLECTION_NAME = 'users';
+
+// async function collection() {
+//     const db = await connect();
+//     return db.collection(COLLECTION_NAME);
+// }
+
+// async function getAll() {
+//     const col = await collection();
+//     const items = await col.find().toArray();
+//     return items;
+// }
 
 
 function getUsers() {
