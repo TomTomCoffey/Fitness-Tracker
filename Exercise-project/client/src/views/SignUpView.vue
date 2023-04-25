@@ -9,15 +9,20 @@ import {  addMessage, loginWithUser, useSession } from '@/model/session';
    const session = useSession();
 
 
+
+   
+   
+
+
     const route = useRoute(); 
     const user = ref<User>({} as User);
     getUser(+route.params.id).then((data) => {
-        user.value = data.data ?? {} as User;
         user.value.isAdmin = false;
         user.value.workouts = [];
         user.value.cardio = [];
         user.value.friends = [];
         user.value.prs = 0;
+        user.value = data.data ?? {} as User;
         console.log(user.value)
     })
     function save() {
@@ -59,6 +64,12 @@ import {  addMessage, loginWithUser, useSession } from '@/model/session';
             <label class="label">Email</label>
             <div class="control">
                 <input class="input" type="text" placeholder="Email" v-model="user.email">
+            </div>
+            </div>
+            <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+                <input class="input" type="password" placeholder="******" v-model="user.password">
             </div>
             </div>
 

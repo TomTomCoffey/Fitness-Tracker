@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-
+import type { User } from '@/model/session';
 import { ref } from 'vue';
-import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs, addMessage} from '@/model/session';
+import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs, addMessage, updateUser} from '@/model/session';
 
 
 
@@ -44,7 +44,7 @@ function checkForPr(workoutName: string, workoutWeight: number) {
     }
 
     addWorkout2(workoutName, workoutWeight)
-
+    updateUser(session.user as User);
 }
 
 

@@ -22,6 +22,7 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 
   export interface User {
      id?: number;
+     _id?: number;
      name: string;
      email?: string;
      photo?: string;
@@ -77,7 +78,7 @@ export function deleteUser(id: number): Promise<void> {
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api(`user/${user.id}`, user, 'PUT')
+    return api(`user/${user._id}`, user, 'PATCH')
 
 }
 
