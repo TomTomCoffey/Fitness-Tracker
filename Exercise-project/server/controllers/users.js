@@ -41,7 +41,7 @@ router
 
     })
 
-    .patch('/', (req, res, next) => {
+    .put('/', (req, res, next) => {
 
         model.update(req.body)
             .then(x => {

@@ -78,7 +78,7 @@ export function deleteUser(id: number): Promise<void> {
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api(`user/${user._id}`, user, 'PATCH')
+    return api(`users/${user.id}`, user, 'PATCH')
 
 }
 

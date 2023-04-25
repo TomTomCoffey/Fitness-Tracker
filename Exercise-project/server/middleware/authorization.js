@@ -1,15 +1,25 @@
 const users = require('../models/users');
 
 module.exports = {
-    requestLogin(){
+    requireLogin(requireAdmin = false) {
         return (req, res, next) => {
-            const headers = req.headers.authorization;
-            if(headers ){
-                const token = headers.split(' ')[1];
-               // users.verifyTokenAsync(token, process.env.JWT.SECRET)  
-               ///need to finish this
-
+            const header = req.headers.authorization;
+            if (header) {
+                const token = header.split(' ')[1];
+                users.verifyTokenAsync(token)
+                    .then(user => {
+                        if (user && (!requireAdmin || user.role === 'admin')) {
+                            req.user = user;
+                            next();
+                        } else {
+                            next({ code: 401, message: 'Invalid token' });
+                        }
+                    }).catch(err=> {
+                        next({ code: 401, message: err });
+                    });
+            }else{
+                next({ code: 401, message: 'Missing token' });
             }
+        }
     }
-}
 }
