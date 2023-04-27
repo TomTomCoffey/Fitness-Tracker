@@ -91,12 +91,13 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
 }
 
-export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
+export async function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
     
 
-   let user =  api('users/login', {email, password}, 'POST')
+   const user =  api('users/login', {email, password}, 'POST')
     user.then((user) => {
         session.user = user.data;
+        console.log(session.user);
     }
     )
     return user;
