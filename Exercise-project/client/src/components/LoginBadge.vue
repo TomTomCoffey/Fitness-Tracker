@@ -2,6 +2,7 @@
  import { login, useSession, login1 } from '@/model/session';
  import SignUpBadge from './SignUpBadge.vue';
  import { getUser, type User } from '@/model/session';
+ import { RouterLink } from 'vue-router';
 
 
 
@@ -38,6 +39,8 @@
                     <a class="button" @click="login1(3)">
                         <strong>Sally</strong>
                     </a>
+                    <RouterLink to="/login" class="button"> </RouterLink>">
+                        <strong>test Login</strong>
                     </div>
              
                     </div> 

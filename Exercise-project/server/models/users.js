@@ -19,7 +19,7 @@ async function getAll(page = 1, pageSize = 30) {
 
 async function getById(id) {
     const col = await collection();
-    const item = await col.findOne({ id: new ObjectId(id) });
+    const item = await col.findOne({ id: new ObjectId(+id) });
     return item;
 }
 

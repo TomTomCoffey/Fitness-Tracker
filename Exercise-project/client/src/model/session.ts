@@ -92,7 +92,18 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 }
 
 export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
-    return api('users/login', {email, password})
+    
+
+   let user =  api('users/login', {email, password}, 'POST')
+    user.then((user) => {
+        session.user = user.data;
+    }
+    )
+    return user;
+    
+
+
+    
 }
 
 
