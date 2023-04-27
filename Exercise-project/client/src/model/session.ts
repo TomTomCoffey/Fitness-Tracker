@@ -33,12 +33,20 @@ import type { ObjectId } from "mongodb";
      friends?: User[];
      prs: number;
      cardio: Cardio[];
+     token?: number;
  
  }
 
 
  export function api(url: string, data?: any, method?: string, headers?: any) {
     session.isLoading = true;
+
+    if(session.user?.token)
+    {headers = {
+        "Authorization": `Bearer ${session.user?.token}`,
+        ...headers,
+    }
+}
     return myFetch.api(url, data, method, headers)
         .catch(err => {
             console.error({err});
@@ -135,10 +143,9 @@ export function deleteMessage(index: number) {
 
 
  export function login(number: number) {
-         const User = user.find((user) => user.id === number);
-            if (User) {
-                session.user = User;
-            }
+         return async function(){
+            session.user = await api(`users/`)
+         }
         
     }
 export function loginWithUser(user: User) {
