@@ -4,6 +4,7 @@ const path = require('path');
 const users = require('./controllers/users')
 const app = express()
 const { requestLogin } = require('./middleware/authorization')
+const { parseAuthorizationHeader } = require('./middleware/authorization')
 
 
 const hostname = '127.0.0.1';
@@ -17,6 +18,8 @@ app
         console.log(`${req.method} ${req.url}`);
         next();
     }) 
+
+    .use(parseAuthorizationHeader)
 
 
     .use((req, res, next) => {

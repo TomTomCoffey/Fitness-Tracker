@@ -23,7 +23,7 @@ import type { ObjectId } from "mongodb";
 
   export interface User {
      id?: number;
-     _id?: ObjectId;
+     _id?: string;
      name: string;
      email?: string;
      photo?: string;

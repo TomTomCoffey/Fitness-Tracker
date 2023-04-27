@@ -1,4 +1,7 @@
 ###
+@port = 3070
+
+###
 GET http://localhost:3070/
 
 ###
@@ -23,3 +26,7 @@ GET http://localhost:300/api/v1/users/search/password/0
 ###
 
 POST http://localhost:3070/api/v1/users/seed
+
+###
+POST http://localhost:3070/api/v1/users/login
+
