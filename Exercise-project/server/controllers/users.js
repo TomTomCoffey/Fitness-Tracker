@@ -70,21 +70,22 @@ router
 
 
 
-        .post('/login', (req, res, next) => {
-            model.login(req.body.email, req.body.password)
+   
+    .post('/login', (req, res, next) => {
+        model.login(req.body.email, req.body.password)
             .then(x => {
                 const data = { data: x, isSuccess: true };
                 res.send(data)
-        }).catch(next);
-})
+            }).catch(next);
+    })
 
-        .post('/oAuthLogin', (req, res, next) => {
-            model.oAuthLogin(req.body.provider, req.body.accessToken)
-                .then(x => {
-                    const data = { data: x, isSuccess: true };
-                    res.send(data)
-                }).catch(next);
-        })
+    .post('/oAuthLogin', (req, res, next) => {
+        model.oAuthLogin(req.body.provider, req.body.accessToken)
+            .then(x => {
+                const data = { data: x, isSuccess: true };
+                res.send(data)
+            }).catch(next);
+    })
 
   
 

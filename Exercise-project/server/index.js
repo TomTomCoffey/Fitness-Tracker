@@ -36,7 +36,7 @@ app
     .get('/api/v1/', (req, res) => {
         res.send('Hello World! From Express')
     })
-    .use('/api/v1/users', users)
+    .use('/api/v1/users/', users)
    // .use('/api/v1/jokes', jokes)
 
 // Catch all

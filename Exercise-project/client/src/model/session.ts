@@ -23,7 +23,6 @@ import type { ObjectId } from "mongodb";
 
   export interface User {
      id?: number;
-     _id?: string;
      name: string;
      email?: string;
      photo?: string;
@@ -33,9 +32,12 @@ import type { ObjectId } from "mongodb";
      friends?: User[];
      prs: number;
      cardio: Cardio[];
-     token?: number;
+     token?: string;
  
  }
+
+
+ 
 
 
  export function api(url: string, data?: any, method?: string, headers?: any) {
@@ -74,7 +76,7 @@ export function getUser(id: number): Promise<DataEnvelope<User>> {
 
 export function createUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api('users', user)
+    return api('users/', user, 'POST')
 }
 
 export function deleteUser(id: number): Promise<void> {
@@ -85,25 +87,13 @@ export function deleteUser(id: number): Promise<void> {
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api(`users/${user._id}`, user, 'PUT')
+    return api(`users/${user.id}`, user, 'PUT')
 
 }
 
 export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
     return api('users/login', {email, password})
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -144,10 +134,20 @@ export function deleteMessage(index: number) {
 
  export function login(number: number) {
          return async function(){
-            session.user = await api(`users/`)
+            session.user = await api(`users/1`)
          }
         
     }
+
+  
+    export function login1(number: number) {
+        const User = user.find((user) => user.id === number);
+           if (User) {
+               session.user = User;
+           }
+       
+   }
+
 export function loginWithUser(user: User) {
     session.user = user;
 }

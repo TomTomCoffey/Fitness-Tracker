@@ -30,3 +30,17 @@ POST http://localhost:3070/api/v1/users/seed
 ###
 POST http://localhost:3070/api/v1/users/login
 
+###
+
+###
+GET http://localhost:3070/api/v1/users
+
+###
+POST http://localhost:3070/api/v1/users/login
+Content-Type: application/json
+
+{
+    "email": "tom@email.com",
+    "password": "1"
+
+}

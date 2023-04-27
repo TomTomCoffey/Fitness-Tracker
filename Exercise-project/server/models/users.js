@@ -19,7 +19,7 @@ async function getAll(page = 1, pageSize = 30) {
 
 async function getById(id) {
     const col = await collection();
-    const item = await col.findOne({ _id: new ObjectId(id) });
+    const item = await col.findOne({ id: new ObjectId(id) });
     return item;
 }
 
@@ -37,7 +37,7 @@ async function update(item) {
     console.log(item);
     const col = await collection();
     const result = await col.findOneAndUpdate(
-        { _id: new ObjectId(item.id) },
+        { _id: new ObjectId(item._id) },
         { $set: item },
         { returnDocument: 'after' }
     );
@@ -78,38 +78,38 @@ async function login(email, password) {
     if (!user) {
         throw new Error('User not found');
     }
-    if(user.password !== password) {
+    if (user.password !== password) {
         throw new Error('Invalid password');
     }
 
-    const cleanUser = {... user, password: undefined};
-    const token = await generateTokenAsync(cleanUser, process.env.JWT.SECRET, '1d');
+    const cleanUser = { ...user, password: undefined };
+    const token = await generateTokenAsync(cleanUser, process.env.JWT_SECRET, '1d');
 
-    // const token = jwt.sign()  we should not use sync function for encryption
-    // return {... user, password: undefined};
     return { user: cleanUser, token };
-
 }
 
-async function oAuthLogin(provider, accessToken){
-  
+async function oAuthLogin(provider, accessToken) {
+    // validate the access token
+    // if valid, return the user
+    // if not, create a new user
+    // return the user
 }
 
-function generateTokenAsync(user, secret, expiresT){
-    return new Promise((resolve, reject) => {
-        jwt.sign( user , secret, { expiresIn: expiresT }, (err, token) => {
-            if(err) {
+function generateTokenAsync(user, secret, expiresIn) {
+    return new Promise( (resolve, reject) => {
+        jwt.sign(user, secret, { expiresIn }, (err, token) => {
+            if (err) {
                 reject(err);
-                return;
+            } else {
+                resolve(token);
             }
-            resolve(token);
         });
     });
-
 }
-function verifyTokenAsync(token) {
+
+function verifyTokenAsync(token, secret) {
     return new Promise( (resolve, reject) => {
-        jwt.verify(token, process.env.JWT_SECRET ?? "", (err, user) => {
+        jwt.verify(token, secret, (err, user) => {
             if (err) {
                 reject(err);
             } else {
