@@ -4,6 +4,7 @@ import type { Workout } from "./workouts";
 import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
+import type { ObjectId } from "mongodb";
 
  
 
@@ -22,7 +23,7 @@ import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 
   export interface User {
      id?: number;
-     _id?: number;
+     _id?: ObjectId;
      name: string;
      email?: string;
      photo?: string;
@@ -63,8 +64,6 @@ export function getUser(id: number): Promise<DataEnvelope<User>> {
 
 }
 
-
-
 export function createUser(user: User): Promise<DataEnvelope<User>> {
 
     return api('users', user)
@@ -78,9 +77,14 @@ export function deleteUser(id: number): Promise<void> {
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api(`users/${user.id}`, user, 'PATCH')
+    return api(`users/${user._id}`, user, 'PUT')
 
 }
+
+export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
+    return api('users/login', {email, password})
+}
+
 
 
 

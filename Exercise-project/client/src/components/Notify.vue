@@ -40,6 +40,7 @@
         min-height: 300px;
         max-height: calc(100vh - 100px);
         overflow-y: auto;
+
     }
     .notification-list .notification {
         margin: 5px;
@@ -50,6 +51,17 @@
         background-color: transparent;
         border: none;
         color: #333;
+    }
+
+    .button:hover {
+        background-color: transparent;
+        border: none;
+        color: #f30808;
+    }
+    .button.active{
+        background-color: transparent;
+        border: none;
+        color: #f30808;
     }
 
 </style>

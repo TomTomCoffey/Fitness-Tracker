@@ -92,11 +92,7 @@ async function login(email, password) {
 }
 
 async function oAuthLogin(provider, accessToken){
-    // if (provider === 'google') {
-    //     const googleUser = await getGoogleUser(accessToken);
-    //     const user = await getOrCreateUserFromGoogleUser(googleUser);
-    //     return user;
-    // }
+  
 }
 
 function generateTokenAsync(user, secret, expiresT){
@@ -111,17 +107,16 @@ function generateTokenAsync(user, secret, expiresT){
     });
 
 }
-function verifyTokenAsync(token, secret){
-    return new Promise((resolve, reject) => {
-        jwt.verify( token , secret, (err, decoded) => {
-            if(err) {
+function verifyTokenAsync(token) {
+    return new Promise( (resolve, reject) => {
+        jwt.verify(token, process.env.JWT_SECRET ?? "", (err, user) => {
+            if (err) {
                 reject(err);
-                return;
+            } else {
+                resolve(user);
             }
-            resolve(decoded);
         });
     });
-
 }
 
 
