@@ -5,6 +5,7 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { getUser, createUser } from '@/model/session';
 import {  addMessage, loginWithUser, useSession } from '@/model/session';
+import router from '@/router';
 
    const session = useSession();
 

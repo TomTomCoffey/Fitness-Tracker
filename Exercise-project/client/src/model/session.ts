@@ -22,6 +22,7 @@ import type { ObjectId } from "mongodb";
  
 
   export interface User {
+    _id?: string
      id?: number;
      name: string;
      email?: string;
@@ -35,9 +36,6 @@ import type { ObjectId } from "mongodb";
      token?: string;
  
  }
-
-
- 
 
 
  export function api(url: string, data?: any, method?: string, headers?: any) {
@@ -81,7 +79,7 @@ export function createUser(user: User): Promise<DataEnvelope<User>> {
 
 export function deleteUser(id: number): Promise<void> {
     
-        return api(`users/${id}`, undefined, 'DELETE')
+    return api(`users/${id}`, undefined, 'DELETE')
 
 }
 
@@ -91,20 +89,15 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
 }
 
-export async function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
+export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
     
+   return api('users/login', {email, password}, 'POST')
+                 
+}
+export function getUserWithName(name: string): Promise<DataEnvelope<User>> {
 
-   const user =  api('users/login', {email, password}, 'POST')
-    user.then((user) => {
-        session.user = user.data;
-        console.log(session.user);
-    }
-    )
-    return user;
-    
+    return api(`users/${name}`)
 
-
-    
 }
 
 
