@@ -1,21 +1,33 @@
 <script setup lang="ts">
-    import { useSession, loginWithServer } from "../model/session";
-    import { defineProps, ref } from "vue";
-    import { useRouter } from "vue-router";
+import router from "@/router";
+import { useSession, loginWithServer, type User, loginWithUser } from "../model/session";
+import { defineProps, ref } from "vue";
+import { useRouter } from "vue-router";
 const session = useSession();
 
 const email = ref('');
 const password = ref('');
+console.log(session.user);
 
 function login() {
-    loginWithServer(email.value, password.value);
-    console.log({ email, password });
+    loginWithServer(email.value, password.value).then((user) => {
+        console.log(user.data);
+        console.log('=========')
+        session.user = user.data;
+      
+       // router.push("/home")
+    });
 }
+     
+    
 
  </script>
 
  <template>
-     <div>
+     <div class="box">
+
+        
+        <div class="form">
 
             <h1 class="title">Login</h1>
             <h2 class="subtitle">Please enter your credentials</h2>
@@ -40,6 +52,8 @@ function login() {
                 </div>
             </div>
 
+        </div>
+
      </div>
  </template>
 
@@ -47,7 +61,7 @@ function login() {
  <style scoped>
 
  .title{
-     color: white;
+     color: black;
      font-size: 3rem;
      font-weight: 300;
      line-height: 1.2;
@@ -55,12 +69,30 @@ function login() {
      text-align: center;
  }
  .subtitle{
-     color: white;
+     color: black;
      font-size: 1.5rem;
      font-weight: 300;
      line-height: 1.2;
      margin-bottom: 5rem;
      text-align: center;
  }
+
+ .form{
+        margin: 0 auto;
+        width: 50%;
+        padding: 5rem;
+        background-color: white;
+        border-radius: 10px;
+ }
+
+ .box{
+        background-color: transparent;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+ }
+
+
 
  </style>
