@@ -3,8 +3,8 @@ const express = require('express')
 const path = require('path');
 const users = require('./controllers/users')
 const app = express()
-const { requestLogin } = require('./middleware/authorization')
-const { parseAuthorizationHeader } = require('./middleware/authorization')
+const { requireLogin, parseAuthorizationHeader } = require('./middleware/authorization')
+//const { parseAuthorizationHeader } = require('./middleware/authorization')
 
 
 const hostname = '127.0.0.1';
@@ -36,7 +36,7 @@ app
     .get('/api/v1/', (req, res) => {
         res.send('Hello World! From Express')
     })
-    .use('/api/v1/users/', users)
+    .use('/api/v1/users/', users, requireLogin(true))
    // .use('/api/v1/jokes', jokes)
 
 // Catch all
