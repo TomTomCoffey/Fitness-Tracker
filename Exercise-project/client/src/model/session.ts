@@ -5,19 +5,20 @@ import type { Cardio } from "./cardio";
 import * as myFetch from "./myFetch";
 import type { DataEnvelope, DataListEnvelope } from "./myFetch";
 import type { ObjectId } from "mongodb";
+import { useRouter } from "vue-router";
 
  
 
 
- const session = reactive({
-     user: null as User | null,
-     isLoading: false,
-     messages: [] as {
-         msg: string,
-         type: "success" | "danger" | "warning" | "info",
-     }[],
-     
- })
+const session = reactive({
+    user: null as User | null,
+    isLoading: false,
+    messages: [] as {
+        msg: string,
+        type: "success" | "danger" | "warning" | "info",
+    }[],
+    redirectUrl: null as string | null,
+})
 
  
 
@@ -90,14 +91,28 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 }
 
 export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
-    
-   return api('users/login', {email, password}, 'POST')
-                 
+      return api('users/login', {email, password})
+
 }
-export function getUserWithName(name: string): Promise<DataEnvelope<User>> {
 
-    return api(`users/${name}`)
 
+
+export function useLogin(email : string, password : string) {
+    const router = useRouter();  
+
+    return async function() {
+        const response  = await api('users/login', {email, password});
+        session.user = response.data;
+        console.log(response.data);
+        if(!session.user) {
+            addMessage("User not found", "danger");
+            return;
+        }
+        session.user.token = response.data.token;
+
+        router.push(session.redirectUrl ?? "/");
+        session.redirectUrl = null;
+    }
 }
 
 
@@ -137,12 +152,6 @@ export function deleteMessage(index: number) {
     }
 
 
- export function login(number: number) {
-         return async function(){
-            session.user = await api(`users/1`)
-         }
-        
-    }
 
   
     export function login1(number: number) {
