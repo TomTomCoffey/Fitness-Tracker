@@ -86,7 +86,7 @@ export function deleteUser(id: number): Promise<void> {
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api(`users/${user.id}`, user, 'PUT')
+    return api(`users/`, user, 'PUT')
 
 }
 
@@ -98,10 +98,14 @@ export async function loginWithServer(email: string, password: string): Promise<
     session.user = person.data.user;
 
     if(session.user) {
+    const router = useRouter();
     session.user.token = person.data.token;
+    addMessage("Login Successful", "success");
+    router.push('/');
     }
 
     return person.data.user;
+    
 
     
 

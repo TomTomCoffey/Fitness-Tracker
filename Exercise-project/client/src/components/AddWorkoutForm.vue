@@ -43,8 +43,8 @@ function checkForPr(workoutName: string, workoutWeight: number) {
         }
     }
 
-    addWorkout2(workoutName, workoutWeight)
-    //updateUser(session.user as User);
+    addWorkout2(workoutName, workoutWeight);
+    updateUser(session.user as User);
 }
 
 

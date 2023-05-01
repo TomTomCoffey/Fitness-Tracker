@@ -20,7 +20,7 @@ async function getAll(page = 1, pageSize = 30) {
 
 async function getById(id) {
     const col = await collection();
-    const item = await col.findOne({ id: new ObjectId(+id) });
+    const item = await col.findOne({ id: new ObjectId(id) });
     return item;
 }
 
@@ -35,14 +35,16 @@ async function add(item) {
 
 async function update(item) {
 
-    console.log(item);
+    console.log({item});
     const col = await collection();
+    const id = item._id;
+    delete item._id;
     const result = await col.findOneAndUpdate(
-        { _id: new ObjectId(item._id) },
-        { $set: item },
+        { _id: new ObjectId(id) },
+        { $set: item},
         { returnDocument: 'after' }
     );
-
+    console.log(result.value);
     return result.value;
 }
 

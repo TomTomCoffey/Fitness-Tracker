@@ -17,7 +17,7 @@ function login() {
     
     loginWithServer(email.value, password.value).then((user) => {
 
-        if(user === null || user === undefined){
+        if(user.name === null || user === undefined){
             console.log("user is null");
             return;
         }
@@ -33,6 +33,7 @@ function login() {
         // console.log(user1.value);
         // console.log("=========")
         // console.log(user);
+        router.push("/");
     }
 
        
