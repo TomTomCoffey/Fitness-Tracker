@@ -28,3 +28,16 @@ export type DataEnvelope<T> = {
 export type DataListEnvelope<T> = DataEnvelope<T[]> & {
     total: number,
 }
+
+// export function loadScript(url: string, id: string) {
+//     return new Promise((resolve, reject) => {
+//         if(document.createElement('script')) return resolve;
+//         script.src = url;
+//         script.id = id;
+//         script.onload = resolve;
+//         script.onerror = reject;
+//         document.head.appendChild(script);
+//     }
+//     );
+   
+

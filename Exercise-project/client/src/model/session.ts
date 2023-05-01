@@ -90,13 +90,20 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
 }
 
-export async  function loginWithServer(email: string, password: string): Promise<User> {
+export async function loginWithServer(email: string, password: string): Promise<User> {
       
+    
     const person = await api('users/login', {email, password}, 'POST');
 
     session.user = person.data.user;
-        
+
+    if(session.user) {
+    session.user.token = person.data.token;
+    }
+
     return person.data.user;
+
+    
 
 }
 
