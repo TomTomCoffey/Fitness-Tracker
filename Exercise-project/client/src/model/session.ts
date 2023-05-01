@@ -90,31 +90,40 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
 }
 
-export function loginWithServer(email: string, password: string): Promise<DataEnvelope<User>> {
-      return api('users/login', {email, password})
+export async  function loginWithServer(email: string, password: string): Promise<User> {
+      
+    const person = await api('users/login', {email, password}, 'POST');
+
+    session.user = person.data.user;
+        
+    return person.data.user;
 
 }
 
-
-
-export function useLogin(email : string, password : string) {
-    const router = useRouter();  
+export function useLogin(email: string, password: string) {
+    const router = useRouter();
 
     return async function() {
-        const response  = await api('users/login', {email, password});
-        session.user = response.data;
-        console.log(response.data);
-        if(!session.user) {
-            addMessage("User not found", "danger");
-            return;
-        }
-        session.user.token = response.data.token;
+     const response = await api('users/login', {email, password}, 'POST');
 
-        router.push(session.redirectUrl ?? "/");
-        session.redirectUrl = null;
-    }
+     session.user = response.data.user;
+     
+     console.log(session.user);
+     if(!session.user) {
+         addMessage("User not found", "danger");
+         return;
+     }
+     session.user.token = response.data.token;
+
+       //router.push("/");
+
+       return response.data.user;
+    
+
+    //  router.push(session.redirectUrl ?? "/");
+    //  session.redirectUrl = null;
+ }
 }
-
 
 
        
@@ -147,9 +156,7 @@ export function deleteMessage(index: number) {
      return session;
  }
 
-    export function useUser() {
-        return session.user;
-    }
+ 
 
 
 

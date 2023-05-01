@@ -14,7 +14,7 @@ GET http://127.0.0.1:3070/
 GET http://localhost:3070/
 
 ###
-GET http://localhost:3070/api/v1/users/1
+GET http://localhost:3070/api/v1/users/
 
 ###
 GET http://localhost:3070/api/v1/users/search/sally

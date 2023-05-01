@@ -16,26 +16,38 @@ const user1 = ref<User | null>(null);
 function login() {
     
     loginWithServer(email.value, password.value).then((user) => {
-        console.log(user);
-        console.log('=========')
-        user1.value = user.data;
-        console.log(user.data);
-        console.log("=========")
-        session.user = user.data as User;
-        console.log(session.user);
-        console.log("=========")
-        console.log(user1.value.name);
-        console.log("=========")
-        console.log(user.data.email);
+
+        if(user === null || user === undefined){
+            console.log("user is null");
+            return;
+        }
+    else{
+        // console.log(user);
+        // console.log('=========')
+        // user1.value = user;
+        // console.log(user);
+        // console.log("=========")
+        // session.user = user as User;
+        // console.log(session.user);
+        // console.log("=========")
+        // console.log(user1.value);
+        // console.log("=========")
+        // console.log(user);
+    }
 
        
     });
 }
 
-function login2(){
+
+
+function useLogin1(){
     useLogin(email.value, password.value);
+    console.log(session.user);
+
       
-       // router.push("/home")
+
+        //router.push("/");
    
 }
 

@@ -30,7 +30,7 @@
                         <strong>Log in</strong>
                     </a>
                     <div class="navbar-dropdown">
-                    <a class="button" @click="useLogin">
+                    <a class="button" @click="login1(1)">
                         <strong>Tom</strong>
                     </a>
                     <a class="button" @click=" login1(2)">
