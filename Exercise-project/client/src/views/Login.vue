@@ -22,17 +22,7 @@ function login() {
             return;
         }
     else{
-        // console.log(user);
-        // console.log('=========')
-        // user1.value = user;
-        // console.log(user);
-        // console.log("=========")
-        // session.user = user as User;
-        // console.log(session.user);
-        // console.log("=========")
-        // console.log(user1.value);
-        // console.log("=========")
-        // console.log(user);
+      
         router.push("/");
     }
 
@@ -42,15 +32,6 @@ function login() {
 
 
 
-function useLogin1(){
-    useLogin(email.value, password.value);
-    console.log(session.user);
-
-      
-
-        //router.push("/");
-   
-}
 
      
     

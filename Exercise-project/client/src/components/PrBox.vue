@@ -1,98 +1,89 @@
 <script setup lang="ts">
- import { ref } from 'vue';
- import { useSession, findBestBench1} from '@/model/session';
- import { useWorkouts1 } from '@/model/workouts';
- import { getUsers, type User } from '@/model/session';
-
-
-
-
+import { ref } from 'vue';
+import { useSession } from '@/model/session';
+import { useWorkouts1 } from '@/model/workouts';
+import { getUsers, type User } from '@/model/session';
+import type { Workout } from '@/model/workouts';
+import { findBestBench1 } from '@/model/session';
 
 const items = ref<User[]>([]);
- getUsers().then((data) => {
-     items.value = data.data;
- });
+getUsers().then((data) => {
+  items.value = data.data;
+});
 
+const session = useSession();
+const workouts = useWorkouts1();
+const sessionWorkouts = ref(workouts);
 
+ function findBestLift(user: User | null, liftType: string): number {
+  if (user === null) {
+    return 0;
+  }
+  let bestLift = 0;
+  for (let i = 0; i < user?.workouts?.length; i++) {
+    if (user.workouts[i].workout === liftType && user.workouts[i].weight > bestLift) {
+      bestLift = user.workouts[i].weight;
+    }
+  }
+  return bestLift;
+}
 
-
-
- const session = useSession();
- const workouts = useWorkouts1();
- const sessionWorkouts = ref(workouts);
- const user = ref(session.user);
-
-
-
-
-
-
- </script>
-
+</script>
 
 <template>
-    <div>
-        <div v-for="(user, index) in items" :key="index">
-
-
-            <div class="column is-half">
-
-      <div class="box">
-    <article class="media box">
-      <figure class="media-left">
-        <p class="image">
-          <img :src="user?.photo" alt="User Photo" class="img">                   
-        </p>
-      </figure>
-      <figure class="media-left">
-
-
-        <h2><strong>Best Lifts!</strong></h2>
-       
-
-      </figure>
-       
-      <div class="box">
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>{{ user?.name }}</strong> <small>@{{ user?.name }}</small> <small></small>
-            <br>
-            
-                                 <div v-for="workout in user.workouts">
-                    <p> Current PR for: {{ workout.workout }} {{ workout.weight }}lbs</p>
-                    <!-- <p> Current PR for: Bench Press {{ findBestBench1(user) }} lbs</p> -->
-                                 </div>
-                  
-                          
-          </p>
+  <div>
+    <div v-for="(user, index) in items" :key="index">
+      <div class="column is-half">
+        <div class="box">
+          <article class="media box">
+            <figure class="media-left">
+              <p class="image">
+                <img :src="user?.photo" alt="User Photo" class="img">                   
+              </p>
+            </figure>
+            <figure class="media-left">
+              <h2><strong>Best Lifts!</strong></h2>
+            </figure>
+            <div class="box">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{ user?.name }}</strong> <small>@{{ user?.name }}</small>
+                    <br>                    
+                    <strong>Bench Press:</strong> {{ user.bestBench }} lbs
+                    <br>
+                    <strong>Squat:</strong> {{ user.bestSquat }} lbs
+                    <br>
+                    <strong>Deadlift:</strong> {{ user.bestDeadlift }} lbs
+                    <br>
+                  </p>
+                </div>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <a class="level-item" aria-label="reply">
+                    <span class="icon is-small">
+                      <i class="fas fa-reply" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <a class="level-item" aria-label="retweet">
+                    <span class="icon is-small">
+                      <i class="fas fa-retweet" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                  <a class="level-item" aria-label="like">
+                    <span class="icon is-small">
+                      <i class="fas fa-heart" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
         </div>
       </div>
-        <nav class="level is-mobile">
-          <div class="level-left">
-            <a class="level-item" aria-label="reply">
-              <span class="icon is-small">
-                <i class="fas fa-reply" aria-hidden="true"></i>
-              </span>
-            </a>
-            <a class="level-item" aria-label="retweet">
-              <span class="icon is-small">
-                <i class="fas fa-retweet" aria-hidden="true"></i>
-              </span>
-            </a>
-            <a class="level-item" aria-label="like">
-              <span class="icon is-small">
-                <i class="fas fa-heart" aria-hidden="true"></i>
-              </span>
-            </a>
-          </div>
-        </nav>
-      </div>
-    </article>
-      </div>
+    </div>
   </div>
-</div>
- </div>
 </template>
 
 

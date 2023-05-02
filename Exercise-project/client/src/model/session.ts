@@ -35,6 +35,9 @@ const session = reactive({
      prs: number;
      cardio: Cardio[];
      token?: string;
+     bestBench?: number;
+    bestSquat?: number;
+    bestDeadlift?: number;
  
  }
 
@@ -253,17 +256,17 @@ export function loginWithUser(user: User) {
         }
         return bestBench;
     }
-    export function findBestBench1(user : User){
+    export function findBestBench1(user : User) : number{
 
         let bestBench = 0;
         for(let i = 0; i < user!.workouts.length; i++){
-            if(user?.workouts[i].workout === "Bench Press" && user?.workouts[i].weight > bestBench){
-                bestBench = user?.workouts[i].weight;
+            if(user.workouts[i].workout === "Bench Press" && user.workouts[i].weight > bestBench){
+                bestBench = user.workouts[i].weight;
             }
         }
         return bestBench;
     }
-    export function findBestSquat(){
+    export function findBestSquat() : number{
         let bestSquat = 0;
         for(let i = 0; i < session.user!.workouts.length; i++){
             if(session.user?.workouts[i].workout === "Squat" && session.user?.workouts[i].weight > bestSquat){
@@ -272,7 +275,7 @@ export function loginWithUser(user: User) {
         }
         return bestSquat;
     }
-    export function findBestSquat1(user: User){
+    export function findBestSquat1(user: User) : number{
         let bestSquat = 0;
         for(let i = 0; i < user!.workouts.length; i++){
             if(user?.workouts[i].workout === "Squat" && user?.workouts[i].weight > bestSquat){
@@ -293,14 +296,15 @@ export function loginWithUser(user: User) {
         return bestDeadlift;
     }
 
-    export function findBestDeadlift1(user: User){
+    export function findBestDeadlift1(user: User) : number{
 
         let bestDeadlift = 0;
         for(let i = 0; i < user!.workouts.length; i++){
-            if(user?.workouts[i].workout === "Deadlift" && user?.workouts[i].weight > bestDeadlift){
+            if(user.workouts[i].workout === "Deadlift" && user.workouts[i].weight > bestDeadlift){
                 bestDeadlift = user?.workouts[i].weight;
             }
         }
+        console.log(bestDeadlift);
         return bestDeadlift;
 
 
@@ -331,8 +335,17 @@ export function loginWithUser(user: User) {
    
 
        
+  export function setBestBench(number : number){
+    session.user!.bestBench = number;
+  }
+    export function setBestSquat(number : number){
+    session.user!.bestSquat = number;
+    }
+    export function setBestDeadlift(number : number){
+    session.user!.bestDeadlift = number;
+    }
 
-
+    
 
 
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import type { User } from '@/model/session';
+import { setBestBench, setBestDeadlift, setBestSquat, type User } from '@/model/session';
 import { ref } from 'vue';
 import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs, addMessage, updateUser} from '@/model/session';
 
@@ -28,18 +28,22 @@ function checkForPr(workoutName: string, workoutWeight: number) {
         if (workoutWeight > findBestBench()) {
             increasePRs();
             addMessage("You hit a new PR for Bench!", 'info');
+            setBestBench(workoutWeight);
         }
     }
     if (workoutName == "Squat") {
         if (workoutWeight > findBestSquat()) {
             increasePRs();
             addMessage("You hit a new PR for Squat!", 'info');
+            setBestSquat(workoutWeight);
         }
     }
     if (workoutName == "Deadlift") {
         if (workoutWeight > findBestDeadlift()) {
             increasePRs();
             addMessage("You hit a new PR for Deadlift!", 'info');
+            setBestDeadlift(workoutWeight);
+            
         }
     }
 
