@@ -44,3 +44,43 @@ Content-Type: application/json
     "password": "1"
 
 }
+
+###
+PUT http://localhost:3070/api/v1/users/
+Content-Type: application/json
+
+{
+      "_id": "6446e12fdd29e476a96ce218",
+      "id": 1,
+      "name": "Tom II",
+      "email": "tom@email.com",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcxcswohHLpnQkmFeO53km_-QRERECUppvgg&usqp=CAU",
+      "password": "1",
+      "isAdmin": true,
+      "workouts": [
+        {
+          "workout": "Bench Press",
+          "weight": 240
+        },
+        {
+          "workout": "Squat",
+          "weight": 275
+        },
+        {
+          "workout": "Deadlift",
+          "weight": 440
+        },
+        {
+          "workout": "Squat",
+          "weight": 135
+        }
+      ],
+      "friends": [],
+      "prs": 2,
+      "cardio": [
+        {
+          "distanceMiles": 5.9,
+          "durationMins": 120
+        }
+      ]
+    }

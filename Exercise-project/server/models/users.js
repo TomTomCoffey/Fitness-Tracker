@@ -1,5 +1,5 @@
 const data = require('../data/users.json');
-const { connect, ObjectId } = require('./mongo');
+const { connect, ObjectId } = require('./Mongo');
 const jwt = require('jsonwebtoken');
 const { env } = require('process');
 

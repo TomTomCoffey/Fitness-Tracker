@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSession, addCardio } from '@/model/session';
+import { useSession, addCardio, updateUser, type User } from '@/model/session';
 import { ref } from 'vue';
 
 const isCardioActive = ref(true);
@@ -16,6 +16,7 @@ const cardioDuration = ref(0);
 function addCardio1(cardioDistance: number, cardioDuration: number) {
     addCardio(cardioDuration, cardioDistance);
     console.log(cardioDistance, cardioDuration);
+    updateUser(session.user as User);
 }
 
 
