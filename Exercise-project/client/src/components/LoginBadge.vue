@@ -25,30 +25,15 @@
 
                 
              <div class="navbar-item" v-else>
-                   <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        <strong>Log in</strong>
-                    </a>
-                    <div class="navbar-dropdown">
-                    <a class="button" @click="login1(1)">
-                        <strong>Tom</strong>
-                    </a>
-                    <a class="button" @click=" login1(2)">
-                        <strong>Zoey</strong>
-                    </a>
-                    <a class="button" @click="login1(3)">
-                        <strong>Sally</strong>
-                    </a>
-                    <RouterLink to="/login" class="button"> </RouterLink>">
-                        <strong>test Login</strong>
-                    </div>
-             
-                    </div> 
+               <div class="button">
+                 <RouterLink to="/login">Login</RouterLink>
+                </div>
+             </div>
                 
                 
               
 
-             </div>
+          
 
 
 
@@ -59,6 +44,9 @@
 
 .navbar-item{
         color: #0c5e44;
+        background-color: #0c5e44;
+
+
     }
     .navbar-link{
         color: #0c5e44;
@@ -68,7 +56,7 @@
         color: white;
     }
     .button{
-        background-color: #2b7a78;
+        background-color: #dfe8e8;
         color: white;
         margin: 0.5rem;
         width: 80%;
@@ -78,6 +66,8 @@
         color: black;
         margin: 0.5rem;
     }
+
+    
 
   
 
