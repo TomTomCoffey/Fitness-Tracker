@@ -48,9 +48,9 @@ async function update(item) {
     return result.value;
 }
 
-async function deleteItem(id) {
+async function deleteItem(item) {
     const col = await collection();
-    const result = await col.deleteOne({ _id: new ObjectId(id) });
+    const result = await col.deleteOne({item});
     return result.deletedCount;
 }
 

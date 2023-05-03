@@ -81,9 +81,9 @@ export function createUser(user: User): Promise<DataEnvelope<User>> {
     return api('users/', user, 'POST')
 }
 
-export function deleteUser(id: number): Promise<void> {
+export function deleteUser(user: User): Promise<void> {
     
-    return api(`users/${id}`, undefined, 'DELETE')
+    return api(`users/`, undefined, 'DELETE')
 
 }
 

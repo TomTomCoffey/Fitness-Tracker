@@ -15,18 +15,6 @@ const session = useSession();
 const workouts = useWorkouts1();
 const sessionWorkouts = ref(workouts);
 
- function findBestLift(user: User | null, liftType: string): number {
-  if (user === null) {
-    return 0;
-  }
-  let bestLift = 0;
-  for (let i = 0; i < user?.workouts?.length; i++) {
-    if (user.workouts[i].workout === liftType && user.workouts[i].weight > bestLift) {
-      bestLift = user.workouts[i].weight;
-    }
-  }
-  return bestLift;
-}
 
 </script>
 

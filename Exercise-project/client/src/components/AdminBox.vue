@@ -2,10 +2,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 //import { useSession, users} from '@/model/session';
-import { getUsers, type User } from '@/model/session';
+import { addMessage, getUsers, useSession, type User } from '@/model/session';
 import { deleteUser } from '@/model/session';
 
 
+const session = useSession();
+
+
+let num = ref(0);
 
 
 
@@ -17,7 +21,20 @@ const items = ref<User[]>([]);
  console.log(items.value);
 
 
+function deleteUsers(user : User){
 
+if(user === null || user === undefined){
+    console.log("user is null");
+    return;
+}
+else{
+    deleteUser(user);
+    addMessage("User Deleted", "warning");
+    //location.reload();
+}
+ 
+
+}
 
 
 /////This code will be updated to delete users from the database
@@ -57,7 +74,7 @@ const items = ref<User[]>([]);
                         <td class="title is-5">{{user?.name}}</td>
                         <td class="title is-5">{{user?.email}}</td>
                         <td class="title is-5">{{user?.isAdmin}}</td>
-                        <td class="title is-5"><button class="button is-danger" @click="">Delete</button></td>
+                        <td class="title is-5"><button class="button is-danger" @click="deleteUsers(user)" >Delete</button></td>
                     </tr>
                 </tbody>
             </table>
