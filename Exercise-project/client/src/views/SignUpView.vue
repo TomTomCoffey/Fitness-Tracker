@@ -22,10 +22,18 @@ import router from '@/router';
         } else {
             createUser(user.value).then((data) => {
                 console.log(data);
+
+                if(data === null || data === undefined){
+                    console.log("user is null");
+                    return;
+                }
+                else{
+               
                 addMessage('Congrats on being a new user!', 'success');
                 addMessage('Please log in to continue', 'info');
                 //loginWithUser(user.value)// <--- want to log in new users as they sign in but not working
                 router.push('/login');
+                }
             })
         }
     }

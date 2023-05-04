@@ -119,7 +119,7 @@ export async function loginWithServer(email: string, password: string): Promise<
 }
 
 export function useLogin(email: string, password: string) {
-    const router = useRouter();
+    
 
     return async function() {
      const response = await api('users/login', {email, password}, 'POST');
@@ -133,7 +133,7 @@ export function useLogin(email: string, password: string) {
      }
      session.user.token = response.data.token;
 
-       //router.push("/");
+  
 
        return response.data.user;
     
