@@ -27,7 +27,12 @@ async function getById(id) {
 async function add(item) {
     const col = await collection();
 
+    item.email = item.email.toLowerCase();
 
+    const userTaken = await col.findOne({ email: item.email });
+    if (userTaken) {
+        throw new Error('Email already taken');
+    }
    
     item.workouts = [];
     item.cardio = [];
