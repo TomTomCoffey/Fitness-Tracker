@@ -27,9 +27,22 @@ async function getById(id) {
 async function add(item) {
     const col = await collection();
 
+
+   
+    item.workouts = [];
+    item.cardio = [];
+    item.friends = [];
+    item.prs = 0;
+    item.isAdmin = false;
+    item.bestBench = 0;
+    item.bestSquat = 0;
+    item.bestDeadlift = 0;
+
+    //item.created = new Date();
     const result = await col.insertOne(item);
 
     item._id = result.insertedId;
+    console.log(item);
     return item;
 }
 

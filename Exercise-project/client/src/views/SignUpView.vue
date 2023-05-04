@@ -15,23 +15,17 @@ import router from '@/router';
 
     const route = useRoute(); 
     const user = ref<User>({} as User);
-    getUser(+route.params.id).then((data) => {
-        user.value.isAdmin = false;
-        user.value.workouts = [];
-        user.value.cardio = [];
-        user.value.friends = [];
-        user.value.prs = 0;
-        user.value = data.data ?? {} as User;
-        console.log(user.value)
-    })
+   
     function save() {
         if(user.value.id) {
             console.log('update')
         } else {
             createUser(user.value).then((data) => {
-                console.log(data)
-                addMessage('Congrats on being a new user!', 'success')
-                loginWithUser(user.value)// <--- want to log in new users as they sign in but not working
+                console.log(data);
+                addMessage('Congrats on being a new user!', 'success');
+                addMessage('Please log in to continue', 'info');
+                //loginWithUser(user.value)// <--- want to log in new users as they sign in but not working
+                router.push('/login');
             })
         }
     }

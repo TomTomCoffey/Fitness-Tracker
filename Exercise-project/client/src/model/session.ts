@@ -95,7 +95,7 @@ export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
 export async function loginWithServer(email: string, password: string): Promise<User> {
       
-    
+    const router = useRouter();
     const person = await api('users/login', {email, password}, 'POST');
 
     session.user = person.data.user;
@@ -106,6 +106,10 @@ export async function loginWithServer(email: string, password: string): Promise<
     addMessage("Login Successful", "success");
     router.push('/');
     }
+
+
+     router.push(session.redirectUrl ?? "/");
+     session.redirectUrl = null;
 
     return person.data.user;
     

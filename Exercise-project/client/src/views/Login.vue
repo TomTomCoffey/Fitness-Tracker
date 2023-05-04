@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import router from "@/router";
+
 import { useSession, loginWithServer, type User, loginWithUser,useLogin } from "../model/session";
 import { defineProps, ref } from "vue";
 import { useRouter } from "vue-router";
 
 
-
+const router = useRouter();
 const session = useSession();
 const email = ref('');
 const password = ref('');
@@ -20,6 +20,7 @@ function login() {
         if(user.name === null || user === undefined){
             console.log("user is null");
             return;
+           
         }
     else{
       
