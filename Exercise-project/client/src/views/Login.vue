@@ -24,7 +24,7 @@ function login() {
         }
     else{
       
-        router.push("/");
+        router.push("/exercises");
     }
 
        

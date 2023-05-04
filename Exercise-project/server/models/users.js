@@ -42,8 +42,7 @@ async function add(item) {
     item.bestBench = 0;
     item.bestSquat = 0;
     item.bestDeadlift = 0;
-
-    //item.created = new Date();
+    item.created = new Date();
     const result = await col.insertOne(item);
 
     item._id = result.insertedId;
