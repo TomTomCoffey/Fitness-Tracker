@@ -20,7 +20,6 @@ function login() {
         if(user.name === null || user === undefined){
             console.log("user is null");
             return;
-           
         }
     else{
       

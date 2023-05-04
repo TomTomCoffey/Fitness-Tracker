@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { useSession } from '@/model/session';
 import { useWorkouts1 } from '@/model/workouts';
-import { getUsers, type User } from '@/model/session';
+import { getUsers, type User } from '../model/session';
 import type { Workout } from '@/model/workouts';
 import { findBestBench1 } from '@/model/session';
 

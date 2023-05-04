@@ -38,6 +38,7 @@ const session = reactive({
      bestBench?: number;
     bestSquat?: number;
     bestDeadlift?: number;
+    created?: string;
  
  }
 
@@ -66,7 +67,8 @@ const session = reactive({
 
 export function getUsers(): Promise<DataListEnvelope<User>> {
 
-    return api('users')
+    //console.log("Do i get here");
+    return api('users');
 
 }
 
@@ -89,7 +91,7 @@ export function deleteUser(user: User): Promise<void> {
 
 export function updateUser(user: User): Promise<DataEnvelope<User>> {
 
-    return api(`users/`, user, 'PUT')
+    return api(`users/`, {...user, token: undefined}, 'PUT')
 
 }
 
@@ -103,12 +105,12 @@ export async function loginWithServer(email: string, password: string): Promise<
     if(session.user) {
     session.user.token = person.data.token;
     addMessage("Login Successful", "success");
-    //router.push('/');
+    router.push('/');
     }
 
 
-     //router.push(session.redirectUrl ?? "/");
-    // session.redirectUrl = null;
+     router.push(session.redirectUrl ?? "/");
+    session.redirectUrl = null;
 
     return person.data.user;
     

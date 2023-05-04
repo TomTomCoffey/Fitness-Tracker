@@ -102,7 +102,7 @@ async function login(email, password) {
         throw new Error('Invalid password');
     }
 
-    const cleanUser = { ...user, password: undefined };
+    const cleanUser = { ...user, password: undefined, photo: undefined };
     const token = await generateTokenAsync(cleanUser,'1d');
 
     return { user: cleanUser, token };

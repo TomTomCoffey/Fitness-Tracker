@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-//import { useSession, users} from '@/model/session';
+// import { useSession, users} from '@/model/session';
 import { addMessage, getUsers, useSession, type User } from '@/model/session';
 import { deleteUser } from '@/model/session';
 
@@ -28,7 +28,6 @@ if(user === null || user === undefined){
     return;
 }
 else{
-    console.log(user);
     deleteUser(user);
     addMessage("User Deleted", "warning");
     //location.reload();
