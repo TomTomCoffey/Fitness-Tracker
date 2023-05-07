@@ -105,12 +105,12 @@ export async function loginWithServer(email: string, password: string): Promise<
     if(session.user) {
     session.user.token = person.data.token;
     addMessage("Login Successful", "success");
-    router.push('/');
+    //router.push('/');
     }
 
 
-     router.push(session.redirectUrl ?? "/");
-    session.redirectUrl = null;
+    //  router.push(session.redirectUrl ?? "/");
+    // session.redirectUrl = null;
 
     return person.data.user;
     
