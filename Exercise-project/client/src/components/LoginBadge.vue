@@ -2,14 +2,22 @@
  import { useSession, login1, useLogin } from '@/model/session';
  import SignUpBadge from './SignUpBadge.vue';
  import { getUser, type User } from '@/model/session';
- import { RouterLink } from 'vue-router';
+ import { RouterLink, useRouter } from 'vue-router';
 
 
 
 
-
+ const router = useRouter();
 
  const session = useSession();
+
+ function logout(){
+
+   
+        session.user = null;
+        router.push('/login');
+
+ }
 
 
 
@@ -20,7 +28,7 @@
  <template>
              <div class="navbar-item" v-if="session.user">
                  Welcome, {{ session.user.name }}
-                 (<a @click=" session.user = null">logout</a>)
+                 (<a @click="logout">logout</a>)
              </div>
 
                 
