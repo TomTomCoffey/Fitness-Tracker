@@ -15,12 +15,17 @@ const benchlist = getBenchList();
 const squatlist = getSquatList();
 const deadliftlist = getDeadliftList();
 
-
-
+const labels = ()=>{
+    const label = [];
+    for(let i = 0; i < session.user!.workouts.length; i++){
+        label.push(i);
+    }
+    return label;
+}
 
 
 const workoutData = {
-    labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+    labels: labels(),
     datasets: [
         {
             label: 'Bench Press',
@@ -124,6 +129,8 @@ return deadliftlist;
 
 
 
+
+
 </script>
 
 <template>
@@ -131,25 +138,7 @@ return deadliftlist;
         <!-- i need to create a line graph here -->
         <div class="box">
             <canvas id="myChart" width="400" height="400"></canvas>
-
-            
-
-
-
-
-
-
-
-
-
         </div>
-        
-
-    
-
-
-       
-
     </div>
 </template>
 
