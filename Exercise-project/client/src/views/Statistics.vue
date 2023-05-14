@@ -14,9 +14,47 @@ const benchlist = getBenchList();
 const squatlist = getSquatList();
 const deadliftlist = getDeadliftList();
 
+onMounted(() => {
+    console.log(session.user);
+    console.log(benchlist);
+    console.log(squatlist);
+    console.log(deadliftlist);
 
 
 const ctx = document.getElementById('myChart');
+
+const myChart = new Chart(document.getElementById('myChart'), {
+    type: 'line',
+    data: {
+        labels: ['Bench Press', 'Squat', 'Deadlift'],
+        datasets: [{
+            label: 'Weight',
+            data: [benchlist, squatlist, deadliftlist],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                min: 0,
+                max: 1000
+            }
+        }
+    }
+});
+
+})
 
 
 
@@ -80,6 +118,7 @@ return deadliftlist;
         <!-- i need to create a line graph here -->
         <div class="box">
             <canvas id="myChart" width="400" height="400"></canvas>
+
             
 
 
