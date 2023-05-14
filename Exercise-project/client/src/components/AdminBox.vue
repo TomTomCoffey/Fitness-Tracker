@@ -28,6 +28,7 @@ if(user === null || user === undefined){
     return;
 }
 else{
+    console.log(user);
     deleteUser(user);
     addMessage("User Deleted", "warning");
     //location.reload();

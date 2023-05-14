@@ -2,10 +2,68 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useSession } from '@/model/session';
+import type { Workout } from '@/model/workouts';
+import Chart from 'chart.js/auto';
+import { onMounted } from 'vue';
 
 
 const session = useSession();
 const user = ref(session.user);
+
+const benchlist = getBenchList();
+const squatlist = getSquatList();
+const deadliftlist = getDeadliftList();
+
+
+
+const ctx = document.getElementById('myChart');
+
+
+
+
+
+
+
+function getBenchList() : number[]{
+
+    const benchlist = [];
+
+    for(let i = 0; i < session.user!.workouts.length; i++){
+        if(session.user!.workouts[i].workout === "Bench Press"){
+            benchlist.push(session.user!.workouts[i].weight);
+        }      
+}
+return benchlist;
+
+}
+
+function getSquatList() : number[]{
+
+    const squatlist = [];
+
+    for(let i = 0; i < session.user!.workouts.length; i++){
+        if(session.user!.workouts[i].workout === "Squat"){
+            squatlist.push(session.user!.workouts[i].weight);
+        }      
+}
+return squatlist;
+
+
+}
+function getDeadliftList() : number[]{
+
+    const deadliftlist = [];
+
+    for(let i = 0; i < session.user!.workouts.length; i++){
+        if(session.user!.workouts[i].workout === "Deadlift"){
+            deadliftlist.push(session.user!.workouts[i].weight);
+        }      
+}
+return deadliftlist;
+
+}
+
+
 
 
 
@@ -18,7 +76,23 @@ const user = ref(session.user);
 </script>
 
 <template>
-    <div>
+    <div class="container">
+        <!-- i need to create a line graph here -->
+        <div class="box">
+            <canvas id="myChart" width="400" height="400"></canvas>
+            
+
+
+
+
+
+
+
+
+
+        </div>
+        
+
     
 
 
@@ -30,5 +104,27 @@ const user = ref(session.user);
 
 
 <style scoped>
+
+.box{
+    width: 100vh;
+    height: 100vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-left: 200px;
+}
+
+.myChart{
+    width: 100vh;
+    height: 100vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
 
 </style>

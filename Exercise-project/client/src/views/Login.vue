@@ -82,6 +82,7 @@ function login() {
      line-height: 1.2;
      margin-bottom: 1rem;
      text-align: center;
+     display: block;
  }
  .subtitle{
      color: black;
@@ -90,6 +91,7 @@ function login() {
      line-height: 1.2;
      margin-bottom: 5rem;
      text-align: center;
+        display: block;
  }
 
  .form{
@@ -102,7 +104,7 @@ function login() {
 
  .box{
         background-color: transparent;
-        height: 100vh;
+        height: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
