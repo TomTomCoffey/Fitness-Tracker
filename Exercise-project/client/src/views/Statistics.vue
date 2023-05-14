@@ -5,6 +5,7 @@ import { useSession } from '@/model/session';
 import type { Workout } from '@/model/workouts';
 import Chart from 'chart.js/auto';
 import { onMounted } from 'vue';
+import type { ChartConfiguration } from 'chart.js';
 
 
 const session = useSession();
@@ -14,47 +15,59 @@ const benchlist = getBenchList();
 const squatlist = getSquatList();
 const deadliftlist = getDeadliftList();
 
-onMounted(() => {
-    console.log(session.user);
-    console.log(benchlist);
-    console.log(squatlist);
-    console.log(deadliftlist);
 
 
-const ctx = document.getElementById('myChart');
 
-const myChart = new Chart(document.getElementById('myChart'), {
+
+const workoutData = {
+    labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+    datasets: [
+        {
+            label: 'Bench Press',
+            data: benchlist,
+            borderColor: 'red',
+            backgroundColor: 'red',
+            fill: false,
+        },
+        {
+            label: 'Squat',
+            data: squatlist,
+            borderColor: 'blue',
+            backgroundColor: 'blue',
+            fill: false,
+        },
+        {
+            label: 'Deadlift',
+            data: deadliftlist,
+            borderColor: 'green',
+            backgroundColor: 'green',
+            fill: false,
+        }
+    ]
+}
+
+const config: ChartConfiguration = {
     type: 'line',
-    data: {
-        labels: ['Bench Press', 'Squat', 'Deadlift'],
-        datasets: [{
-            label: 'Weight',
-            data: [benchlist, squatlist, deadliftlist],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 205, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)'
-            ],
-            borderWidth: 1
-        }]
-    },
+    data: workoutData,
     options: {
-        scales: {
-            y: {
-                beginAtZero: true,
-                min: 0,
-                max: 1000
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Workout Progress'
             }
         }
     }
-});
+}
 
-})
+onMounted(() => {
+    const ctx = document.getElementById('myChart') as HTMLCanvasElement;
+    const myChart = new Chart(ctx, config);
+
+});
 
 
 
@@ -146,13 +159,15 @@ return deadliftlist;
 
 .box{
     width: 100vh;
-    height: 100vh;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     margin-left: 200px;
+
+    margin-right: 200px;
+    
 }
 
 .myChart{
@@ -163,6 +178,10 @@ return deadliftlist;
     padding: 10px;
     margin: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.container{
+    background-color: transparent;
 }
 
 
