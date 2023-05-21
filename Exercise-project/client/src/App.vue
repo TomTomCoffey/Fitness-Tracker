@@ -3,6 +3,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
+import { createApp } from 'vue';
 
 </script>
 
@@ -38,6 +39,10 @@ import Footer from '@/components/Footer.vue'
   padding: 0;
   margin: 0;
 
+}
+
+.container{
+  height: 78vh;
 }
 
 

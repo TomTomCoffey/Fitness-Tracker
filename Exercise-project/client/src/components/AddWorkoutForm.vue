@@ -1,15 +1,10 @@
 <script setup lang="ts">
 
-import { getUsers, setBestBench, setBestDeadlift, setBestSquat, type User } from '@/model/session';
+import { setBestBench, setBestDeadlift, setBestSquat, type User } from '@/model/session';
 import { ref } from 'vue';
 import { useSession, useWorkout, addWorkout1, findBestBench, findBestDeadlift, findBestSquat, increasePRs, addMessage, updateUser} from '@/model/session';
-import AutoComplete from 'primevue/Autocomplete';
 
 
-const items = ref<User[]>([]);
-getUsers().then((data) => {        ////This will get me the users from my database
-  items.value = data.data;
-});
 
 
 const session = useSession();
@@ -62,24 +57,6 @@ function checkForPr(workoutName: string, workoutWeight: number) {
 const workoutName = ref('');
 const workoutWeight = ref(0);
 
-const usersearch = ref('');   /// got my ref for user
-
-const value = ref("");
-
-
-async function search(event: [query : String])
-{
-    const query = event[0];
-    const data = await getUsers();
-    const users = data.data;
-    const results = users.filter((user) => {
-        return user.name.toLowerCase().startsWith(query.toLowerCase());
-    });
-    items.value = results;
-    console.log(results);
-}
-
-
 
 
 
@@ -121,17 +98,6 @@ async function search(event: [query : String])
                     <input type= "number" required v-model="workoutWeight">
                     </div>
                 </div>
-
-                <div class="field">
-                    <label for="" class="label">Enter a User you worked with:</label>
-                    <div class="select ">
-                        <div class="card flex justify-content-center">
-                             <AutoComplete v-model="value" :suggestions="items" @complete="search" />
-                        </div>
-                    </div>
-                </div>
-             
-
             </section>
             <footer class="modal-card-foot">
               <button class="button is-success" @click="checkForPr(workoutName, workoutWeight), $emit('close')">Add</button>
