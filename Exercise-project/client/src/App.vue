@@ -3,7 +3,6 @@
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
-import { createApp } from 'vue';
 
 </script>
 
@@ -41,15 +40,6 @@ import { createApp } from 'vue';
 
 }
 
-.container{
-  height: 78vh;
-}
-
-@media (max-width: 600px) {
-  .container {
-    height: 100%;
-  }
-}
 
 
 </style>
