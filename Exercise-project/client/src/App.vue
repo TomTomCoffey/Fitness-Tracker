@@ -45,6 +45,11 @@ import { createApp } from 'vue';
   height: 78vh;
 }
 
+@media (max-width: 600px) {
+  .container {
+    height: 100%;
+  }
+}
 
 
 </style>

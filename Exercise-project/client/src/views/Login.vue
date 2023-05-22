@@ -110,6 +110,15 @@ function login() {
         align-items: center;
  }
 
+ @media (max-width: 600px) {
+  .form {
+    width: 90%;
+    padding: 2rem;
+    
+   
+  }
+}
+
 
 
  </style>
